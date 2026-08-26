@@ -129,6 +129,9 @@
   <data name="AccountSetFrom" xml:space="preserve">
     <value>Hasta Grupo de Ctas.</value>
   </data>
+  <data name="PM_AccountSetTitle" xml:space="preserve">
+    <value>PJC - Reporte de Grupos de Cuentas</value>
+  </data>
   <data name="AccountSetTo" xml:space="preserve">
     <value>Hasta Grupo de Ctas.</value>
   </data>
@@ -177,9 +180,6 @@
   <data name="ChargesTitle" xml:space="preserve">
     <value>PJC - Reporte de Cargos</value>
   </data>
-  <data name="Comments" xml:space="preserve">
-    <value>Comentarios</value>
-  </data>
   <data name="CurrencyFieldLabel" xml:space="preserve">
     <value>[ES] Currency Field Label</value>
     <comment>Translation Unnecessary</comment>
@@ -212,30 +212,6 @@
   <data name="IncludeOptionalFields" xml:space="preserve">
     <value>Incluir Campos Opcionales</value>
   </data>
-  <data name="MiscellaneousCodeFrom" xml:space="preserve">
-    <value>Desde Código de Varios</value>
-  </data>
-  <data name="MiscellaneousCodeTo" xml:space="preserve">
-    <value>Hasta Código de Varios</value>
-  </data>
-  <data name="ItemNumber" xml:space="preserve">
-    <value>N° Artículo</value>
-  </data>
-  <data name="ItemNumberFrom" xml:space="preserve">
-    <value>N° Artículo De</value>
-  </data>
-  <data name="ItemNumberTo" xml:space="preserve">
-    <value>N° Artículo A</value>
-  </data>
-  <data name="ItemStatus_ActiveItems" xml:space="preserve">
-    <value>Artículos Activos</value>
-  </data>
-  <data name="ItemStatus_AllItems" xml:space="preserve">
-    <value>Todos los Artículos</value>
-  </data>
-  <data name="ItemStatus_InactiveItems" xml:space="preserve">
-    <value>Artículos Inactivos</value>
-  </data>
   <data name="NumericFieldLabel" xml:space="preserve">
     <value>[ES] Numeric Field Label</value>
     <comment>Translation Unnecessary</comment>
@@ -263,12 +239,6 @@
   <data name="OptionalFields" xml:space="preserve">
     <value>Campos Opcionales</value>
   </data>
-  <data name="OverheadCodeFrom" xml:space="preserve">
-    <value>De Cód. Gastos Grales</value>
-  </data>
-  <data name="OverheadCodeTo" xml:space="preserve">
-    <value>A Cód. Gastos Grales</value>
-  </data>
   <data name="PaymentSelectionCode" xml:space="preserve">
     <value>Código de Selección</value>
   </data>
@@ -277,51 +247,6 @@
   </data>
   <data name="PaymentSelectionCodeTo" xml:space="preserve">
     <value>Hasta Código de Selección</value>
-  </data>
-  <data name="PM_AccountSetTitle" xml:space="preserve">
-    <value>PJC - Reporte de Grupos de Cuentas</value>
-  </data>
-  <data name="PM_GLIntegrationTitle" xml:space="preserve">
-    <value>PJC  Reporte de Integración del LM</value>
-  </data>
-  <data name="PM_MiscellaneousExpensesTitle" xml:space="preserve">
-    <value>PJC - Reporte de Gastos Varios</value>
-  </data>
-  <data name="PM_OptionalFieldTitle" xml:space="preserve">
-    <value>PJC - Reporte de Campos Opcionales</value>
-  </data>
-  <data name="PM_OptionsTitle" xml:space="preserve">
-    <value>PJC - Reporte de Opciones</value>
-  </data>
-  <data name="PM_OverheadExpensesTitle" xml:space="preserve">
-    <value>PJC - Reporte de Gastos Generales</value>
-  </data>
-  <data name="PO_GLIntegrationTitle" xml:space="preserve">
-    <value>OC – Reporte de Integración del LM</value>
-  </data>
-  <data name="PO_ItemsTitle" xml:space="preserve">
-    <value>OC - Reporte de Artículos</value>
-  </data>
-  <data name="PO_OptionalFieldsTitle" xml:space="preserve">
-    <value>OC – Reporte de Campos Opcionales</value>
-  </data>
-  <data name="PO_OptionsTitle" xml:space="preserve">
-    <value>OC - Reporte de Opciones</value>
-  </data>
-  <data name="PO_ShipViaCodesTitle" xml:space="preserve">
-    <value>OC - Reporte de Códigos de Vías de Envío</value>
-  </data>
-  <data name="PO_TemplatesTitle" xml:space="preserve">
-    <value>OC - Reporte de Plantillas</value>
-  </data>
-  <data name="PO_WeightUOMTitle" xml:space="preserve">
-    <value>OC – Reporte de Unidades de Medida de Peso</value>
-  </data>
-  <data name="Print" xml:space="preserve">
-    <value>Imprimir</value>
-  </data>
-  <data name="Profile" xml:space="preserve">
-    <value>Perfil</value>
   </data>
   <data name="Project" xml:space="preserve">
     <value>Proyecto</value>
@@ -342,17 +267,17 @@
     <value>[ES] Radio Button Group Label</value>
     <comment>Translation Unnecessary</comment>
   </data>
-  <data name="ShipViaCodeFrom" xml:space="preserve">
-    <value>De Cód. Vía de Envío</value>
-  </data>
-  <data name="ShipViaCodes" xml:space="preserve">
-    <value>Cód. Vía Envío</value>
-  </data>
-  <data name="ShipViaCodeTo" xml:space="preserve">
-    <value>A Cód. Vía de Envío</value>
-  </data>
   <data name="ShowSettings" xml:space="preserve">
     <value>Mostrar Especificaciones</value>
+  </data>
+  <data name="PO_OptionsTitle" xml:space="preserve">
+    <value>OC - Reporte de Opciones</value>
+  </data>
+  <data name="PO_ShipViaCodesTitle" xml:space="preserve">
+    <value>OC - Reporte de Códigos de Vías de Envío</value>
+  </data>
+  <data name="PO_TemplatesTitle" xml:space="preserve">
+    <value>OC - Reporte de Plantillas</value>
   </data>
   <data name="Subcontractor" xml:space="preserve">
     <value>PJC - Reporte de Subcontratistas</value>
@@ -366,8 +291,14 @@
   <data name="SubcontractorTo" xml:space="preserve">
     <value>Hasta Subcontratista</value>
   </data>
-  <data name="Taxes" xml:space="preserve">
-    <value>Impuestos</value>
+  <data name="TermsCode" xml:space="preserve">
+    <value>Cód. de Condiciones</value>
+  </data>
+  <data name="TermsCodeFrom" xml:space="preserve">
+    <value>Desde Cód. de Condiciones</value>
+  </data>
+  <data name="TermsCodeTo" xml:space="preserve">
+    <value>Hasta Cód. de Condiciones</value>
   </data>
   <data name="TemplateCodeFrom" xml:space="preserve">
     <value>De Cód. de Plantilla</value>
@@ -378,14 +309,83 @@
   <data name="TemplateCodeTo" xml:space="preserve">
     <value>A Cód. de Plantilla</value>
   </data>
-  <data name="TermsCode" xml:space="preserve">
-    <value>Cód. de Condiciones</value>
+  <data name="ShipViaCodeFrom" xml:space="preserve">
+    <value>De Cód. Vía de Envío</value>
   </data>
-  <data name="TermsCodeFrom" xml:space="preserve">
-    <value>Desde Cód. de Condiciones</value>
+  <data name="ShipViaCodeTo" xml:space="preserve">
+    <value>A Cód. Vía de Envío</value>
   </data>
-  <data name="TermsCodeTo" xml:space="preserve">
-    <value>Hasta Cód. de Condiciones</value>
+  <data name="ShipViaCodes" xml:space="preserve">
+    <value>Cód. Vía Envío</value>
+  </data>
+  <data name="PO_GLIntegrationTitle" xml:space="preserve">
+    <value>OC – Reporte de Integración del LM</value>
+  </data>
+  <data name="PO_OptionalFieldsTitle" xml:space="preserve">
+    <value>OC – Reporte de Campos Opcionales</value>
+  </data>
+  <data name="PM_GLIntegrationTitle" xml:space="preserve">
+    <value>PJC  Reporte de Integración del LM</value>
+  </data>
+  <data name="PM_OptionalFieldTitle" xml:space="preserve">
+    <value>PJC - Reporte de Campos Opcionales</value>
+  </data>
+  <data name="MiscellaneousCodeFrom" xml:space="preserve">
+    <value>Desde Código de Varios</value>
+  </data>
+  <data name="MiscellaneousCodeTo" xml:space="preserve">
+    <value>Hasta Código de Varios</value>
+  </data>
+  <data name="OverheadCodeFrom" xml:space="preserve">
+    <value>De Cód. Gastos Grales</value>
+  </data>
+  <data name="OverheadCodeTo" xml:space="preserve">
+    <value>A Cód. Gastos Grales</value>
+  </data>
+  <data name="PM_MiscellaneousExpensesTitle" xml:space="preserve">
+    <value>PJC - Reporte de Gastos Varios</value>
+  </data>
+  <data name="PM_OptionsTitle" xml:space="preserve">
+    <value>PJC - Reporte de Opciones</value>
+  </data>
+  <data name="PM_OverheadExpensesTitle" xml:space="preserve">
+    <value>PJC - Reporte de Gastos Generales</value>
+  </data>
+  <data name="PO_WeightUOMTitle" xml:space="preserve">
+    <value>OC – Reporte de Unidades de Medida de Peso</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>N° Artículo</value>
+  </data>
+  <data name="ItemNumberFrom" xml:space="preserve">
+    <value>N° Artículo De</value>
+  </data>
+  <data name="ItemNumberTo" xml:space="preserve">
+    <value>N° Artículo A</value>
+  </data>
+  <data name="ItemStatus_ActiveItems" xml:space="preserve">
+    <value>Artículos Activos</value>
+  </data>
+  <data name="ItemStatus_AllItems" xml:space="preserve">
+    <value>Todos los Artículos</value>
+  </data>
+  <data name="ItemStatus_InactiveItems" xml:space="preserve">
+    <value>Artículos Inactivos</value>
+  </data>
+  <data name="PO_ItemsTitle" xml:space="preserve">
+    <value>OC - Reporte de Artículos</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimir</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Impuestos</value>
   </data>
   <data name="UnitOfMeasure" xml:space="preserve">
     <value>Unidad de Medida</value>
@@ -1142,6 +1142,15 @@
   <data name="Current" xml:space="preserve">
     <value>Actual</value>
   </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Clasificar por</value>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>Tipo de Reporte</value>
+  </data>
+  <data name="PMTransactionHistoryReportTitle" xml:space="preserve">
+    <value>PJC - Informe del historial de transacciones</value>
+  </data>
   <data name="BothCurrency" xml:space="preserve">
     <value>Tanto la moneda del cliente como la moneda funcional</value>
   </data>
@@ -1241,10 +1250,673 @@
   <data name="P/O" xml:space="preserve">
     <value>OC</value>
   </data>
-  <data name="SortBy" xml:space="preserve">
-    <value>Clasificar por</value>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
   </data>
-  <data name="PMTransactionHistoryReportTitle" xml:space="preserve">
-    <value>PJC - Informe del historial de transacciones</value>
+  <data name="IC_SerailLotNumberQOH" xml:space="preserve">
+    <value>CI – Reportes de Cantidad de Nº de Serie/Lote Disponibles</value>
+  </data>
+  <data name="LotNumbers" xml:space="preserve">
+    <value>Números de lote</value>
+  </data>
+  <data name="SerialNumbers" xml:space="preserve">
+    <value>Números de serie</value>
+  </data>
+  <data name="ShowQuantityVariance" xml:space="preserve">
+    <value>Mostrar sólo art. con Desviación de Cant. de CI</value>
+  </data>
+  <data name="IC_SerialOrLotTransactionsTitle" xml:space="preserve">
+    <value>CI - Reporte de Transacciones de Nº Lote/Serie</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Fecha de Documento</value>
+  </data>
+  <data name="Both" xml:space="preserve">
+    <value>Ambos</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Número de serie</value>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>Número de lote</value>
+  </data>
+  <data name="SerialNumberFrom" xml:space="preserve">
+    <value>Del número de serie</value>
+  </data>
+  <data name="SerialNumberTo" xml:space="preserve">
+    <value>Al número de serie</value>
+  </data>
+  <data name="DocumentDateFrom" xml:space="preserve">
+    <value>Desde la fecha del documento</value>
+  </data>
+  <data name="DocumentDateTo" xml:space="preserve">
+    <value>Hasta la fecha del documento</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Disponible</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>No disponible</value>
+  </data>
+  <data name="ExpiredStock" xml:space="preserve">
+    <value>Exist. Caducadas</value>
+  </data>
+  <data name="FromCustomerNumber" xml:space="preserve">
+    <value>Del número de cliente</value>
+  </data>
+  <data name="FromExpiredDate" xml:space="preserve">
+    <value>Desde la fecha de vencimiento</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>Del número de lote</value>
+  </data>
+  <data name="FromRegisteredDate" xml:space="preserve">
+    <value>Desde la fecha de registro</value>
+  </data>
+  <data name="FromReservedDate" xml:space="preserve">
+    <value>Desde fecha reservada</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>Del número de serie</value>
+  </data>
+  <data name="FromSoldDate" xml:space="preserve">
+    <value>Desde la fecha de venta</value>
+  </data>
+  <data name="IC_SerialLotStockListingReport" xml:space="preserve">
+    <value>CI – Reporte Listado de Existencias con Nº Serie/Lote</value>
+  </data>
+  <data name="Registered" xml:space="preserve">
+    <value>Registrada</value>
+  </data>
+  <data name="ReservedStock" xml:space="preserve">
+    <value>Exist. Reservadas</value>
+  </data>
+  <data name="SoldStock" xml:space="preserve">
+    <value>Exist. Vendidas</value>
+  </data>
+  <data name="ToCustomerNumber" xml:space="preserve">
+    <value>Al número de cliente</value>
+  </data>
+  <data name="ToExpiredDate" xml:space="preserve">
+    <value>Hasta la fecha de vencimiento</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>Al número de lote</value>
+  </data>
+  <data name="ToRegisteredDate" xml:space="preserve">
+    <value>Hasta la fecha de registro</value>
+  </data>
+  <data name="ToReservedDate" xml:space="preserve">
+    <value>Hasta fecha reservada</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>Al número de serie</value>
+  </data>
+  <data name="ToSoldDate" xml:space="preserve">
+    <value>Hasta la fecha de venta</value>
+  </data>
+  <data name="22PayPeriods" xml:space="preserve">
+    <value>22 períodos de pago</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Activa</value>
+  </data>
+  <data name="AddLine" xml:space="preserve">
+    <value>Agregar línea</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>DIRECCIÓN</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>Abril</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>Agosto</value>
+  </data>
+  <data name="Billing" xml:space="preserve">
+    <value>Facturación</value>
+  </data>
+  <data name="Billings" xml:space="preserve">
+    <value>Facturaciones</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Fecha de nacimiento</value>
+  </data>
+  <data name="Biweekly" xml:space="preserve">
+    <value>Quincenal</value>
+  </data>
+  <data name="CalendarYearTotals" xml:space="preserve">
+    <value>Totales del año calendario</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Clase</value>
+  </data>
+  <data name="Class1" xml:space="preserve">
+    <value>Clase 1</value>
+  </data>
+  <data name="Class2" xml:space="preserve">
+    <value>Clase 2</value>
+  </data>
+  <data name="Class3" xml:space="preserve">
+    <value>Clase 3</value>
+  </data>
+  <data name="Class4" xml:space="preserve">
+    <value>Clase 4</value>
+  </data>
+  <data name="CP_AssignEmployeeEarnDedAudit" xml:space="preserve">
+    <value>Asignar auditoría de ganancias/descuentos de empleados</value>
+  </data>
+  <data name="CP_AssignEmployeeTaxAudit" xml:space="preserve">
+    <value>Asignar auditoría fiscal a empleados</value>
+  </data>
+  <data name="CP_CheckDate" xml:space="preserve">
+    <value>Verificar fecha</value>
+  </data>
+  <data name="CP_ManualChecks" xml:space="preserve">
+    <value>Comprobaciones manuales</value>
+  </data>
+  <data name="CP_Pre-CheckPayrollJobRegisterTitle" xml:space="preserve">
+    <value>Informe de registro de trabajo de nómina de pre-cheque</value>
+  </data>
+  <data name="CP_Pre-CheckPayrollRegisterTitle" xml:space="preserve">
+    <value>Informe de registro de nómina pre-cheque</value>
+  </data>
+  <data name="CP_ReversedChecks" xml:space="preserve">
+    <value>Cheques anulados</value>
+  </data>
+  <data name="CP_ShowSINNumbers" xml:space="preserve">
+    <value>Mostrar números SIN</value>
+  </data>
+  <data name="CP_SystemChecks" xml:space="preserve">
+    <value>Comprobaciones del sistema</value>
+  </data>
+  <data name="CP_ToCheckDate" xml:space="preserve">
+    <value>Para comprobar la fecha</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>A diario</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>Rango de fechas</value>
+  </data>
+  <data name="ddlAll" xml:space="preserve">
+    <value>Toda</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>Diciembre</value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>decimales</value>
+  </data>
+  <data name="DeleteLine" xml:space="preserve">
+    <value>Eliminar línea</value>
+  </data>
+  <data name="DetailDatesHours" xml:space="preserve">
+    <value>Detalle Fechas/Horas</value>
+  </data>
+  <data name="DetailInformation" xml:space="preserve">
+    <value>Información detallada</value>
+  </data>
+  <data name="EFT" xml:space="preserve">
+    <value>EFT</value>
+  </data>
+  <data name="EFTOptionsTitle" xml:space="preserve">
+    <value>Informe de opciones de EFT</value>
+  </data>
+  <data name="EmployeeList" xml:space="preserve">
+    <value>Lista de empleados</value>
+  </data>
+  <data name="EmployeeListCode" xml:space="preserve">
+    <value>Código de lista de empleados</value>
+  </data>
+  <data name="EmployeeListing" xml:space="preserve">
+    <value>Listado de empleados</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Nombre del empleado</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Número de empleado</value>
+  </data>
+  <data name="EmployeeSubtotals" xml:space="preserve">
+    <value>Subtotales de empleados</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>Febrero</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromClass" xml:space="preserve">
+    <value>De clase</value>
+  </data>
+  <data name="FromClassCode" xml:space="preserve">
+    <value>Del código de clase</value>
+  </data>
+  <data name="FromEmployee" xml:space="preserve">
+    <value>De empleado</value>
+  </data>
+  <data name="FromEmployeeList" xml:space="preserve">
+    <value>De la lista de empleados</value>
+  </data>
+  <data name="FromEmployeeNumber" xml:space="preserve">
+    <value>Del número de empleado</value>
+  </data>
+  <data name="FromFollowUpDate" xml:space="preserve">
+    <value>Desde la fecha de seguimiento</value>
+  </data>
+  <data name="FromPostingSequence" xml:space="preserve">
+    <value>De la secuencia de publicación</value>
+  </data>
+  <data name="FromQuarantineDate" xml:space="preserve">
+    <value>Desde la fecha de cuarentena</value>
+  </data>
+  <data name="FromSelectionList" xml:space="preserve">
+    <value>De la lista de selección</value>
+  </data>
+  <data name="GLIntegrationTitle" xml:space="preserve">
+    <value>Informe de integración de G/L</value>
+  </data>
+  <data name="GL_AccountDescription" xml:space="preserve">
+    <value>Descripción de la cuenta de mayor</value>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>Fecha de contratación</value>
+  </data>
+  <data name="IC_QuarantineTitle" xml:space="preserve">
+    <value>Informe de cuarentena de I/C</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>Inactiva</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Fecha inactiva</value>
+  </data>
+  <data name="InactiveRoePending" xml:space="preserve">
+    <value>ROE inactivo pendiente</value>
+  </data>
+  <data name="IncludeBillingInformation" xml:space="preserve">
+    <value>Incluir información de facturación</value>
+  </data>
+  <data name="IncludeComponentBOMs" xml:space="preserve">
+    <value>Incluir listas de materiales de componentes</value>
+  </data>
+  <data name="IncludeCostsForEachItem" xml:space="preserve">
+    <value>Incluir costos para cada artículo</value>
+  </data>
+  <data name="IncludeEmployees" xml:space="preserve">
+    <value>Incluir empleadas</value>
+  </data>
+  <data name="IncludeInformation" xml:space="preserve">
+    <value>Incluir información</value>
+  </data>
+  <data name="InvalidEntryMsgTxt" xml:space="preserve">
+    <value>entrada en el</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Enero</value>
+  </data>
+  <data name="JobDetails" xml:space="preserve">
+    <value>Detalles del trabajo</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>Julio</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>Junio</value>
+  </data>
+  <data name="LastMaintainedDate" xml:space="preserve">
+    <value>Fecha del último mantenimiento</value>
+  </data>
+  <data name="LastRaisedDate" xml:space="preserve">
+    <value>Fecha del último aumento</value>
+  </data>
+  <data name="LastReviewDate" xml:space="preserve">
+    <value>Fecha de la última revisión</value>
+  </data>
+  <data name="LblOptionalFields" xml:space="preserve">
+    <value>Campos opcionales</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Número de línea</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>Marzo</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>Puede</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Mes</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Mensual</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NonReusableTimecards" xml:space="preserve">
+    <value>Tarjetas de tiempo no reutilizables</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>Noviembre</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>Octubre</value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Campo opcional</value>
+  </data>
+  <data name="OptionalFieldsTitle" xml:space="preserve">
+    <value>Informe de campos opcionales</value>
+  </data>
+  <data name="OptionsTitle" xml:space="preserve">
+    <value>Informe de opciones</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Otra</value>
+  </data>
+  <data name="PayFrequency" xml:space="preserve">
+    <value>Frecuencia de pago</value>
+  </data>
+  <data name="PayPeriodEndDate" xml:space="preserve">
+    <value>Fecha de finalización del período de pago</value>
+  </data>
+  <data name="PayrollEarningandHoursReport" xml:space="preserve">
+    <value>Informe de ganancias y horas de nómina</value>
+  </data>
+  <data name="PayrollEmployeeInformation" xml:space="preserve">
+    <value>Informe de información de empleados de nómina</value>
+  </data>
+  <data name="PayrollEmployeeSelection" xml:space="preserve">
+    <value>Selección de empleados de nómina</value>
+  </data>
+  <data name="PayrollEmployeeSelectionReport" xml:space="preserve">
+    <value>Informe de selección de empleados de nómina</value>
+  </data>
+  <data name="PayrollProcessingExceptionsReport" xml:space="preserve">
+    <value>Informe de excepciones de procesamiento de nómina</value>
+  </data>
+  <data name="PayrollRegisterTitle" xml:space="preserve">
+    <value>Informe de registro de nómina</value>
+  </data>
+  <data name="PayrollTimecardTitle" xml:space="preserve">
+    <value>Informe de tarjetas de tiempo de nómina</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Fecha de finalización del período</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Secuencia de publicación</value>
+  </data>
+  <data name="ProcessingExceptionsReport" xml:space="preserve">
+    <value>Informe de excepciones de procesamiento</value>
+  </data>
+  <data name="ProjectsTitle" xml:space="preserve">
+    <value>Informe de proyectos</value>
+  </data>
+  <data name="QuarantineDate" xml:space="preserve">
+    <value>Fecha de cuarentena</value>
+  </data>
+  <data name="Quarterly" xml:space="preserve">
+    <value>Trimestral</value>
+  </data>
+  <data name="Selectionlist" xml:space="preserve">
+    <value>Lista de selección</value>
+  </data>
+  <data name="SelectionListCode" xml:space="preserve">
+    <value>Código de lista de selección</value>
+  </data>
+  <data name="Semimonthly" xml:space="preserve">
+    <value>Quincenal</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>Septiembre</value>
+  </data>
+  <data name="ShowEFTBankAccountNumbers" xml:space="preserve">
+    <value>Mostrar números de cuenta bancaria EFT</value>
+  </data>
+  <data name="SortDetailsBy" xml:space="preserve">
+    <value>Ordenar detalles por</value>
+  </data>
+  <data name="SystemCheques" xml:space="preserve">
+    <value>Comprobaciones del sistema</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>Finalizada</value>
+  </data>
+  <data name="TerminateRoePending" xml:space="preserve">
+    <value>ROE terminado pendiente</value>
+  </data>
+  <data name="TerminationDate" xml:space="preserve">
+    <value>Fecha de terminación</value>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>Luego por</value>
+  </data>
+  <data name="Timecard" xml:space="preserve">
+    <value>tarjeta de tiempo</value>
+  </data>
+  <data name="TimecardDetail" xml:space="preserve">
+    <value>Detalle de la tarjeta de tiempo</value>
+  </data>
+  <data name="TimecardListing" xml:space="preserve">
+    <value>Listado de tarjetas de tiempo</value>
+  </data>
+  <data name="TimecardSummary" xml:space="preserve">
+    <value>Resumen de tarjeta de tiempo</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="ToClass" xml:space="preserve">
+    <value>A clase</value>
+  </data>
+  <data name="ToClassCode" xml:space="preserve">
+    <value>Al código de clase</value>
+  </data>
+  <data name="ToEmployee" xml:space="preserve">
+    <value>Al empleado</value>
+  </data>
+  <data name="ToEmployeeList" xml:space="preserve">
+    <value>A la lista de empleados</value>
+  </data>
+  <data name="ToEmployeeNumber" xml:space="preserve">
+    <value>Al número de empleado</value>
+  </data>
+  <data name="ToPostingSequence" xml:space="preserve">
+    <value>Para la secuencia de publicación</value>
+  </data>
+  <data name="ToQuarantineDate" xml:space="preserve">
+    <value>Fecha de cuarentena</value>
+  </data>
+  <data name="ToSelectionList" xml:space="preserve">
+    <value>A la lista de selección</value>
+  </data>
+  <data name="TransactionHistoryReportTitle" xml:space="preserve">
+    <value>Informe del historial de transacciones de nómina</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="UP_AssignEmployeeEarnDedAudit" xml:space="preserve">
+    <value>Asignar auditoría de ganancias/descuentos de empleados</value>
+  </data>
+  <data name="UP_AssignEmployeeTaxAudit" xml:space="preserve">
+    <value>Asignar auditoría fiscal a empleados</value>
+  </data>
+  <data name="UP_CheckDate" xml:space="preserve">
+    <value>Verificar fecha</value>
+  </data>
+  <data name="UP_CheckNumber" xml:space="preserve">
+    <value>Número de cheque</value>
+  </data>
+  <data name="UP_ChequeType" xml:space="preserve">
+    <value>Tipo de cheque</value>
+  </data>
+  <data name="UP_FromCheckDate" xml:space="preserve">
+    <value>Desde la fecha de verificación</value>
+  </data>
+  <data name="UP_ManualChecks" xml:space="preserve">
+    <value>Comprobaciones manuales</value>
+  </data>
+  <data name="UP_Pre-CheckPayrollJobRegisterTitle" xml:space="preserve">
+    <value>Informe de registro de trabajo de nómina de pre-verificación</value>
+  </data>
+  <data name="UP_Pre-CheckPayrollRegisterTitle" xml:space="preserve">
+    <value>Informe de registro de nómina previo a la verificación</value>
+  </data>
+  <data name="UP_ReversedChecks" xml:space="preserve">
+    <value>Cheques anulados</value>
+  </data>
+  <data name="UP_ShowSINNumbers" xml:space="preserve">
+    <value>Mostrar números de SSN</value>
+  </data>
+  <data name="UP_SystemChecks" xml:space="preserve">
+    <value>Comprobaciones del sistema</value>
+  </data>
+  <data name="UP_ToCheckDate" xml:space="preserve">
+    <value>Para comprobar la fecha</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Semanalmente</value>
+  </data>
+  <data name="WorkClassificationcodes" xml:space="preserve">
+    <value>Códigos de clasificación del trabajo</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Año</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="LotNumberFrom" xml:space="preserve">
+    <value>Del número de lote</value>
+  </data>
+  <data name="LotNumberTo" xml:space="preserve">
+    <value>Al número de lote</value>
+  </data>
+  <data name="1099CPRSCode" xml:space="preserve">
+    <value>Código 1099/CPRS</value>
+  </data>
+  <data name="10PayPeriods" xml:space="preserve">
+    <value>10 períodos de pago</value>
+  </data>
+  <data name="13PayPeriods" xml:space="preserve">
+    <value>13 períodos de pago</value>
+  </data>
+  <data name="BothBlankMessage" xml:space="preserve">
+    <value>Los valores Desde {0} y Hasta {0} no pueden estar ambos en blanco</value>
+  </data>
+  <data name="CP_CheckNumber" xml:space="preserve">
+    <value>Número de cheque</value>
+  </data>
+  <data name="CP_ChequeType" xml:space="preserve">
+    <value>Tipo de cheque</value>
+  </data>
+  <data name="CP_FromCheckDate" xml:space="preserve">
+    <value>Desde la fecha de verificación</value>
+  </data>
+  <data name="CustomerVendorNumber" xml:space="preserve">
+    <value>Número de cliente/proveedor</value>
+  </data>
+  <data name="EarliestExpiryDate" xml:space="preserve">
+    <value>Fecha de vencimiento más temprana/continuación</value>
+  </data>
+  <data name="Earning/Deduction/Tax/Code" xml:space="preserve">
+    <value>Ganancias/Deducción/Impuestos/Código</value>
+  </data>
+  <data name="EarningsAndDeduction" xml:space="preserve">
+    <value>Ganancias y deducciones</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Fecha de vencimiento</value>
+  </data>
+  <data name="ExpiryDateFrom" xml:space="preserve">
+    <value>Desde la fecha de caducidad</value>
+  </data>
+  <data name="ExpiryDateTo" xml:space="preserve">
+    <value>Hasta la fecha de vencimiento</value>
+  </data>
+  <data name="FromRecallDate" xml:space="preserve">
+    <value>Desde la fecha de retiro</value>
+  </data>
+  <data name="FromRecallNumber" xml:space="preserve">
+    <value>Del número de retirada</value>
+  </data>
+  <data name="ICWarrantyContractListTitle" xml:space="preserve">
+    <value>CI – Reporte de Lista de Código de Contrato/Garantía</value>
+  </data>
+  <data name="IC_RecallTitle" xml:space="preserve">
+    <value>CI - Reporte de Retirada</value>
+  </data>
+  <data name="ItemNumbers" xml:space="preserve">
+    <value>Números de artículo</value>
+  </data>
+  <data name="ItemSummary" xml:space="preserve">
+    <value>Resumen del artículo</value>
+  </data>
+  <data name="LatestExpiryDate" xml:space="preserve">
+    <value>Última fecha de vencimiento de la garantía/cont.</value>
+  </data>
+  <data name="ManualCheques" xml:space="preserve">
+    <value>Comprobaciones manuales</value>
+  </data>
+  <data name="NotRegistered" xml:space="preserve">
+    <value>No registrada</value>
+  </data>
+  <data name="OrderBy" xml:space="preserve">
+    <value>Ordenar por</value>
+  </data>
+  <data name="RecallDate" xml:space="preserve">
+    <value>Fecha de retirada</value>
+  </data>
+  <data name="RecallNumber" xml:space="preserve">
+    <value>Número de retirada</value>
+  </data>
+  <data name="ReportFormat" xml:space="preserve">
+    <value>Formato de informe</value>
+  </data>
+  <data name="ReusableTimecards" xml:space="preserve">
+    <value>Tarjetas de tiempo reutilizables</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Espectáculo</value>
+  </data>
+  <data name="SoldDate" xml:space="preserve">
+    <value>Fecha de venta</value>
+  </data>
+  <data name="SoldDateFrom" xml:space="preserve">
+    <value>Desde la fecha de venta</value>
+  </data>
+  <data name="SoldDateTo" xml:space="preserve">
+    <value>Hasta la fecha de venta</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>Fecha de existencias</value>
+  </data>
+  <data name="StockDateFrom" xml:space="preserve">
+    <value>Desde la fecha de existencias</value>
+  </data>
+  <data name="StockDateTo" xml:space="preserve">
+    <value>Hasta la fecha de existencias</value>
+  </data>
+  <data name="ToRecallDate" xml:space="preserve">
+    <value>Para recordar la fecha</value>
+  </data>
+  <data name="ToRecallNumber" xml:space="preserve">
+    <value>Para recuperar el número</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Usar</value>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>Fecha de vencimiento de la garantía</value>
+  </data>
+  <data name="WarrantySummary" xml:space="preserve">
+    <value>Resumen de garantía</value>
+  </data>
+  <data name="ContractSummary" xml:space="preserve">
+    <value>Resumen del contrato</value>
   </data>
 </root>

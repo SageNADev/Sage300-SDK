@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class InternalUsageResx {
@@ -286,6 +286,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Location cannot be blank..
+        /// </summary>
+        public static string InvalidLocation {
+            get {
+                return ResourceManager.GetString("InvalidLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Canadian Payroll Active?.
         /// </summary>
         public static string IsCanadianPayrollActive {
@@ -372,6 +381,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string PostSequenceNumber {
             get {
                 return ResourceManager.GetString("PostSequenceNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posting this internal usage will reduce the item quantity to below zero at this location. Do you want to proceed?.
+        /// </summary>
+        public static string QuantityWarning {
+            get {
+                return ResourceManager.GetString("QuantityWarning", resourceCulture);
             }
         }
         

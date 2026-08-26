@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Process {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class SerialRegistrationResx {
@@ -70,7 +70,16 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Process {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Shipment.
+        ///   Looks up a localized string similar to Customer Name.
+        /// </summary>
+        public static string CustomerName {
+            get {
+                return ResourceManager.GetString("CustomerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IC Shipment.
         /// </summary>
         public static string DocumenttypeICShipment {
             get {
@@ -79,7 +88,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Process {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O/E Debit Note.
+        ///   Looks up a localized string similar to OE Debit Note.
         /// </summary>
         public static string DocumenttypeOEDebitNote {
             get {
@@ -88,7 +97,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Process {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O/E Invoice.
+        ///   Looks up a localized string similar to OE Invoice.
         /// </summary>
         public static string DocumenttypeOEInvoice {
             get {
@@ -97,7 +106,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Process {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O/E Shipment.
+        ///   Looks up a localized string similar to OE Shipment.
         /// </summary>
         public static string DocumenttypeOEShipment {
             get {
@@ -124,7 +133,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Process {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Serial O/E Invoice.
+        ///   Looks up a localized string similar to Serial OE Invoice.
         /// </summary>
         public static string SerialOEInvoice {
             get {

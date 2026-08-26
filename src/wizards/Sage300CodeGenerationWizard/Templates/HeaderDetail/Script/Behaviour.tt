@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -38,6 +38,7 @@
 
     // Specific payroll logic since CP and UP are now dynamically assigned
     var entityContext = (moduleId == "PR") ? ", $.noop, " + containerName + "ViewModel.PayrollType" : "" ;
+    var unloadEvent = "'pagehide'";
 #>
 /* <#=copyright#> */
 
@@ -632,6 +633,14 @@ var <#=localEntityName#>Utility = {
 #>
 };
 
+// Generic section for invoking cleanup functions when the screen unloads
+var unloadUI = {
+    // Common function to perform any screen required cleanup
+        finalize: function () {
+            sg.utls.destroySession();
+        }
+};
+
 // Initial Entry
 $(() => {
     <#=localEntityName#>UI.init();
@@ -640,7 +649,8 @@ $(() => {
             return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, <#=localEntityName#>Resources.<#=keyFieldName#>Title)).text();
         }
     });
-    $(window).on('unload', () => {
-        sg.utls.destroySession();
-    });
+
+    // Bind event to invoke common callback function when the screen unloads
+    $(window).on(<#=unloadEvent#>, unloadUI.finalize);
+
 });

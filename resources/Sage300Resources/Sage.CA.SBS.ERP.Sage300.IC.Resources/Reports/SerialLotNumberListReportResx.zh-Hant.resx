@@ -121,8 +121,80 @@
     <value>存貨控制系列/批別編號清單報表</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="FromCustomerNumber" xml:space="preserve">
+    <value>來自客戶編號</value>
+  </data>
+  <data name="FromExpiryDate" xml:space="preserve">
+    <value>從到期日</value>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>來自商品編號</value>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>出發地點</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>取自批號</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>來自序號</value>
+  </data>
+  <data name="FromSoldDate" xml:space="preserve">
+    <value>自售出日期起</value>
+  </data>
+  <data name="FromThirdExpiryDate" xml:space="preserve">
+    <value>從到期日</value>
+  </data>
+  <data name="FromThirdLocation" xml:space="preserve">
+    <value>出發地點</value>
+  </data>
+  <data name="FromThirdSoldDate" xml:space="preserve">
+    <value>自售出日期起</value>
+  </data>
+  <data name="FromThirdVendorNumber" xml:space="preserve">
+    <value>來自供應商編號</value>
+  </data>
+  <data name="FromVendorNumber" xml:space="preserve">
+    <value>來自供應商編號</value>
+  </data>
   <data name="OptionFields" xml:space="preserve">
     <value>列印自選欄位</value>
     <comment>Option</comment>
+  </data>
+  <data name="ToCustomerNumber" xml:space="preserve">
+    <value>致客戶號碼</value>
+  </data>
+  <data name="ToExpiryDate" xml:space="preserve">
+    <value>到期日</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>至項目編號</value>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>前往地點</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>至批號</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>至序號</value>
+  </data>
+  <data name="ToSoldDate" xml:space="preserve">
+    <value>至出售日期</value>
+  </data>
+  <data name="ToThirdExpiryDate" xml:space="preserve">
+    <value>到期日</value>
+  </data>
+  <data name="ToThirdLocation" xml:space="preserve">
+    <value>前往地點</value>
+  </data>
+  <data name="ToThirdSoldDate" xml:space="preserve">
+    <value>至出售日期</value>
+  </data>
+  <data name="ToThirdVendorNumber" xml:space="preserve">
+    <value>致供應商編號</value>
+  </data>
+  <data name="ToVendorNumber" xml:space="preserve">
+    <value>致供應商編號</value>
   </data>
 </root>

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Process {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class QuarantineReleaseResx {
@@ -70,6 +70,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Process {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The date entered lies outside the range specified in the company profile..
+        /// </summary>
+        public static string DateOutsideRange {
+            get {
+                return ResourceManager.GetString("DateOutsideRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Quarantine Release.
         /// </summary>
         public static string Entity {
@@ -84,6 +93,42 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Process {
         public static string FiscalyearNotExist {
             get {
                 return ResourceManager.GetString("FiscalyearNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Item Number.
+        /// </summary>
+        public static string FromItemNumber {
+            get {
+                return ResourceManager.GetString("FromItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Lot Number.
+        /// </summary>
+        public static string FromLotNumber {
+            get {
+                return ResourceManager.GetString("FromLotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Item Number.
+        /// </summary>
+        public static string ToItemNumber {
+            get {
+                return ResourceManager.GetString("ToItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Lot Number.
+        /// </summary>
+        public static string ToLotNumber {
+            get {
+                return ResourceManager.GetString("ToLotNumber", resourceCulture);
             }
         }
     }

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class LotNumberResx {
@@ -70,11 +70,29 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contract code {0} does not exist..
+        /// </summary>
+        public static string ContractCodeNotExist {
+            get {
+                return ResourceManager.GetString("ContractCodeNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Current Quantity.
         /// </summary>
         public static string CURRENTQTY {
             get {
                 return ResourceManager.GetString("CURRENTQTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Quantity.
+        /// </summary>
+        public static string CurrentQuantity {
+            get {
+                return ResourceManager.GetString("CurrentQuantity", resourceCulture);
             }
         }
         
@@ -93,6 +111,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string CustomerVendorNumber {
             get {
                 return ResourceManager.GetString("CustomerVendorNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The date entered lies outside the range specified in the company profile..
+        /// </summary>
+        public static string DateOutsideRange {
+            get {
+                return ResourceManager.GetString("DateOutsideRange", resourceCulture);
             }
         }
         
@@ -268,6 +295,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item number {0} does not exist..
+        /// </summary>
+        public static string ItemNumberNotExist {
+            get {
+                return ResourceManager.GetString("ItemNumberNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Items….
         /// </summary>
         public static string Items {
@@ -331,11 +367,29 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Location does not exist..
+        /// </summary>
+        public static string LocationNotExist {
+            get {
+                return ResourceManager.GetString("LocationNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lot Combine.
         /// </summary>
         public static string LotCombine {
             get {
                 return ResourceManager.GetString("LotCombine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot number {0} does not exist..
+        /// </summary>
+        public static string LotNumberNotExist {
+            get {
+                return ResourceManager.GetString("LotNumberNotExist", resourceCulture);
             }
         }
         
@@ -403,7 +457,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lot Number {0} does not exist for Item Number {1} and Location {2}..
+        ///   Looks up a localized string similar to Lot Number {0} does not exist for the Item Number {1} and Location {2}..
         /// </summary>
         public static string NOLOTNUMBER1 {
             get {
@@ -421,11 +475,29 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to On.
+        /// </summary>
+        public static string On {
+            get {
+                return ResourceManager.GetString("On", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to On Recall.
         /// </summary>
         public static string ONRECALL {
             get {
                 return ResourceManager.GetString("ONRECALL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Fields.
+        /// </summary>
+        public static string OptionalField {
+            get {
+                return ResourceManager.GetString("OptionalField", resourceCulture);
             }
         }
         
@@ -466,7 +538,16 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quarantined On.
+        ///   Looks up a localized string similar to Quantity Reserved for Order.
+        /// </summary>
+        public static string QuantityReservedForOrder {
+            get {
+                return ResourceManager.GetString("QuantityReservedForOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quarantined .
         /// </summary>
         public static string QUARANTINEDON {
             get {
@@ -522,9 +603,9 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         /// <summary>
         ///   Looks up a localized string similar to Lot Number Transaction Inquiry.
         /// </summary>
-        public static string TitleTRANSACTIONINQUIRY {
+        public static string TitleLotNumberTransactionInquiry {
             get {
-                return ResourceManager.GetString("TitleTRANSACTIONINQUIRY", resourceCulture);
+                return ResourceManager.GetString("TitleLotNumberTransactionInquiry", resourceCulture);
             }
         }
         

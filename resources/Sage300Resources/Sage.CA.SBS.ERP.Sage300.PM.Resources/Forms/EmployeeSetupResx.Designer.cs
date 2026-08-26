@@ -70,6 +70,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A/R Item No.{0} is not active..
+        /// </summary>
+        public static string ARItemNotActive {
+            get {
+                return ResourceManager.GetString("ARItemNotActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Item Number.
         /// </summary>
         public static string ARItemNumber {
@@ -102,15 +111,6 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string BlankUserId {
             get {
                 return ResourceManager.GetString("BlankUserId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Earnings code &apos;{0}&apos; does not exist in Canadian Payroll..
-        /// </summary>
-        public static string CAEarningsCodeValidation {
-            get {
-                return ResourceManager.GetString("CAEarningsCodeValidation", resourceCulture);
             }
         }
         
@@ -178,7 +178,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email1.
+        ///   Looks up a localized string similar to E-mail 1.
         /// </summary>
         public static string Email1 {
             get {
@@ -187,7 +187,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email2.
+        ///   Looks up a localized string similar to E-mail 2.
         /// </summary>
         public static string Email2 {
             get {
@@ -277,11 +277,38 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Employee Number {0} is inactive in Sage 300 {1} Payroll..
+        /// </summary>
+        public static string InactivePayrollEmployeeErrorMessage {
+            get {
+                return ResourceManager.GetString("InactivePayrollEmployeeErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Number {0} does not exist in Canadian Payroll..
+        /// </summary>
+        public static string InvalidCPEmployeeErrorMessage {
+            get {
+                return ResourceManager.GetString("InvalidCPEmployeeErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Unit of Measure cannot be blank..
         /// </summary>
         public static string InvalidUOMBlankMessage {
             get {
                 return ResourceManager.GetString("InvalidUOMBlankMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Number {0} does not exist in US Payroll..
+        /// </summary>
+        public static string InvalidUSEmployeeErrorMessage {
+            get {
+                return ResourceManager.GetString("InvalidUSEmployeeErrorMessage", resourceCulture);
             }
         }
         
@@ -426,15 +453,6 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string UpdateConfirmMessage {
             get {
                 return ResourceManager.GetString("UpdateConfirmMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Earnings code &apos;{0}&apos; does not exist in US Payroll..
-        /// </summary>
-        public static string USEarningsCodeValidation {
-            get {
-                return ResourceManager.GetString("USEarningsCodeValidation", resourceCulture);
             }
         }
         

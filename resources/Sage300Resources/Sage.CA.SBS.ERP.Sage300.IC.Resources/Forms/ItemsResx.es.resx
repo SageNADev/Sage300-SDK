@@ -491,4 +491,67 @@
   <data name="QtyonSalesOrder" xml:space="preserve">
     <value>Cant. en Orden de Venta</value>
   </data>
+  <data name="AllowSerialLotQuantityConfirmation" xml:space="preserve">
+    <value>Admitir que Cant. de N° {0} sea Diferente de Cant. en Asientos está a punto de cambiar. Si existen o si se crean números de {1}, no podrá desactivar la opción. Tampoco podrá seleccionar un grupo de cuenta que usa un método de cálculo de costo de número de {2}. ¿Realmente desea activar esta opción?</value>
+  </data>
+  <data name="InvalidLotNumberMask" xml:space="preserve">
+    <value>No se ha definido la estructura de máscara {0} para los números de lote.</value>
+  </data>
+  <data name="InvalidSerialLotContract" xml:space="preserve">
+    <value>Cód. de contrato predet. de nº {0} {1} no existe.</value>
+  </data>
+  <data name="InvalidSerialLotWarranty" xml:space="preserve">
+    <value>Cód. de garantía predet. de nº {0} {1} no existe.</value>
+  </data>
+  <data name="InvalidSerialNumberMask" xml:space="preserve">
+    <value>No se ha definido la estructura de máscara {0} para los números de serie</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>Lote</value>
+  </data>
+  <data name="LotConfirmationPopup" xml:space="preserve">
+    <value>lote</value>
+  </data>
+  <data name="LotContractWhenReceived" xml:space="preserve">
+    <value>Poner Nº Lote Autom. en Contrato Cuando se Recibe</value>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>Descripción de la máscara del número de lote</value>
+  </data>
+  <data name="LotWarrantyWhenSold" xml:space="preserve">
+    <value>Poner Nº Lote Autom. en Garantía Cuando se Vende</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>De serie</value>
+  </data>
+  <data name="SerialConfirmationPopup" xml:space="preserve">
+    <value>de serie</value>
+  </data>
+  <data name="SerialContractWhenReceived" xml:space="preserve">
+    <value>Poner Nº Serie Autom. en Contrato Cuando se Recibe</value>
+  </data>
+  <data name="SerialNumberMaskDescription" xml:space="preserve">
+    <value>Descripción de la máscara del número de serie</value>
+  </data>
+  <data name="SerialWarrantyWhenRegistered" xml:space="preserve">
+    <value>Poner Nº Serie Autom. en Garantía Cuando se Registra</value>
+  </data>
+  <data name="SerialWarrantyWhenSold" xml:space="preserve">
+    <value>Poner Nº Serie Autom. en Garantía Cuando se Vende</value>
+  </data>
+  <data name="AccountSetCannotBeSelect" xml:space="preserve">
+    <value>La opción «Permitir que la cantidad {0} sea diferente» está activada para este artículo. No se puede seleccionar un conjunto de cuentas que utilice un método de valoración de costes {1}.</value>
+  </data>
+  <data name="KittingItemsErrorMsg" xml:space="preserve">
+    <value>Este artículo forma parte de un kit.</value>
+  </data>
+  <data name="Lotted" xml:space="preserve">
+    <value>asignada</value>
+  </data>
+  <data name="NotSerializedLotted" xml:space="preserve">
+    <value>Se ha especificado un conjunto de cuentas que utiliza un método de costes {0}, pero el artículo no es {1}.</value>
+  </data>
+  <data name="Serialized" xml:space="preserve">
+    <value>serializado</value>
+  </data>
 </root>

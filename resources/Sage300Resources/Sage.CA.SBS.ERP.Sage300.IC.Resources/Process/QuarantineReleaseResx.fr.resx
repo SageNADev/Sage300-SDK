@@ -129,4 +129,19 @@
     <value>La date ne figure pas dans la période répertoriée.</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="DateOutsideRange" xml:space="preserve">
+    <value>La date saisie est en dehors de la plage spécifiée dans le profil de l'entreprise.</value>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>Du numéro d'article</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>Du numéro de lot</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>Au numéro d'article</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>Au numéro de lot</value>
+  </data>
 </root>

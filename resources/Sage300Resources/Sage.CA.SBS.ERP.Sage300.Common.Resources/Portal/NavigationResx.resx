@@ -435,7 +435,10 @@
   <data name="CS_CompanyProfile" xml:space="preserve">
     <value>Company Profile</value>
   </data>
-  <data name="CS_FiscalCalendar" xml:space="preserve">
+	<data name="CS_EmailHistory" xml:space="preserve">
+    <value>Email History</value>
+  </data>
+	<data name="CS_FiscalCalendar" xml:space="preserve">
     <value>Fiscal Calendar</value>
   </data>
   <data name="Currency" xml:space="preserve">
@@ -1393,7 +1396,7 @@
     <value>Customize the navigation menu by hiding or showing web screens and categories. If you hide all screens for a module, the module does not appear in the navigation menu.</value>
   </data>
   <data name="CompanySetup" xml:space="preserve">
-    <value>Company Setup</value>
+    <value>Company</value>
   </data>
   <data name="DataAndMaintenance" xml:space="preserve">
     <value>Data and Maintenance</value>
@@ -2215,5 +2218,56 @@
   </data>
   <data name="HQ_Publish_Payslip" xml:space="preserve">
     <value>Publish Payslips</value>
+  </data>
+  <data name="IC_Serial_Lot_Stock_Listing_Report" xml:space="preserve">
+    <value>Serial/Lot Stock Listing</value>
+  </data>
+  <data name="IC_Mask_Structure" xml:space="preserve">
+    <value>Mask Structures</value>
+  </data>
+  <data name="IC_Quarantine_Release" xml:space="preserve">
+    <value>Quarantine Release</value>
+  </data>
+  <data name="HelpAgent" xml:space="preserve">
+    <value>Search help</value>
+  </data>
+  <data name="IC_Warranty_Update" xml:space="preserve">
+    <value>Warranty Update</value>
+  </data>
+  <data name="IC_Lot_Number_Inquiry" xml:space="preserve">
+    <value>Lot Number Inquiry</value>
+  </data>
+  <data name="CF0000" xml:space="preserve">
+    <value>CashFlow Analyzer</value>
+  </data>
+  <data name="CF1000" xml:space="preserve">
+    <value>C/F Inquiry</value>
+  </data>
+  <data name="CF1101" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="CF1102" xml:space="preserve">
+    <value>Cash Flow Summary</value>
+  </data>
+  <data name="CF1103" xml:space="preserve">
+    <value>A/R Summary</value>
+  </data>
+  <data name="CF1104" xml:space="preserve">
+    <value>A/P Summary</value>
+  </data>
+  <data name="CF1105" xml:space="preserve">
+    <value>Loan</value>
+  </data>
+  <data name="CF9000" xml:space="preserve">
+    <value>C/F Setup</value>
+  </data>
+  <data name="CF9100" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations" xml:space="preserve">
+    <value>Serial/Lot Reconciliations</value>
+  </data>
+  <data name="IC_Lot_Splits_Combine" xml:space="preserve">
+    <value>Lot Splits/Combines</value>
   </data>
 </root>

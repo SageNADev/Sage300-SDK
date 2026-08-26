@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -311,5 +311,47 @@
   </data>
   <data name="LessEstTaxWithheld" xml:space="preserve">
     <value>Menos Impuesto Retenido Estimado</value>
+  </data>
+  <data name="BatchDescription" xml:space="preserve">
+    <value>Descripción de Lote</value>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>Descripción de Asiento</value>
+  </data>
+  <data name="CreateReverseBatch" xml:space="preserve">
+    <value>Crear Lote Reverso</value>
+  </data>
+  <data name="CreateReverseEntryTitle" xml:space="preserve">
+    <value>Crear Asiento Reverso</value>
+  </data>
+  <data name="ReverseBatch" xml:space="preserve">
+    <value>¿Está seguro de que desea revertir el lote completo?</value>
+  </data>
+  <data name="ReverseEntry" xml:space="preserve">
+    <value>¿Revertir el asiento?</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="OriginalWithPrefix" xml:space="preserve">
+    <value>Original con Prefijo</value>
+  </data>
+  <data name="NewDescription" xml:space="preserve">
+    <value>Nueva descripción</value>
+  </data>
+  <data name="CreatedReverseEntryNo" xml:space="preserve">
+    <value>N° de Asiento Reverso Creado</value>
+  </data>
+  <data name="DocumentNumberOption" xml:space="preserve">
+    <value>N° Documento</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>Generado</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>Ingresado</value>
+  </data>
+  <data name="ReverseNonARBatches" xml:space="preserve">
+    <value>La reversión de un lote de LM auxiliar puede generar discrepancias de conciliación entre Cuentas por Cobrar y sus libros mayores auxiliares asociados.</value>
   </data>
 </root>

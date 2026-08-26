@@ -169,6 +169,12 @@
     <value>存貨控制批別編號查詢</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>自上市日期無效</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>到股票日期無效</value>
+  </data>
   <data name="LIFEWARR1" xml:space="preserve">
     <value>終身保修1</value>
     <comment>Modal - Table Column</comment>

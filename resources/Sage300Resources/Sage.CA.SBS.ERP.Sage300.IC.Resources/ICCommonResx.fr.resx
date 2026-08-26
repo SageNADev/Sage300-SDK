@@ -550,7 +550,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DocumentNumber" xml:space="preserve">
-    <value>Numéro document</value>
+    <value>N° document</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DocumentType" xml:space="preserve">
@@ -746,11 +746,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="FromItemNumber" xml:space="preserve">
-    <value>De numéro article</value>
+    <value>De N° article</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="FromLocation" xml:space="preserve">
-    <value>De l’emplacement</value>
+    <value>De Emplac.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="FromPriceList" xml:space="preserve">
@@ -882,7 +882,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ItemNumber" xml:space="preserve">
-    <value>Numéro article</value>
+    <value>N° article</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Items" xml:space="preserve">
@@ -934,11 +934,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="Location" xml:space="preserve">
-    <value>Emplacement</value>
+    <value>Emplac.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="LotNumber" xml:space="preserve">
-    <value>Numéro de lot</value>
+    <value>N° lot</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="LotNumberMask" xml:space="preserve">
@@ -950,7 +950,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="Lots" xml:space="preserve">
-    <value>Lots</value>
+    <value>Numéros lot</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="LotTracking" xml:space="preserve">
@@ -1514,7 +1514,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="SerialNumber" xml:space="preserve">
-    <value>Numéro de série</value>
+    <value>N° série</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="SerialNumberExpired" xml:space="preserve">
@@ -1526,11 +1526,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="SerialNumbers" xml:space="preserve">
-    <value>Numéros de série</value>
+    <value>N° série</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Serials" xml:space="preserve">
-    <value>Numéros de série</value>
+    <value>Numéros série</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Settings" xml:space="preserve">
@@ -1654,11 +1654,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ToItemNumber" xml:space="preserve">
-    <value>À numéro article</value>
+    <value>À N° article</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ToLocation" xml:space="preserve">
-    <value>À emplacement</value>
+    <value>À Emplac.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="TotalCost" xml:space="preserve">
@@ -2792,5 +2792,26 @@
   </data>
   <data name="FractionalQuantityWarning" xml:space="preserve">
     <value>Si vous choisissez d’autoriser les quantités fractionnaires, vous ne pourrez pas changer cette option par la suite. Voulez-vous vraiment autoriser les quantités fractionnaires?</value>
+  </data>
+  <data name="ContractExpiryDate" xml:space="preserve">
+    <value>Date de fin de contrat</value>
+  </data>
+  <data name="ItemNumbers" xml:space="preserve">
+    <value>Numéros d'articles</value>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>Date d'expiration de la garantie</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>De N° lot</value>
+  </data>
+  <data name="FromStockDate" xml:space="preserve">
+    <value>De Date stock</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>À N° lot</value>
+  </data>
+  <data name="ToStockDate" xml:space="preserve">
+    <value>À Date stock</value>
   </data>
 </root>

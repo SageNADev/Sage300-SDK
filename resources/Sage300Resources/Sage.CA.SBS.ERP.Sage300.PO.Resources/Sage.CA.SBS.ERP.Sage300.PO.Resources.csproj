@@ -335,8 +335,11 @@
     <EmbeddedResource Include="Forms\ReturnEntryResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ReturnEntryResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ReturnEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\ReturnEntryResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReturnEntryResx.fr.resx" />
     <EmbeddedResource Include="Forms\ReturnEntryResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ReturnEntryResx.zh-Hant.resx" />

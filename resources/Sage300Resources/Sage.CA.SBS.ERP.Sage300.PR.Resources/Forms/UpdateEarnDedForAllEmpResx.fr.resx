@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BillingCurrency" xml:space="preserve">
-    <value>Dev. de facturation</value>
+    <value>Devise de facturation</value>
   </data>
   <data name="BillingCurrencyDescription" xml:space="preserve">
-    <value>Dev. de facturation Description</value>
+    <value>Description de devise de facturation</value>
   </data>
   <data name="EBrowse" xml:space="preserve">
-    <value>Critères de I'employé</value>
+    <value>Critères de l'employé</value>
   </data>
   <data name="EmployeeNumber" xml:space="preserve">
-    <value>Numéro de I'employé</value>
+    <value>Numéro de l'employé</value>
   </data>
   <data name="ID2ChangeforEarnDed" xml:space="preserve">
     <value>Gain/Retenue</value>
   </data>
   <data name="InvalidWCCGroup" xml:space="preserve">
-    <value>Entrée non valide. Le groupe WCC {0} n'existe pas.</value>
+    <value>Saisie non valide. Le groupe CSST {0} n'existe pas.</value>
   </data>
   <data name="Print" xml:space="preserve">
     <value>Fermer</value>
@@ -142,7 +142,7 @@
     <value>Voulez-vous mettre à jour ce gain/retenue?</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Avertissement</value>
   </data>
   <data name="Update" xml:space="preserve">
     <value>Mettre à jour</value>
@@ -151,7 +151,7 @@
     <value>Mettre à jour par</value>
   </data>
   <data name="UpdateEarnDedAllEmployeesTitle" xml:space="preserve">
-    <value>Mettre à jour gain/ret. pour tous les empl.</value>
+    <value>Mettre à jour gain/retenue pour tous les employés</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>Non</value>
@@ -159,7 +159,10 @@
   <data name="Yes" xml:space="preserve">
     <value>Oui</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
   <data name="ConfirmationMessageForPrint" xml:space="preserve">
-    <value>Traitement terminé. Imprimer le rapport de vérif. de mise à jour gain/ret. des employés?</value>
+    <value>Traitement terminé. Imprimer le rapport de vérification de mise à jour gain/retenue des employés?</value>
   </data>
 </root>

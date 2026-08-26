@@ -121,4 +121,34 @@
     <value>CI – Consulta de Número de Serie</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>Desde el número de artículo</value>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>Desde la ubicación</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>A partir del número de serie</value>
+  </data>
+  <data name="FromStockDate" xml:space="preserve">
+    <value>Desde la fecha de stock</value>
+  </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>La fecha de inicio del stock no es válida.</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>La fecha de inventario final no es válida.</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>Al número de artículo</value>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>A la ubicación</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>Al número de serie</value>
+  </data>
+  <data name="ToStockDate" xml:space="preserve">
+    <value>Fecha de entrada en inventario</value>
+  </data>
 </root>

@@ -125,37 +125,9 @@
     <value>Auto-asignar Desde</value>
     <comment>Check Box</comment>
   </data>
-  <data name="AutoGen" xml:space="preserve">
-    <value>Autogenerar</value>
-    <comment>Button</comment>
-  </data>
-  <data name="ConfirmClearLots" xml:space="preserve">
-    <value>¿Seguro que desea borrar todos los números de lote de la lista?</value>
-    <comment>Message</comment>
-  </data>
-  <data name="ConfirmClearSerials" xml:space="preserve">
-    <value>¿Seguro que desea borrar todos los números de serie de la lista?</value>
-    <comment>Message</comment>
-  </data>
-  <data name="ConfirmDeleteLot" xml:space="preserve">
-    <value>¿Seguro que desea eliminar el número de lote?</value>
-    <comment>Message</comment>
-  </data>
-  <data name="ConfirmDeleteSerial" xml:space="preserve">
-    <value>¿Seguro que desea eliminar el número de serie?</value>
-    <comment>Message</comment>
-  </data>
   <data name="ConfirmPost" xml:space="preserve">
     <value>¿Desea asentar este/a {0}?</value>
     <comment>Message</comment>
-  </data>
-  <data name="Date" xml:space="preserve">
-    <value>Fecha de Uso Interno</value>
-    <comment>Field</comment>
-  </data>
-  <data name="DateBus" xml:space="preserve">
-    <value>Fecha de Asentamiento</value>
-    <comment>Field</comment>
   </data>
   <data name="EachLotHas" xml:space="preserve">
     <value>Cada Lote Tiene</value>
@@ -165,28 +137,8 @@
     <value>CI – Conciliaciones de N° Serie/Lote</value>
     <comment>Screen Title</comment>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
-    <comment>Field</comment>
-  </data>
-  <data name="KITITEMINVOICE" xml:space="preserve">
-    <value>¿Desea mostrar los artículos componentes del juego?</value>
-    <comment>Message</comment>
-  </data>
-  <data name="LOCATIONINACTIVE" xml:space="preserve">
-    <value>La ubicación {0} no está activa.</value>
-    <comment>Message</comment>
-  </data>
-  <data name="LOCATIONNOTALLOWED" xml:space="preserve">
-    <value>El artículo de N° Serie/Lote no está admitido en esta ubicación.</value>
-    <comment>Error</comment>
-  </data>
   <data name="LotNotAvailable" xml:space="preserve">
     <value>El número de lote {0} no está disponible.</value>
-    <comment>Error</comment>
-  </data>
-  <data name="LOTNUMWRONGFORMAT" xml:space="preserve">
-    <value>El número de lote no es válido para la máscara de número de lote actual.</value>
     <comment>Error</comment>
   </data>
   <data name="LotQtyRequired" xml:space="preserve">
@@ -202,32 +154,16 @@
     <comment>Message</comment>
   </data>
   <data name="NextLotNumber" xml:space="preserve">
-    <value>Número Lote Siguiente</value>
+    <value>Nº Lote Siguiente</value>
     <comment>Field</comment>
   </data>
   <data name="NextSerialNumber" xml:space="preserve">
-    <value>Número Serie Siguiente</value>
+    <value>Nº Serie Siguiente</value>
     <comment>Field</comment>
-  </data>
-  <data name="No" xml:space="preserve">
-    <value>No</value>
-    <comment>Field</comment>
-  </data>
-  <data name="NOLOCATIONFORITEM" xml:space="preserve">
-    <value>No se encontró la ubicación {0} para el artículo {1}.</value>
-    <comment>Message</comment>
-  </data>
-  <data name="OEInvoice" xml:space="preserve">
-    <value>IO - Factura</value>
-    <comment>Dropdown Item</comment>
   </data>
   <data name="Or" xml:space="preserve">
     <value>O</value>
     <comment>Label</comment>
-  </data>
-  <data name="POInvoice" xml:space="preserve">
-    <value>OC - Factura</value>
-    <comment>Dropdown Item</comment>
   </data>
   <data name="QtyOverflow" xml:space="preserve">
     <value>La cantidad excede la cantidad máxima permitida.</value>
@@ -241,41 +177,13 @@
     <value>Las cantidades no pueden ser menores que cero.</value>
     <comment>Message</comment>
   </data>
-  <data name="Recall" xml:space="preserve">
-    <value>Retirada</value>
-    <comment>Field</comment>
-  </data>
   <data name="Reconciliation" xml:space="preserve">
     <value>Conciliación</value>
     <comment>Field</comment>
   </data>
-  <data name="Release" xml:space="preserve">
-    <value>Salida</value>
-    <comment>Field</comment>
-  </data>
-  <data name="SerialNumsRequired" xml:space="preserve">
-    <value>Números de Serie Requeridos</value>
-    <comment>Group Item</comment>
-  </data>
   <data name="StartupWarning" xml:space="preserve">
     <value>Debe asentar todas las transacciones que afectan al inventario y ejecutar Procesamiento de Final de Día antes de usar esta transacción.</value>
     <comment>Message</comment>
-  </data>
-  <data name="UOM" xml:space="preserve">
-    <value>UM</value>
-    <comment>Column</comment>
-  </data>
-  <data name="UsedBy" xml:space="preserve">
-    <value>Usado Por</value>
-    <comment>Field</comment>
-  </data>
-  <data name="Warning" xml:space="preserve">
-    <value>Advertencia</value>
-    <comment>Field</comment>
-  </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Sí</value>
-    <comment>Field</comment>
   </data>
   <data name="ApplyToInvoiceNumber" xml:space="preserve">
     <value>Aplicar a Número de Factura</value>
@@ -285,7 +193,79 @@
     <value>Unidad de Medida de Almacenamiento</value>
     <comment>Field</comment>
   </data>
-  <data name="ReconciliationHeaders" xml:space="preserve">
-    <value>Cabeceras de Conciliación</value>
+  <data name="AutoAllocateBlankSerialWarning" xml:space="preserve">
+    <value>El número de serie desde el cual asignar está en blanco. Se asignará el siguiente número de serie disponible.</value>
+  </data>
+  <data name="CannotbeBlankErrorMessage" xml:space="preserve">
+    <value>El número de documento de referencia no puede estar en blanco.</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Borrar todo</value>
+  </data>
+  <data name="CostMustNotBeNegative" xml:space="preserve">
+    <value>El costo no debe ser negativo.</value>
+  </data>
+  <data name="DocumentNumberInvalidCharMessage" xml:space="preserve">
+    <value>El número de documento contiene un carácter no válido (" o \\).</value>
+  </data>
+  <data name="InvalidApplyDocumentErrorMessage" xml:space="preserve">
+    <value>El documento número {0} al que se aplica no existe.</value>
+  </data>
+  <data name="InvalidLotGenSettings" xml:space="preserve">
+    <value>O bien 'Crear lotes' o bien 'Cada lote contiene' debe ser cero, pero ambos no pueden serlo.</value>
+  </data>
+  <data name="ItemDoesNotExist" xml:space="preserve">
+    <value>El elemento {0} no existe.</value>
+  </data>
+  <data name="ItemNumNotFound" xml:space="preserve">
+    <value>El número de artículo no se encontró en la factura {0}.</value>
+  </data>
+  <data name="NextLotNumberCannotBeBlank" xml:space="preserve">
+    <value>El número de lote siguiente estaba en blanco. El sistema no puede añadir ni generar un número de lote basándose en un número de lote siguiente en blanco.</value>
+  </data>
+  <data name="NextSerialNumberCannotBeBlank" xml:space="preserve">
+    <value>El siguiente número de serie ha quedado en blanco. El sistema no puede generar automáticamente un número de serie basándose en un siguiente número de serie en blanco.</value>
+  </data>
+  <data name="StockDateConfirmMsg" xml:space="preserve">
+    <value>La fecha introducida se encuentra fuera del rango especificado en el perfil de la empresa.</value>
+  </data>
+  <data name="AutoAllocateBlankSerialLotWarning" xml:space="preserve">
+    <value>El número {0} desde el cual realizar la asignación está en blanco. Se asignará el siguiente número {0} disponible.</value>
+  </data>
+  <data name="ConfirmClearSerialsandLots" xml:space="preserve">
+    <value>¿Está seguro de que desea borrar todos los números {0} de la lista?</value>
+  </data>
+  <data name="DuplicateSerialOrLotNumber" xml:space="preserve">
+    <value>{0} Detalle de conciliación.El registro ya existe.</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>N° de Lote</value>
+  </data>
+  <data name="LotLower" xml:space="preserve">
+    <value>lote</value>
+  </data>
+  <data name="Lots" xml:space="preserve">
+    <value>lotes</value>
+  </data>
+  <data name="OEItemConfirmation" xml:space="preserve">
+    <value>¿Desea mostrar los artículos que componen el kit?</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>De serie</value>
+  </data>
+  <data name="SerialLower" xml:space="preserve">
+    <value>de serie</value>
+  </data>
+  <data name="SerialNumsRequired" xml:space="preserve">
+    <value>Se requieren números de serie</value>
+  </data>
+  <data name="SerialOrLotNumberCannotGenerated" xml:space="preserve">
+    <value>No se pueden generar {0} números porque el siguiente número {1} se dejó en blanco o se restableció cuando se generaron {2} anteriormente. Según la máscara numérica {1} del elemento, este campo se restablecerá si se genera el último número {1} permitido.</value>
+  </data>
+  <data name="SerialOrLotsAllocatedWarning" xml:space="preserve">
+    <value>No se asignaron {0} números. Es posible que no haya ningún {1} disponible para asignar. Después de ejecutar el procesamiento de fin del día, es posible que {1} esté disponible para asignar.</value>
+  </data>
+  <data name="Serials" xml:space="preserve">
+    <value>N° Serie</value>
   </data>
 </root>

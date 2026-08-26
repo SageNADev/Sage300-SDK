@@ -4300,7 +4300,16 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to { Left Parenthesis.
+        ///   Looks up a localized string similar to { Left Brace.
+        /// </summary>
+        public static string SymbolLeftBrace {
+            get {
+                return ResourceManager.GetString("SymbolLeftBrace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [ Left Bracket.
         /// </summary>
         public static string SymbolLeftBracket {
             get {
@@ -4336,7 +4345,16 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to } Right Parenthesis.
+        ///   Looks up a localized string similar to } Right Brace.
+        /// </summary>
+        public static string SymbolRightBrace {
+            get {
+                return ResourceManager.GetString("SymbolRightBrace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ] Right Bracket.
         /// </summary>
         public static string SymbolRightBracket {
             get {

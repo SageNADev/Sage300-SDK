@@ -344,4 +344,8 @@
   <data name="PurchaseOrder" xml:space="preserve">
     <value>Bon de commande</value>
   </data>
+  <data name="EmailOptions" xml:space="preserve"><value>Options de courriel</value></data>
+  <data name="SenderEmailForPurchaseOrders" xml:space="preserve"><value>Expéd. bons cde</value></data>
+  <data name="SenderEmailForReturns" xml:space="preserve"><value>Expéd. retours</value></data>
+  <data name="InvalidEmailAddress" xml:space="preserve"><value>Saisissez une adresse de courriel valide.</value></data>
 </root>

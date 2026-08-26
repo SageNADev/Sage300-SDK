@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CannotBlank" xml:space="preserve">
+    <value>Warranty code cannot be blank.</value>
+  </data>
   <data name="DaysExceed" xml:space="preserve">
     <value>Days cannot exceed 999,999.</value>
   </data>
@@ -138,6 +141,9 @@
   </data>
   <data name="IC0850" xml:space="preserve">
     <value>Warranty Codes</value>
+  </data>
+  <data name="Lifetime" xml:space="preserve">
+    <value>Lifetime</value>
   </data>
   <data name="Period1Days" xml:space="preserve">
     <value>Period 1 Days</value>
@@ -202,6 +208,9 @@
   <data name="WarrantyCode" xml:space="preserve">
     <value>Warranty Code</value>
     <comment>Field</comment>
+  </data>
+  <data name="WarrantyCodeDescription" xml:space="preserve">
+    <value>Warranty Code Description</value>
   </data>
   <data name="WarrantyDays" xml:space="preserve">
     <value>Warranty Days</value>

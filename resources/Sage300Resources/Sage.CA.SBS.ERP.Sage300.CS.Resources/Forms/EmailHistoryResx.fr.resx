@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Portions co-modified with OpenAI Codex -->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Entity" xml:space="preserve"><value>Historique des courriels</value></data>
+  <data name="EmailId" xml:space="preserve"><value>Identifiant du courriel</value></data>
+  <data name="SourceApplication" xml:space="preserve"><value>Application source</value></data>
+  <data name="SourceType" xml:space="preserve"><value>Type de source</value></data>
+  <data name="SourceLabel" xml:space="preserve"><value>Étiquette d'identifiant de source</value></data>
+  <data name="Subject" xml:space="preserve"><value>Objet du courriel</value></data>
+  <data name="ToEmail" xml:space="preserve"><value>Adresse courriel du destinataire</value></data>
+  <data name="CcEmail" xml:space="preserve"><value>Adresse courriel en copie conforme</value></data>
+  <data name="BccEmail" xml:space="preserve"><value>Adresse en copie conforme invisible</value></data>
+  <data name="FromEmail" xml:space="preserve"><value>Adresse courriel de l’expéditeur</value></data>
+  <data name="CreatedBy" xml:space="preserve"><value>Généré par l’identifiant utilisateur</value></data>
+  <data name="CreateDate" xml:space="preserve"><value>Date de génération</value></data>
+  <data name="CreateTime" xml:space="preserve"><value>Heure de génération</value></data>
+  <data name="SentDate" xml:space="preserve"><value>Date d’envoi</value></data>
+  <data name="SentTime" xml:space="preserve"><value>Heure d’envoi</value></data>
+  <data name="Status" xml:space="preserve"><value>État d’envoi du courriel</value></data>
+  <data name="Attempts" xml:space="preserve"><value>Nombre de tentatives d’envoi</value></data>
+  <data name="ErrorCode" xml:space="preserve"><value>Code d’erreur</value></data>
+  <data name="ErrorMessage" xml:space="preserve"><value>Message d’erreur</value></data>
+  <data name="NumberOfAttachments" xml:space="preserve"><value>Nombre de pièces jointes</value></data>
+  <data name="AttachmentFileName" xml:space="preserve"><value>Nom du fichier joint généré</value></data>
+  <data name="SearchText" xml:space="preserve"><value>Rechercher le texte</value></data>
+  <data name="GenerationDateRangeError" xml:space="preserve"><value>La valeur du champ De date de génération est ultérieure à celle de À date de génération.</value></data>
+  <data name="SourceApplicationRangeError" xml:space="preserve"><value>L’application source de début est ultérieure à l’application source de fin.</value></data>
+</root>

@@ -120,6 +120,9 @@
   <data name="ARItemDescription" xml:space="preserve">
     <value>A/R Item Description</value>
   </data>
+  <data name="ARItemNotActive" xml:space="preserve">
+    <value>A/R Item No.{0} is not active.</value>
+  </data>
   <data name="ARItemNumber" xml:space="preserve">
     <value>A/R Item Number</value>
   </data>
@@ -131,9 +134,6 @@
   </data>
   <data name="BlankUserId" xml:space="preserve">
     <value>If the User ID is blank then this employee will be able to see timecards for ALL employees.</value>
-  </data>
-  <data name="CAEarningsCodeValidation" xml:space="preserve">
-    <value>Earnings code '{0}' does not exist in Canadian Payroll.</value>
   </data>
   <data name="CanadianPayroll" xml:space="preserve">
     <value>Canadian Payroll</value>
@@ -157,10 +157,10 @@
     <value>Earnings Code Description</value>
   </data>
   <data name="Email1" xml:space="preserve">
-    <value>Email1</value>
+    <value>E-mail 1</value>
   </data>
   <data name="Email2" xml:space="preserve">
-    <value>Email2</value>
+    <value>E-mail 2</value>
   </data>
   <data name="Employee" xml:space="preserve">
     <value>Payroll Type</value>
@@ -189,8 +189,17 @@
   <data name="InactiveAsOfDate" xml:space="preserve">
     <value>Inactive (as of)</value>
   </data>
+  <data name="InactivePayrollEmployeeErrorMessage" xml:space="preserve">
+    <value>Employee Number {0} is inactive in Sage 300 {1} Payroll.</value>
+  </data>
+  <data name="InvalidCPEmployeeErrorMessage" xml:space="preserve">
+    <value>Employee Number {0} does not exist in Canadian Payroll.</value>
+  </data>
   <data name="InvalidUOMBlankMessage" xml:space="preserve">
     <value>A/R Unit of Measure cannot be blank.</value>
+  </data>
+  <data name="InvalidUSEmployeeErrorMessage" xml:space="preserve">
+    <value>Employee Number {0} does not exist in US Payroll.</value>
   </data>
   <data name="LastMaintained" xml:space="preserve">
     <value>Last Maintained</value>
@@ -239,9 +248,6 @@
   </data>
   <data name="UpdateConfirmMessage" xml:space="preserve">
     <value>Do you want to update name to: {0}?</value>
-  </data>
-  <data name="USEarningsCodeValidation" xml:space="preserve">
-    <value>Earnings code '{0}' does not exist in US Payroll.</value>
   </data>
   <data name="UserID" xml:space="preserve">
     <value>User ID</value>

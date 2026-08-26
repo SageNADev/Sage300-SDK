@@ -117,148 +117,145 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-<data name="Address" xml:space="preserve">
-  <value>地址行1</value>
-</data>
-<data name="Address2" xml:space="preserve">
-  <value>地址行2</value>
-</data>
-<data name="Address3" xml:space="preserve">
-  <value>地址行3</value>
-</data>
-<data name="Address4" xml:space="preserve">
-  <value>地址行4</value>
-</data>
-<data name="ARItemDescription" xml:space="preserve">
-  <value>應收項目描述</value>
-</data>
-<data name="ARItemNotActive" xml:space="preserve">
-  <value>應收項目編號{0}未啟用。</value>
-</data>
-<data name="ARItemNumber" xml:space="preserve">
-  <value>應收項目編號</value>
-</data>
-<data name="BillingRate" xml:space="preserve">
-  <value>計費費率</value>
-</data>
-<data name="BillingRateCannotLessThanZero" xml:space="preserve">
-  <value>計費費率不能小於零</value>
-</data>
-<data name="BILLRATE" xml:space="preserve">
-  <value>計費費率</value>
-</data>
-<data name="CCY" xml:space="preserve">
-  <value>幣別代碼</value>
-</data>
-<data name="City" xml:space="preserve">
-  <value>城市</value>
-</data>
-<data name="Contact" xml:space="preserve">
-  <value>聯絡人</value>
-</data>
-<data name="ContactFax" xml:space="preserve">
-  <value>聯絡人傳真</value>
-</data>
-<data name="ContactName" xml:space="preserve">
-  <value>聯絡人姓名</value>
-</data>
-<data name="ContactPhone" xml:space="preserve">
-  <value>聯絡人電話</value>
-</data>
-<data name="ContactsEmail" xml:space="preserve">
-  <value>聯絡人電子郵件</value>
-</data>
-<data name="Country" xml:space="preserve">
-  <value>國家</value>
-</data>
-<data name="DefaultSettingsforStandardProjects" xml:space="preserve">
-  <value>標準專案的預設設定</value>
-</data>
-<data name="Delete" xml:space="preserve">
-  <value>刪除</value>
-</data>
-<data name="DESC" xml:space="preserve">
-  <value>幣別描述</value>
-</data>
-<data name="Description" xml:space="preserve">
-  <value>描述</value>
-</data>
-<data name="Fax" xml:space="preserve">
-  <value>傳真</value>
-</data>
-<data name="InactiveAsOfDate" xml:space="preserve">
-  <value>失效日期</value>
-</data>
-<data name="InvalidUOMBlankMessage" xml:space="preserve">
-  <value>應收計量單位不能為空。</value>
-</data>
-<data name="InvalidVendorErrorMessage" xml:space="preserve">
-  <value>供應商編號「{0}」不存在。</value>
-</data>
-<data name="LastMaintained" xml:space="preserve">
-  <value>最後維護</value>
-</data>
-<data name="OptionalFields" xml:space="preserve">
-  <value>選用欄位</value>
-</data>
-<data name="PMSubcontractorsTitle" xml:space="preserve">
-  <value>PJC分包商</value>
-</data>
-<data name="Print" xml:space="preserve">
-  <value>列印</value>
-</data>
-<data name="Save" xml:space="preserve">
-  <value>儲存</value>
-</data>
-<data name="StateProvince" xml:space="preserve">
-  <value>省/州</value>
-</data>
-<data name="SubcontractorCode" xml:space="preserve">
-  <value>分包商代碼</value>
-</data>
-<data name="SubcontractorDescription" xml:space="preserve">
-  <value>分包商描述</value>
-</data>
-<data name="Subcontractors" xml:space="preserve">
-  <value>分包商</value>
-</data>
-<data name="SubcontractorsBlankErrorMessage" xml:space="preserve">
-  <value>輸入無效。分包商代碼不能為空。</value>
-</data>
-<data name="SubcontractorsName" xml:space="preserve">
-  <value>分包商名稱</value>
-</data>
-<data name="Telephone" xml:space="preserve">
-  <value>電話</value>
-</data>
-<data name="UnitOfMeasure" xml:space="preserve">
-  <value>計量單位</value>
-</data>
-<data name="UOMCannotLessThanZero" xml:space="preserve">
-  <value>單位成本不能小於零</value>
-</data>
-<data name="UOMNotDefinedMessage" xml:space="preserve">
-  <value>未輸入或未定義此項目的計量單位。</value>
-</data>
-<data name="VendorDateInactiveErrorMessage" xml:space="preserve">
-  <value>供應商編號「{0}」未啟用。</value>
-</data>
-<data name="VendorDescription" xml:space="preserve">
-  <value>供應商名稱</value>
-</data>
-<data name="VendorName" xml:space="preserve">
-  <value>供應商編號</value>
-</data>
-<data name="VendorNumberBlankErrorMessage" xml:space="preserve">
-  <value>供應商編號不能為空。</value>
-</data>
-<data name="VendorOnHold" xml:space="preserve">
-  <value>供應商編號「{0}」已暫停。</value>
-</data>
-<data name="VendorsEmail" xml:space="preserve">
-  <value>供應商電子郵件</value>
-</data>
-<data name="ZipOrPostalCode" xml:space="preserve">
-  <value>郵遞區號</value>
-</data>
+  <data name="Address" xml:space="preserve">
+    <value>地址行1</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>地址行2</value>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>地址行3</value>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>地址行4</value>
+  </data>
+  <data name="ARItemDescription" xml:space="preserve">
+    <value>應收項目描述</value>
+  </data>
+  <data name="ARItemNotActive" xml:space="preserve">
+    <value>應收項目編號{0}未啟用。</value>
+  </data>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>應收項目編號</value>
+  </data>
+  <data name="BillingRate" xml:space="preserve">
+    <value>計費費率</value>
+  </data>
+  <data name="BillingRateCannotLessThanZero" xml:space="preserve">
+    <value>計費費率不能小於零</value>
+  </data>
+  <data name="BILLRATE" xml:space="preserve">
+    <value>計費費率</value>
+  </data>
+  <data name="CCY" xml:space="preserve">
+    <value>幣別代碼</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>城市</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>聯絡人</value>
+  </data>
+  <data name="ContactFax" xml:space="preserve">
+    <value>聯絡人傳真</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>聯絡人姓名</value>
+  </data>
+  <data name="ContactPhone" xml:space="preserve">
+    <value>聯絡人電話</value>
+  </data>
+  <data name="ContactsEmail" xml:space="preserve">
+    <value>聯絡人電子郵件</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>國家</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="DESC" xml:space="preserve">
+    <value>幣別描述</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>傳真</value>
+  </data>
+  <data name="InactiveAsOfDate" xml:space="preserve">
+    <value>失效日期</value>
+  </data>
+  <data name="InvalidUOMBlankMessage" xml:space="preserve">
+    <value>應收計量單位不能為空。</value>
+  </data>
+  <data name="InvalidVendorErrorMessage" xml:space="preserve">
+    <value>供應商編號「{0}」不存在。</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>最後維護</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>選用欄位</value>
+  </data>
+  <data name="PMSubcontractorsTitle" xml:space="preserve">
+    <value>PJC分包商</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>省/州</value>
+  </data>
+  <data name="SubcontractorCode" xml:space="preserve">
+    <value>分包商代碼</value>
+  </data>
+  <data name="SubcontractorDescription" xml:space="preserve">
+    <value>分包商描述</value>
+  </data>
+  <data name="Subcontractors" xml:space="preserve">
+    <value>分包商</value>
+  </data>
+  <data name="SubcontractorsBlankErrorMessage" xml:space="preserve">
+    <value>輸入無效。分包商代碼不能為空。</value>
+  </data>
+  <data name="SubcontractorsName" xml:space="preserve">
+    <value>分包商名稱</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>電話</value>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>計量單位</value>
+  </data>
+  <data name="UOMCannotLessThanZero" xml:space="preserve">
+    <value>單位成本不能小於零</value>
+  </data>
+  <data name="UOMNotDefinedMessage" xml:space="preserve">
+    <value>未輸入或未定義此項目的計量單位。</value>
+  </data>
+  <data name="VendorDateInactiveErrorMessage" xml:space="preserve">
+    <value>供應商編號「{0}」未啟用。</value>
+  </data>
+  <data name="VendorDescription" xml:space="preserve">
+    <value>供應商名稱</value>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>供應商編號</value>
+  </data>
+  <data name="VendorNumberBlankErrorMessage" xml:space="preserve">
+    <value>供應商編號不能為空。</value>
+  </data>
+  <data name="VendorOnHold" xml:space="preserve">
+    <value>供應商編號「{0}」已暫停。</value>
+  </data>
+  <data name="VendorsEmail" xml:space="preserve">
+    <value>供應商電子郵件</value>
+  </data>
+  <data name="ZipOrPostalCode" xml:space="preserve">
+    <value>郵遞區號</value>
+  </data>
 </root>

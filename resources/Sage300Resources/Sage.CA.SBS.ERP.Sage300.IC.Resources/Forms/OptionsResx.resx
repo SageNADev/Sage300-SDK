@@ -485,4 +485,142 @@
     <value>Weight Units of Measure</value>
     <comment>Weight Unit of Measure Title</comment>
   </data>
+  <data name="SerialNumberMask" xml:space="preserve">
+    <value>Serial Number Mask</value>
+  </data>
+  <data name="TabcaptionSerials" xml:space="preserve">
+    <value>Serials</value>
+  </data>
+  <data name="DaysToExpiry" xml:space="preserve">
+    <value>Days to Expiry</value>
+  </data>
+  <data name="AllowDifferentSerialQty" xml:space="preserve">
+    <value>Allow Serial Quantity to be Different from the Quantity in the Entries</value>
+  </data>
+  <data name="AllowSerialAllocOnQtyOrd" xml:space="preserve">
+    <value>Use the Qty Ordered field in OE for the Allocation of Serial Numbers</value>
+  </data>
+  <data name="ExpiredSerialAllocationMsg" xml:space="preserve">
+    <value>Expired Serial Allocation Message</value>
+  </data>
+  <data name="AllowDuplicateSerials" xml:space="preserve">
+    <value>Allow Duplicate Serial Numbers</value>
+  </data>
+  <data name="AutoAllocation" xml:space="preserve">
+    <value>Auto-allocation</value>
+  </data>
+  <data name="SeparatorsUsedInSerialMask" xml:space="preserve">
+    <value>Separators Used in Serial Mask Structures</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="AllowLotQtyMismatch" xml:space="preserve">
+    <value>AllowLotQtyMismatch</value>
+  </data>
+  <data name="AllowReuseLotNumbers" xml:space="preserve">
+    <value>AllowReuseLotNumbers</value>
+  </data>
+  <data name="AllowReuseSerialNumbers" xml:space="preserve">
+    <value>AllowReuseSerialNumbers</value>
+  </data>
+  <data name="AllowSerialQtyMismatch" xml:space="preserve">
+    <value>AllowSerialQtyMismatch</value>
+  </data>
+  <data name="LotNumberMask" xml:space="preserve">
+    <value>Lot Number Mask</value>
+  </data>
+  <data name="SerialReuseMismatchConflict" xml:space="preserve">
+    <value>SerialReuseMismatchConflict</value>
+  </data>
+  <data name="LotReuseMismatchConflict" xml:space="preserve">
+    <value>LotReuseMismatchConflict</value>
+  </data>
+  <data name="InvalidMaskFormat" xml:space="preserve">
+    <value>InvalidMaskFormat</value>
+  </data>
+  <data name="ItemDefaults" xml:space="preserve">
+    <value>Item Defaults</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Expiry Date</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Serial Number</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>Stock Date</value>
+  </data>
+  <data name="Earliest" xml:space="preserve">
+    <value>Earliest</value>
+  </data>
+  <data name="Latest" xml:space="preserve">
+    <value>Latest</value>
+  </data>
+  <data name="AllowDifferentLotQty" xml:space="preserve">
+    <value>Allow Lot Quantity to be Different from the Quantity in the Entries</value>
+  </data>
+  <data name="AllowLotQuantityDifferent" xml:space="preserve">
+    <value>Allow Lot Quantity to be Different from the Quantity in the Entries</value>
+  </data>
+  <data name="DaysOnQuarantine" xml:space="preserve">
+    <value>Days On Quarantine</value>
+  </data>
+  <data name="ExpiredLotMessage" xml:space="preserve">
+    <value>Expired Lot Allocation Message</value>
+  </data>
+  <data name="LotSeparators" xml:space="preserve">
+    <value>Lot Separators</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>Separator</value>
+  </data>
+  <data name="SeparatorsUsedInLotMask" xml:space="preserve">
+    <value>Separators Used in Lot Mask Structures</value>
+  </data>
+  <data name="UseQtyOrderedOEForLotAllocation" xml:space="preserve">
+    <value>Use the Qty Ordered field in OE for the Allocation of Lot Numbers</value>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>Lot Number</value>
+  </data>
+  <data name="SortLotsByChangeWarning" xml:space="preserve">
+    <value>Warning. Once a lot mask structure separator is set to not in use, it cannot be reset to in use again. Do you want to proceed?</value>
+  </data>
+  <data name="SerialNumberMaskDescription" xml:space="preserve">
+    <value>Serial Number Mask Description</value>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>Lot Number Mask Description</value>
+  </data>
+  <data name="MaskStructure" xml:space="preserve">
+    <value>Mask Structure</value>
+  </data>
+  <data name="RecordNotFound" xml:space="preserve">
+    <value>has not been defined for Serials.</value>
+  </data>
+  <data name="RecordNotFoundLot" xml:space="preserve">
+    <value>has not been defined for lots.</value>
+  </data>
+  <data name="SortByChangeWarning" xml:space="preserve">
+    <value>Warning. Once a serial mask structure separator is set to not in use, it cannot be reset to in use again. Do you want to proceed?</value>
+  </data>
+  <data name="SortByDropdownChangeLotsWarning" xml:space="preserve">
+    <value>Warning. Changing this option could result in previously allocated lots to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?</value>
+  </data>
+  <data name="SortByDropdownChangeWarning" xml:space="preserve">
+    <value>Warning. Changing this option could result in previously allocated serials to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?</value>
+  </data>
 </root>

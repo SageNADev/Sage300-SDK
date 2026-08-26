@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function () {
   //  console.log("sdf");
   $("select.single-select").kendoDropDownList();
   $("select.multi-select").kendoMultiSelect(

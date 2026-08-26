@@ -1598,5 +1598,57 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
                 return ResourceManager.GetString("ZIPPostalCode", resourceCulture);
             }
         }
+
+        public static string CreateReverseBatch {
+            get { return ResourceManager.GetString("CreateReverseBatch", resourceCulture); }
+        }
+
+        public static string CreateReverseEntryTitle {
+            get { return ResourceManager.GetString("CreateReverseEntryTitle", resourceCulture); }
+        }
+
+        public static string ReverseBatch {
+            get { return ResourceManager.GetString("ReverseBatch", resourceCulture); }
+        }
+
+        public static string ReverseEntry {
+            get { return ResourceManager.GetString("ReverseEntry", resourceCulture); }
+        }
+
+        public static string Original {
+            get { return ResourceManager.GetString("Original", resourceCulture); }
+        }
+
+        public static string OriginalWithPrefix {
+            get { return ResourceManager.GetString("OriginalWithPrefix", resourceCulture); }
+        }
+
+        public static string NewDescription {
+            get { return ResourceManager.GetString("NewDescription", resourceCulture); }
+        }
+
+        public static string CreatedReverseEntryNo {
+            get { return ResourceManager.GetString("CreatedReverseEntryNo", resourceCulture); }
+        }
+
+        public static string DocumentNumberOption {
+            get { return ResourceManager.GetString("DocumentNumberOption", resourceCulture); }
+        }
+
+        public static string Generated {
+            get { return ResourceManager.GetString("Generated", resourceCulture); }
+        }
+
+        public static string Entered {
+            get { return ResourceManager.GetString("Entered", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Warning shown when the user tries to reverse a batch whose SRCEAPPL != "AP".
+        ///   Mirrors VB6 AP2100ID.IDS_MSG_ReverseNonAPBatches.
+        /// </summary>
+        public static string ReverseNonAPBatches {
+            get { return ResourceManager.GetString("ReverseNonAPBatches", resourceCulture); }
+        }
     }
 }

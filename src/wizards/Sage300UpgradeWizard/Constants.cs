@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,19 +32,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2025.2";
+            public const string FromReleaseNumber = "2026.0";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2026.0";
+            public const string ToReleaseNumber = "2027.0";
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
             public const bool UpdateAccpacDotNetLibrary = true;
 
             /// <summary> From Accpac Number </summary>
-            public const string FromAccpacNumber = "7.2.0.20";
+            public const string FromAccpacNumber = "7.3.0.0";
             
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "7.3.0.0";
+            public const string ToAccpacNumber = "7.4.0.0";
 
             /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
             public const bool SyncKendoFiles = true;

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class PRCommonResx {
@@ -264,6 +264,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         public static string EmployeeName {
             get {
                 return ResourceManager.GetString("EmployeeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employer.
+        /// </summary>
+        public static string Employer {
+            get {
+                return ResourceManager.GetString("Employer", resourceCulture);
             }
         }
         

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+  <!-- Portions co-modified with Claude Code -->
+  <!--
     Microsoft ResX Schema 
     
     Version 2.0
@@ -138,7 +139,7 @@
     <comment>Success Message </comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>存货控制复制用料单</value>
+    <value>存货控制/复制用料单</value>
     <comment>Screen Title</comment>
   </data>
   <data name="FixedCost" xml:space="preserve">

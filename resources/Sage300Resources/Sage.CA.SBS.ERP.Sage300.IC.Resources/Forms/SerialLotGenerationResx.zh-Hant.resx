@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustAll" xml:space="preserve">
+    <value>全部調整</value>
+  </data>
+  <data name="AdjustedCost" xml:space="preserve">
+    <value>調整後成本</value>
+  </data>
+  <data name="AdjustmentCost" xml:space="preserve">
+    <value>調整成本</value>
+  </data>
+  <data name="Allocated" xml:space="preserve">
+    <value>已分配</value>
+  </data>
+  <data name="Allocation" xml:space="preserve">
+    <value>分配</value>
+  </data>
+  <data name="AllocLotNoneWarning" xml:space="preserve">
+    <value>未分配任何批號。可能沒有足夠數量可供分配的批次。執行日終處理後，可能會有可供分配數量的批次。</value>
+  </data>
+  <data name="AllocLotSomeWarning" xml:space="preserve">
+    <value>未分配所需的全部批次數量。可能沒有更多可供分配的足夠數量批次。執行日終處理後，可能會有更多可供分配的批次。</value>
+  </data>
+  <data name="AllocSerialNoneWarning" xml:space="preserve">
+    <value>未分配任何序號。可能沒有可供分配的序號。執行日終處理後，可能會有可供分配的序號。</value>
+  </data>
+  <data name="AllocSerialSomeWarning" xml:space="preserve">
+    <value>未分配所需的全部序號。可能沒有更多可供分配的序號。執行日終處理後，可能會有更多可供分配的序號。</value>
+  </data>
+  <data name="Assigned" xml:space="preserve">
+    <value>已分配</value>
+  </data>
+  <data name="AutoAllocFrom" xml:space="preserve">
+    <value>自動分配來源</value>
+  </data>
+  <data name="AutoGenFailedMessage" xml:space="preserve">
+    <value>自動產生 {0} 編號失敗。</value>
+  </data>
+  <data name="CannotBeBlankErrorMessage" xml:space="preserve">
+    <value>{0} 編號不能為空。</value>
+  </data>
+  <data name="ClearLotNumbersConfirmMessage" xml:space="preserve">
+    <value>確定要清除清單中的所有批號嗎？</value>
+  </data>
+  <data name="ClearSerialNumbersConfirmMessage" xml:space="preserve">
+    <value>確定要清除清單中的所有序號嗎？</value>
+  </data>
+  <data name="CloseWithLotRemainingMessage" xml:space="preserve">
+    <value>剩餘批次數量不為零，無法儲存記錄。</value>
+  </data>
+  <data name="CloseWithSerialAndLotRemainingMessage" xml:space="preserve">
+    <value>剩餘序號和批次數量均不為零，無法儲存記錄。</value>
+  </data>
+  <data name="CloseWithSerialRemainingMessage" xml:space="preserve">
+    <value>剩餘序號數量不為零，無法儲存記錄。</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>是否繼續？</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>成本</value>
+  </data>
+  <data name="CostAdjustAll" xml:space="preserve">
+    <value>全部調整成本</value>
+  </data>
+  <data name="CostAdjusted" xml:space="preserve">
+    <value>已調整成本</value>
+  </data>
+  <data name="DeletelineWarning" xml:space="preserve">
+    <value>請選擇要刪除的列。</value>
+  </data>
+  <data name="EmptyNextLotNo" xml:space="preserve">
+    <value>下一個批號為空。系統無法根據空白的下一個批號新增或產生批號。</value>
+  </data>
+  <data name="EmptyNextSerialNumber" xml:space="preserve">
+    <value>下一個序號為空。系統無法根據空白的下一個序號新增或產生序號。</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>到期日期</value>
+  </data>
+  <data name="ExpiryDateBeforeStockDateWarning" xml:space="preserve">
+    <value>警告：批次 {0} 的到期日期早於庫存日期。</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>已產生</value>
+  </data>
+  <data name="GeneratedAllocated" xml:space="preserve">
+    <value>已產生/已分配</value>
+  </data>
+  <data name="Generation" xml:space="preserve">
+    <value>產生</value>
+  </data>
+  <data name="GenerationAllocation" xml:space="preserve">
+    <value>產生/分配</value>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>項目編號</value>
+  </data>
+  <data name="LAssigned" xml:space="preserve">
+    <value>已分配批次</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="LotEntity" xml:space="preserve">
+    <value>批號產生/分配</value>
+  </data>
+  <data name="LotNoRequired" xml:space="preserve">
+    <value>所需批次數量</value>
+  </data>
+  <data name="LotNumbers" xml:space="preserve">
+    <value>批號</value>
+  </data>
+  <data name="LotNumberValidationMessage" xml:space="preserve">
+    <value>下一個批號不符合目前批號規則。</value>
+  </data>
+  <data name="LotsAdjusted" xml:space="preserve">
+    <value>已調整批次</value>
+  </data>
+  <data name="LotsReceived" xml:space="preserve">
+    <value>已接收批次</value>
+  </data>
+  <data name="LotsReturned" xml:space="preserve">
+    <value>已退回批次</value>
+  </data>
+  <data name="LotsShipped" xml:space="preserve">
+    <value>已出貨批次</value>
+  </data>
+  <data name="NextSerialOrLotNumberBlankError" xml:space="preserve">
+    <value>下一個 {0} 編號為空。系統無法根據空白的下一個 {0} 編號新增或產生 {0} 編號。</value>
+  </data>
+  <data name="NoSerialOrLotNumberGeneratedWarning" xml:space="preserve">
+    <value>未產生任何 {0} 編號。請確認項目已設定有效的 {0} 編號規則。</value>
+  </data>
+  <data name="NotSerializedLottedWarnMsg" xml:space="preserve">
+    <value>該項目未啟用序號或批次管理，因此不會顯示序號/批次介面。</value>
+  </data>
+  <data name="QtyAdjusted" xml:space="preserve">
+    <value>已調整數量</value>
+  </data>
+  <data name="QtyReceived" xml:space="preserve">
+    <value>已接收數量</value>
+  </data>
+  <data name="QtyReturned" xml:space="preserve">
+    <value>已退回數量</value>
+  </data>
+  <data name="QtyShipped" xml:space="preserve">
+    <value>已出貨數量</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="QuantityAdjusted" xml:space="preserve">
+    <value>已調整數量</value>
+  </data>
+  <data name="QuantityReceived" xml:space="preserve">
+    <value>已接收數量</value>
+  </data>
+  <data name="QuantityReturned" xml:space="preserve">
+    <value>已退回數量</value>
+  </data>
+  <data name="QuantityShipped" xml:space="preserve">
+    <value>已出貨數量</value>
+  </data>
+  <data name="ReceiveAll" xml:space="preserve">
+    <value>全部接收</value>
+  </data>
+  <data name="Received" xml:space="preserve">
+    <value>已接收</value>
+  </data>
+  <data name="RecordAlreadyExistError" xml:space="preserve">
+    <value>{0} 編號 {1} 已存在。</value>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>剩餘</value>
+  </data>
+  <data name="ReturnAll" xml:space="preserve">
+    <value>全部退回</value>
+  </data>
+  <data name="Returned" xml:space="preserve">
+    <value>已退回</value>
+  </data>
+  <data name="SAssgined" xml:space="preserve">
+    <value>已分配序號</value>
+  </data>
+  <data name="SAssignedUOM" xml:space="preserve">
+    <value>計量單位</value>
+  </data>
+  <data name="SerialEntity" xml:space="preserve">
+    <value>序號產生/分配</value>
+  </data>
+  <data name="SerialLotEntity" xml:space="preserve">
+    <value>序號/批號產生</value>
+  </data>
+  <data name="SerialLotNumbers" xml:space="preserve">
+    <value>序號/批號</value>
+  </data>
+  <data name="SerialNoGenerated" xml:space="preserve">
+    <value>已產生</value>
+  </data>
+  <data name="SerialNoRemaining" xml:space="preserve">
+    <value>剩餘</value>
+  </data>
+  <data name="SerialNoRequired" xml:space="preserve">
+    <value>所需序號</value>
+  </data>
+  <data name="SerialNumbers" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="SerialNumberValidationMessage" xml:space="preserve">
+    <value>此序號對於目前的序號遮罩無效。</value>
+  </data>
+  <data name="SerialOrLotNumberGeneratedWarning" xml:space="preserve">
+    <value>已產生所有必需的 {0} 編號。</value>
+  </data>
+  <data name="SerialsAdjusted" xml:space="preserve">
+    <value>已調整序號</value>
+  </data>
+  <data name="SerialsReceived" xml:space="preserve">
+    <value>已接收序號</value>
+  </data>
+  <data name="SerialsReturned" xml:space="preserve">
+    <value>已退回序號</value>
+  </data>
+  <data name="SerialsShipped" xml:space="preserve">
+    <value>已出貨序號</value>
+  </data>
+  <data name="Shipped" xml:space="preserve">
+    <value>已出貨</value>
+  </data>
+  <data name="SQTYAssigned" xml:space="preserve">
+    <value>已分配數量</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>庫存日期</value>
+  </data>
+  <data name="UOM" xml:space="preserve">
+    <value>計量單位</value>
+  </data>
+  <data name="ZeroWarning" xml:space="preserve">
+    <value>「建立批次」或「每個批次包含」其中一個必須為零，但兩者不可同時為零。</value>
+  </data>
+  <data name="CloseWithSerialCostNoMatchMessage" xml:space="preserve">
+    <value>剩餘序號調整成本不為零。</value>
+  </data>
+  <data name="CloseWithLotCostNoMatchMessage" xml:space="preserve">
+    <value>剩餘批次調整成本不為零。</value>
+  </data>
+  <data name="CloseWithSerialAndLotCostNoMatchMessage" xml:space="preserve">
+    <value>剩餘序號和批次調整成本不為零。</value>
+  </data>
+  <data name="AssignAll" xml:space="preserve">
+    <value>全部分配</value>
+  </data>
+  <data name="AutoAlloc" xml:space="preserve">
+    <value>自動分配</value>
+  </data>
+  <data name="AutoGen" xml:space="preserve">
+    <value>自動產生</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>全部清除</value>
+  </data>
+  <data name="NextSerialNumber" xml:space="preserve">
+    <value>下一個序號</value>
+  </data>
+  <data name="EachLotHas" xml:space="preserve">
+    <value>每塊地塊均擁有</value>
+  </data>
+  <data name="Make" xml:space="preserve">
+    <value>製作</value>
+  </data>
+  <data name="NextLotNo" xml:space="preserve">
+    <value>下一批次號</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>或者</value>
+  </data>
+  <data name="FractionalQty" xml:space="preserve">
+    <value>帶有序號的物料不能使用小數數。</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ShipAll" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>很多</value>
+  </data>
+  <data name="Lots" xml:space="preserve">
+    <value>很多</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>連載</value>
+  </data>
+</root>

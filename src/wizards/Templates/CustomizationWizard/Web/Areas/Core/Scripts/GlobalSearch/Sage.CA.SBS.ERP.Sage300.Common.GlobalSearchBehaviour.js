@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2018 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 2018-2026 Sage Software, Inc.  All rights reserved.
 "use strict"
 
 var globalSearchUI = globalSearchUI || {};
@@ -209,7 +209,7 @@ globalSearchUI = {
     }
 }
 
-$(document).ready(function () {
+$(function () {
     globalSearchUI.init();
 
     $(window).on('beforeunload', function () {

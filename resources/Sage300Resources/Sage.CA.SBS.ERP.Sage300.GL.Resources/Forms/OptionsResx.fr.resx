@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Entity" xml:space="preserve">
+	<data name="ProcessingOptions" xml:space="preserve">
+    <value>Options de traitement</value>
+    <comment>Auto-Generated</comment>
+  </data>
+	<data name="EditImportedBatches" xml:space="preserve">
+    <value>Permet. modif. lots importés</value>
+    <comment>Auto-Generated</comment>
+  </data>
+	<data name="EditSubledgerBatches" xml:space="preserve">
+    <value>Permettre modif. lots-livre aux.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+	<data name="Entity" xml:space="preserve">
     <value>Options de GL</value>
     <comment>Auto-Generated</comment>
   </data>

@@ -337,4 +337,23 @@
   <data name="ReceiptDescription" xml:space="preserve">
     <value>收款描述</value>
   </data>
+  <data name="ConfirmationErrorMessage" xml:space="preserve">
+    <value>剩餘序號不為零。您將無法保存記錄。是否繼續？</value>
+  </data>
+  <data name="QuantityErrorValidation" xml:space="preserve">
+    <value>數量和分配的序號/批號必須相等。</value>
+  </data>
+  <data name="QuantityReceivedValidation" xml:space="preserve">
+    <value>收到的數量不能為零。</value>
+  </data>
+  <data name="LotConfirmationErrorMessage" xml:space="preserve">
+    <value>剩餘批次數量不為零。您將無法保存記錄。是否繼續？</value>
+  </data>
+  <data name="SerialConfirmationErrorMessage" xml:space="preserve">
+    <value>剩餘序號不為零。您將無法保存記錄。是否繼續？</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="greaterReturnQTYmsg" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
 </root>

@@ -121,4 +121,34 @@
     <value>存貨控制系列編號查詢</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>從項目編號</value>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>從位置</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>從序號</value>
+  </data>
+  <data name="FromStockDate" xml:space="preserve">
+    <value>自庫存日期</value>
+  </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>自上市日期無效</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>到股票日期無效</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>至項目編號</value>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>前往地點</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="ToStockDate" xml:space="preserve">
+    <value>上市日期</value>
+  </data>
 </root>

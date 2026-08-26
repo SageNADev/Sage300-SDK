@@ -199,7 +199,7 @@
     <value>De</value>
   </data>
   <data name="FromToValueMessage" xml:space="preserve">
-    <value>La valeur du champ De ({0}) ne peut pas être supérieure à celle du champ À.</value>
+    <value>La valeur du champ De {0} ne peut pas être supérieure à celle du champ À.</value>
   </data>
   <data name="GetFailedMessage" xml:space="preserve">
     <value>Un problème est survenu. Impossible de récupérer {0}. Veuillez réessayer.</value>
@@ -996,10 +996,10 @@
     <comment>DatePicker Placeholder</comment>
   </data>
   <data name="SymbolLeftBracket" xml:space="preserve">
-    <value>{ Parenthèse ouvrante</value>
+    <value>[ Crochet ouvrant</value>
   </data>
   <data name="SymbolRightBracket" xml:space="preserve">
-    <value>} Parenthèse fermante</value>
+    <value>] Crochet fermant</value>
   </data>
   <data name="SelectForm" xml:space="preserve">
     <value>Sélectionner formulaire</value>
@@ -1783,5 +1783,11 @@
   </data>
   <data name="ProxyUseSecureProtocol" xml:space="preserve">
     <value>The proxy is configured to use a secure protocol and the request is not secure.</value>
+  </data>
+  <data name="SymbolLeftBrace" xml:space="preserve">
+    <value>{ Accolade gauche</value>
+  </data>
+  <data name="SymbolRightBrace" xml:space="preserve">
+    <value>} Accolade droite</value>
   </data>
 </root>

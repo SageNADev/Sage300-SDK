@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+  <!-- Portions co-modified with Claude Code -->
+  <!--
     Microsoft ResX Schema 
     
     Version 2.0
@@ -129,6 +130,18 @@
     <value>Base</value>
     <comment>List</comment>
   </data>
+  <data name="BOMNumber" xml:space="preserve">
+    <value>Numéro nomenclature</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ComponentBomNo" xml:space="preserve">
+    <value>Numéro nomenclature du composant</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ComponentItemNo" xml:space="preserve">
+    <value>Numéro article composant</value>
+    <comment>Field</comment>
+  </data>
   <data name="ComponentItemNumberDesc" xml:space="preserve">
     <value>Description numéro article composant</value>
     <comment>Field</comment>
@@ -137,9 +150,17 @@
     <value>Composants</value>
     <comment>List Item</comment>
   </data>
+  <data name="ComponentType" xml:space="preserve">
+    <value>Type de composant</value>
+    <comment>Field</comment>
+  </data>
   <data name="Cost" xml:space="preserve">
     <value>Coût</value>
     <comment>List Item</comment>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>Type de coût</value>
+    <comment>Field</comment>
   </data>
   <data name="Decrease" xml:space="preserve">
     <value>Diminuer</value>
@@ -154,7 +175,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>Mise à jour des nomenclatures de GS</value>
+    <value>Mise à jour des nomenclatures de G.S.</value>
     <comment>Screen Title</comment>
   </data>
   <data name="FixedCost" xml:space="preserve">
@@ -185,8 +206,24 @@
     <value>Remplacer</value>
     <comment>List Item</comment>
   </data>
+  <data name="ReplacementBomNo" xml:space="preserve">
+    <value>Remplacer par numéro nomenclature</value>
+    <comment>Field</comment>
+  </data>
   <data name="RplByItemNo" xml:space="preserve">
     <value>Remplacer par numéro article</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToBomNo" xml:space="preserve">
+    <value>À numéro nomenclature</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToItemNo" xml:space="preserve">
+    <value>À numéro article principal</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Mettre à jour</value>
     <comment>Field</comment>
   </data>
   <data name="Using" xml:space="preserve">

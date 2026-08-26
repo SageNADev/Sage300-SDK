@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class GLCommonResx {
@@ -268,7 +268,7 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cannot find drill down information for this record. Please make sure Payroll web screen is installed..
+        ///   Looks up a localized string similar to Cannot find drill down information for this record. Please make sure Payroll web screens are installed..
         /// </summary>
         public static string PayrollWebScreenNotInstalled {
             get {
@@ -336,6 +336,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources {
         public static string Reserved {
             get {
                 return ResourceManager.GetString("Reserved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reversing a subledger batch can introduce reconciliation discrepancies between GL and its associated subledgers..
+        /// </summary>
+        public static string ReverseNonGLBatches {
+            get {
+                return ResourceManager.GetString("ReverseNonGLBatches", resourceCulture);
             }
         }
         

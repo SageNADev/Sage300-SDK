@@ -333,7 +333,7 @@
     <comment>Used for Export/Import</comment>
   </data>
   <data name="InvalidCharacter" xml:space="preserve">
-    <value>產品編號含有無效字元(&quot;)。</value>
+    <value>產品編號含有無效字元(")。</value>
   </data>
   <data name="AllowDifferentLotQty" xml:space="preserve">
     <value>允許不同的批別數量</value>
@@ -490,5 +490,68 @@
   </data>
   <data name="QtyonSalesOrder" xml:space="preserve">
     <value>銷貨單數量</value>
+  </data>
+  <data name="AllowSerialLotQuantityConfirmation" xml:space="preserve">
+    <value>「允許 {0} 數量與條目中的數量不同」選項即將變更。如果存在或建立了 {1} 編號，您將無法關閉此選項。您也無法選擇使用 {2} 成本核算方法的帳戶集。您確定要啟用此選項嗎？</value>
+  </data>
+  <data name="InvalidLotNumberMask" xml:space="preserve">
+    <value>批次尚未定義遮罩結構{0}。</value>
+  </data>
+  <data name="InvalidSerialLotContract" xml:space="preserve">
+    <value>預設的 {0} 合約代碼 {1} 不存在。</value>
+  </data>
+  <data name="InvalidSerialLotWarranty" xml:space="preserve">
+    <value>預設的 {0} 保固代碼 {1} 不存在。</value>
+  </data>
+  <data name="InvalidSerialNumberMask" xml:space="preserve">
+    <value>序號尚未定義遮罩結構{0}。</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>很多</value>
+  </data>
+  <data name="LotConfirmationPopup" xml:space="preserve">
+    <value>很多</value>
+  </data>
+  <data name="LotContractWhenReceived" xml:space="preserve">
+    <value>收到標的後自動將其列入合約</value>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>批號掩碼說明</value>
+  </data>
+  <data name="LotWarrantyWhenSold" xml:space="preserve">
+    <value>售出後自動將該拍品納入保固範圍</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="SerialConfirmationPopup" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="SerialContractWhenReceived" xml:space="preserve">
+    <value>收到後自動將序號加入合約中</value>
+  </data>
+  <data name="SerialNumberMaskDescription" xml:space="preserve">
+    <value>序號遮罩說明</value>
+  </data>
+  <data name="SerialWarrantyWhenRegistered" xml:space="preserve">
+    <value>註冊時自動將序號新增至保固範圍內</value>
+  </data>
+  <data name="SerialWarrantyWhenSold" xml:space="preserve">
+    <value>售出時自動將序號加入保固單中</value>
+  </data>
+  <data name="Lotted" xml:space="preserve">
+    <value>抽獎</value>
+  </data>
+  <data name="NotSerializedLotted" xml:space="preserve">
+    <value>指定了一個使用 {0} 成本核算方法的帳戶集，但該項目不是 {1}。</value>
+  </data>
+  <data name="Serialized" xml:space="preserve">
+    <value>序列化</value>
+  </data>
+  <data name="AccountSetCannotBeSelect" xml:space="preserve">
+    <value>该物料已设置“允许 {0} 数量不同”。无法选择使用 {1} 成本核算方法的科目集。</value>
+  </data>
+  <data name="KittingItemsErrorMsg" xml:space="preserve">
+    <value>该物品属于组合套装中的组件。</value>
   </data>
 </root>

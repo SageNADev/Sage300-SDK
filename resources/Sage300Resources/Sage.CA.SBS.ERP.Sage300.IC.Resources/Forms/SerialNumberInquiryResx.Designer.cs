@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class SerialNumberInquiryResx {
@@ -66,6 +66,96 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string Entity {
             get {
                 return ResourceManager.GetString("Entity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Item Number.
+        /// </summary>
+        public static string FromItemNumber {
+            get {
+                return ResourceManager.GetString("FromItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Location.
+        /// </summary>
+        public static string FromLocation {
+            get {
+                return ResourceManager.GetString("FromLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Serial Number.
+        /// </summary>
+        public static string FromSerialNumber {
+            get {
+                return ResourceManager.GetString("FromSerialNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Stock Date.
+        /// </summary>
+        public static string FromStockDate {
+            get {
+                return ResourceManager.GetString("FromStockDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Stock Date is invalid.
+        /// </summary>
+        public static string InvalidFromDate {
+            get {
+                return ResourceManager.GetString("InvalidFromDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Stock Date is invalid.
+        /// </summary>
+        public static string InvalidToDate {
+            get {
+                return ResourceManager.GetString("InvalidToDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Item Number.
+        /// </summary>
+        public static string ToItemNumber {
+            get {
+                return ResourceManager.GetString("ToItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Location.
+        /// </summary>
+        public static string ToLocation {
+            get {
+                return ResourceManager.GetString("ToLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Serial Number.
+        /// </summary>
+        public static string ToSerialNumber {
+            get {
+                return ResourceManager.GetString("ToSerialNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Stock Date.
+        /// </summary>
+        public static string ToStockDate {
+            get {
+                return ResourceManager.GetString("ToStockDate", resourceCulture);
             }
         }
     }

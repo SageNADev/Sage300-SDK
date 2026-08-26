@@ -189,4 +189,7 @@
     <value>Créer</value>
     <comment>Button</comment>
   </data>
+  <data name="CannotChangeLocationForSerialLotItem" xml:space="preserve">
+    <value>Vous ne pouvez pas modifier l'emplacement d'un article sérialisé ou vendu par lot après avoir entré la quantité commandée.</value>
+  </data>
 </root>

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.OE.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class OrderEntryResx {
@@ -1636,6 +1636,15 @@ namespace Sage.CA.SBS.ERP.Sage300.OE.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quantity shipped cannot be greater than quantity ordered..
+        /// </summary>
+        public static string GreaterShippedQtyErrorMessage {
+            get {
+                return ResourceManager.GetString("GreaterShippedQtyErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Has Retainage.
         /// </summary>
         public static string HasRetainage {
@@ -1812,6 +1821,15 @@ namespace Sage.CA.SBS.ERP.Sage300.OE.Resources.Forms {
         public static string InterprocessCommID {
             get {
                 return ResourceManager.GetString("InterprocessCommID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The location is blank. The serials/lot form will not be displayed..
+        /// </summary>
+        public static string InvalidLocation {
+            get {
+                return ResourceManager.GetString("InvalidLocation", resourceCulture);
             }
         }
         

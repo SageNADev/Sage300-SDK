@@ -205,4 +205,7 @@
     <value>Lead Time (SIA) cannot exceed 32,767.</value>
     <comment>Error message</comment>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
 </root>

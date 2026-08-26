@@ -121,6 +121,18 @@
     <value>Combinación</value>
     <comment>Button</comment>
   </data>
+  <data name="CombineNumber" xml:space="preserve">
+    <value>Nº Combinación</value>
+  </data>
+  <data name="DateOutsideRange" xml:space="preserve">
+    <value>La fecha introducida está fuera del rango especificado en el perfil de la empresa.</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Nº Reparto</value>
+  </data>
+  <data name="DocumentNumberErrMsg" xml:space="preserve">
+    <value>El número de documento no puede estar en blanco.</value>
+  </data>
   <data name="Each" xml:space="preserve">
     <value>Cada</value>
     <comment>Field</comment>
@@ -129,9 +141,60 @@
     <value>CI – Repartos/Combinaciones de Lotes</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Fch. Caduc.</value>
+  </data>
+  <data name="FromCombineNumber" xml:space="preserve">
+    <value>Cant. a Combinar</value>
+  </data>
+  <data name="FromSplitNumber" xml:space="preserve">
+    <value>Cantidad a dividir</value>
+  </data>
+  <data name="GridQtyCombine" xml:space="preserve">
+    <value>Cantidad a combinar</value>
+  </data>
+  <data name="GridQtySplit" xml:space="preserve">
+    <value>División de cantidad</value>
+  </data>
+  <data name="InvalidItemMsg" xml:space="preserve">
+    <value>El artículo {0} no existe.</value>
+  </data>
+  <data name="InvalidLocationMsg" xml:space="preserve">
+    <value>La ubicación {0} no existe.</value>
+  </data>
+  <data name="InvalidLotNumberErrMsg" xml:space="preserve">
+    <value>El número de lote no es válido para la máscara de número de lote actual.</value>
+  </data>
+  <data name="InvalidLotNumMsg" xml:space="preserve">
+    <value>El número de lote {0} no se encontró o no está disponible para el artículo {1}, ubicación {2}.</value>
+  </data>
+  <data name="ItemNumberErrMsg" xml:space="preserve">
+    <value>El número de artículo no puede estar en blanco.</value>
+  </data>
+  <data name="LocationErrMsg" xml:space="preserve">
+    <value>La ubicación no puede estar en blanco.</value>
+  </data>
+  <data name="LotNumberDuplicationErrMsg" xml:space="preserve">
+    <value>Detalle de reparto/combinación. El registro ya existe.</value>
+  </data>
+  <data name="HeaderDetailLotSameErrMsg" xml:space="preserve">
+    <value>El número de lote del encabezado y el del detalle no pueden ser iguales.</value>
+  </data>
+  <data name="LotNumberErrMsg" xml:space="preserve">
+    <value>El número de lote no puede estar en blanco.</value>
+  </data>
   <data name="QtyCombine" xml:space="preserve">
     <value>Combinación de Cantidad</value>
     <comment>Field</comment>
+  </data>
+  <data name="QtyExceedErrMsg" xml:space="preserve">
+    <value>La cantidad a repartir no debe exceder la cantidad enviable.</value>
+  </data>
+  <data name="QtyShippable" xml:space="preserve">
+    <value>Cantidad Enviable</value>
   </data>
   <data name="QtySplit" xml:space="preserve">
     <value>Reparto de Cantidad</value>
@@ -145,6 +208,9 @@
     <value>Cantidad a Repartir</value>
     <comment>Field</comment>
   </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>Remanente</value>
+  </data>
   <data name="SAVECOMBINE" xml:space="preserve">
     <value>¿Desea asentar el Número de Combinación?</value>
     <comment>Message</comment>
@@ -156,5 +222,44 @@
   <data name="Split" xml:space="preserve">
     <value>Reparto</value>
     <comment>Button</comment>
+  </data>
+  <data name="SplitNumber" xml:space="preserve">
+    <value>Nº Reparto</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>Fch. Inventario</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Fch. Transacción</value>
+  </data>
+  <data name="CombineExceedErrMsg" xml:space="preserve">
+    <value>La cantidad de detalle de la combinación no debe exceder la cantidad enviable.</value>
+  </data>
+  <data name="DateInvalidErrMsg" xml:space="preserve">
+    <value>{0} no es válido</value>
+  </data>
+  <data name="ExpiryNotGreaterStockErrMsg" xml:space="preserve">
+    <value>La fecha de caducidad no debe ser anterior a la fecha de existencias.</value>
+  </data>
+  <data name="QuantityErrMsg" xml:space="preserve">
+    <value>La cantidad debe ser mayor que cero.</value>
+  </data>
+  <data name="InvalidLotItemMsg" xml:space="preserve">
+    <value>No se puede recuperar el número de lote porque no se ha introducido la máscara de número de lote.</value>
+  </data>
+  <data name="LotQuarantineErrMsg" xml:space="preserve">
+    <value>El número de lote {0} para el artículo {1}, ubicación {2}, no puede estar en {3} para repartir/combinar.</value>
+  </data>
+  <data name="contract" xml:space="preserve">
+    <value>contrato</value>
+  </data>
+  <data name="LotNotFound" xml:space="preserve">
+    <value>No se encontró el número de lote {0}.</value>
+  </data>
+  <data name="quarantine" xml:space="preserve">
+    <value>cuarentena</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>** NUEVO **</value>
   </data>
 </root>

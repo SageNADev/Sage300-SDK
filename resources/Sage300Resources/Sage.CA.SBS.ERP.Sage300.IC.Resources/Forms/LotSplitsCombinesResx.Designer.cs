@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class LotSplitsCombinesResx {
@@ -70,6 +70,69 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Combine detail quantity must not exceed Quantity Shippable..
+        /// </summary>
+        public static string CombineExceedErrMsg {
+            get {
+                return ResourceManager.GetString("CombineExceedErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Number.
+        /// </summary>
+        public static string CombineNumber {
+            get {
+                return ResourceManager.GetString("CombineNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to contract.
+        /// </summary>
+        public static string contract {
+            get {
+                return ResourceManager.GetString("contract", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is Invalid.
+        /// </summary>
+        public static string DateInvalidErrMsg {
+            get {
+                return ResourceManager.GetString("DateInvalidErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The date entered lies outside the range specified in the company profile..
+        /// </summary>
+        public static string DateOutsideRange {
+            get {
+                return ResourceManager.GetString("DateOutsideRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Split Number.
+        /// </summary>
+        public static string DocumentNumber {
+            get {
+                return ResourceManager.GetString("DocumentNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Document number cannot be blank..
+        /// </summary>
+        public static string DocumentNumberErrMsg {
+            get {
+                return ResourceManager.GetString("DocumentNumberErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Each.
         /// </summary>
         public static string Each {
@@ -88,11 +151,209 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string EntryType {
+            get {
+                return ResourceManager.GetString("EntryType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expiry Date.
+        /// </summary>
+        public static string ExpiryDate {
+            get {
+                return ResourceManager.GetString("ExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expiry Date must not be earlier than Stock Date..
+        /// </summary>
+        public static string ExpiryNotGreaterStockErrMsg {
+            get {
+                return ResourceManager.GetString("ExpiryNotGreaterStockErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qty. Combine.
+        /// </summary>
+        public static string FromCombineNumber {
+            get {
+                return ResourceManager.GetString("FromCombineNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qty. to Split.
+        /// </summary>
+        public static string FromSplitNumber {
+            get {
+                return ResourceManager.GetString("FromSplitNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qty. to Combine.
+        /// </summary>
+        public static string GridQtyCombine {
+            get {
+                return ResourceManager.GetString("GridQtyCombine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qty. Split.
+        /// </summary>
+        public static string GridQtySplit {
+            get {
+                return ResourceManager.GetString("GridQtySplit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Header and Detail Lot Number cannot be the same..
+        /// </summary>
+        public static string HeaderDetailLotSameErrMsg {
+            get {
+                return ResourceManager.GetString("HeaderDetailLotSameErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item {0} does not exist..
+        /// </summary>
+        public static string InvalidItemMsg {
+            get {
+                return ResourceManager.GetString("InvalidItemMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location {0} does not exist..
+        /// </summary>
+        public static string InvalidLocationMsg {
+            get {
+                return ResourceManager.GetString("InvalidLocationMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lot number cannot be retrieved because the lot number mask has not been entered..
+        /// </summary>
+        public static string InvalidLotItemMsg {
+            get {
+                return ResourceManager.GetString("InvalidLotItemMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lot number is not valid for the current lot number mask..
+        /// </summary>
+        public static string InvalidLotNumberErrMsg {
+            get {
+                return ResourceManager.GetString("InvalidLotNumberErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot Number {0} not found or not available for item {1} , location {2}..
+        /// </summary>
+        public static string InvalidLotNumMsg {
+            get {
+                return ResourceManager.GetString("InvalidLotNumMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item Number cannot be blank..
+        /// </summary>
+        public static string ItemNumberErrMsg {
+            get {
+                return ResourceManager.GetString("ItemNumberErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location cannot be blank..
+        /// </summary>
+        public static string LocationErrMsg {
+            get {
+                return ResourceManager.GetString("LocationErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot Number {0} not found ..
+        /// </summary>
+        public static string LotNotFound {
+            get {
+                return ResourceManager.GetString("LotNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Split/Combine Detail.  Record already exists..
+        /// </summary>
+        public static string LotNumberDuplicationErrMsg {
+            get {
+                return ResourceManager.GetString("LotNumberDuplicationErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot Number cannot be blank..
+        /// </summary>
+        public static string LotNumberErrMsg {
+            get {
+                return ResourceManager.GetString("LotNumberErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot Number {0} for item {1} . Location {2} cannot be on {3} to Split/Combine..
+        /// </summary>
+        public static string LotQuarantineErrMsg {
+            get {
+                return ResourceManager.GetString("LotQuarantineErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ***NEW***.
+        /// </summary>
+        public static string New {
+            get {
+                return ResourceManager.GetString("New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quantity Combine.
         /// </summary>
         public static string QtyCombine {
             get {
                 return ResourceManager.GetString("QtyCombine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity to Split must not exceed the Quantity Shippable..
+        /// </summary>
+        public static string QtyExceedErrMsg {
+            get {
+                return ResourceManager.GetString("QtyExceedErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity Shippable.
+        /// </summary>
+        public static string QtyShippable {
+            get {
+                return ResourceManager.GetString("QtyShippable", resourceCulture);
             }
         }
         
@@ -124,6 +385,33 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quantity must be greater than zero..
+        /// </summary>
+        public static string QuantityErrMsg {
+            get {
+                return ResourceManager.GetString("QuantityErrMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to quarantine.
+        /// </summary>
+        public static string quarantine {
+            get {
+                return ResourceManager.GetString("quarantine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remaining.
+        /// </summary>
+        public static string Remaining {
+            get {
+                return ResourceManager.GetString("Remaining", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to post the Combine Number?.
         /// </summary>
         public static string SAVECOMBINE {
@@ -147,6 +435,33 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string Split {
             get {
                 return ResourceManager.GetString("Split", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Split Number.
+        /// </summary>
+        public static string SplitNumber {
+            get {
+                return ResourceManager.GetString("SplitNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stock Date.
+        /// </summary>
+        public static string StockDate {
+            get {
+                return ResourceManager.GetString("StockDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction Date.
+        /// </summary>
+        public static string TransactionDate {
+            get {
+                return ResourceManager.GetString("TransactionDate", resourceCulture);
             }
         }
     }

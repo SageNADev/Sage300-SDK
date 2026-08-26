@@ -285,4 +285,7 @@
   <data name="Separate" xml:space="preserve">
     <value>分列</value>
   </data>
+  <data name="ReverseNonGLBatches" xml:space="preserve">
+    <value>冲销子分类账批次可能会在总账与其相关子分类账之间造成对账差异。</value>
+  </data>
 </root>

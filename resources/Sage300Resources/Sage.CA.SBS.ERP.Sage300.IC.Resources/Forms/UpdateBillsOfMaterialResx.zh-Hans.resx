@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+  <!-- Portions co-modified with Claude Code -->
+  <!--
     Microsoft ResX Schema 
     
     Version 2.0
@@ -129,6 +130,18 @@
     <value>基数</value>
     <comment>List</comment>
   </data>
+  <data name="BOMNumber" xml:space="preserve">
+    <value>用料单编号</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ComponentBomNo" xml:space="preserve">
+    <value>部件用料单编号</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ComponentItemNo" xml:space="preserve">
+    <value>部件货品编号</value>
+    <comment>Field</comment>
+  </data>
   <data name="ComponentItemNumberDesc" xml:space="preserve">
     <value>部件货品编号描述</value>
     <comment>Field</comment>
@@ -137,9 +150,17 @@
     <value>部件</value>
     <comment>List Item</comment>
   </data>
+  <data name="ComponentType" xml:space="preserve">
+    <value>部件类型</value>
+    <comment>Field</comment>
+  </data>
   <data name="Cost" xml:space="preserve">
     <value>成本</value>
     <comment>List Item</comment>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>成本类型</value>
+    <comment>Field</comment>
   </data>
   <data name="Decrease" xml:space="preserve">
     <value>减少</value>
@@ -154,7 +175,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>存货控制更新用料单</value>
+    <value>存货控制/更新用料单</value>
     <comment>Screen Title</comment>
   </data>
   <data name="FixedCost" xml:space="preserve">
@@ -185,8 +206,24 @@
     <value>替换</value>
     <comment>List Item</comment>
   </data>
+  <data name="ReplacementBomNo" xml:space="preserve">
+    <value>取代用料单编号</value>
+    <comment>Field</comment>
+  </data>
   <data name="RplByItemNo" xml:space="preserve">
     <value>被这一货品编号取代</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToBomNo" xml:space="preserve">
+    <value>到用料单编号</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToItemNo" xml:space="preserve">
+    <value>到主货品编号</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>更新</value>
     <comment>Field</comment>
   </data>
   <data name="Using" xml:space="preserve">

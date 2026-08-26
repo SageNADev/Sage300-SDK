@@ -491,4 +491,67 @@
   <data name="QtyonSalesOrder" xml:space="preserve">
     <value>Qté sur bordereau de vente</value>
   </data>
+  <data name="AllowSerialLotQuantityConfirmation" xml:space="preserve">
+    <value>'Permettre qté {0} d'être différente de celle dans les saisies' est sur le point de changer. Si les numéros de {1} existent ou sont créés vous serez incapable de désactiver l'option. Vous serez également incapable de sélectionner un groupe de comptes qui utilise une méthode d'évaluation des {2}. Voulez-vous vraiment activer cette option?</value>
+  </data>
+  <data name="InvalidLotNumberMask" xml:space="preserve">
+    <value>La structure du masque {0} n'a pas été définie pour les numéros de lot.</value>
+  </data>
+  <data name="InvalidSerialLotContract" xml:space="preserve">
+    <value>Code contrat implicite-n° {0} {1} n'existe pas.</value>
+  </data>
+  <data name="InvalidSerialLotWarranty" xml:space="preserve">
+    <value>Code garantie implicite-n° {0} {1} n'existe pas.</value>
+  </data>
+  <data name="InvalidSerialNumberMask" xml:space="preserve">
+    <value>La structure du masque {0} n'a pas été définie pour les numéros de série.</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>n° lot</value>
+  </data>
+  <data name="LotConfirmationPopup" xml:space="preserve">
+    <value>lot</value>
+  </data>
+  <data name="LotContractWhenReceived" xml:space="preserve">
+    <value>Mettre autom. n° lot sous contrat lors réception de l'article</value>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>Numéro de lot Description du masque</value>
+  </data>
+  <data name="LotWarrantyWhenSold" xml:space="preserve">
+    <value>Mettre autom. n° lot sous garantie lors vente de l'article</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>n° série</value>
+  </data>
+  <data name="SerialConfirmationPopup" xml:space="preserve">
+    <value>série</value>
+  </data>
+  <data name="SerialContractWhenReceived" xml:space="preserve">
+    <value>Mettre autom. n° série sous contrat lors réception de l'article</value>
+  </data>
+  <data name="SerialNumberMaskDescription" xml:space="preserve">
+    <value>Description du masque de numéro de série</value>
+  </data>
+  <data name="SerialWarrantyWhenRegistered" xml:space="preserve">
+    <value>Mettre autom. n° série sous garantie lors réception enregistrem.</value>
+  </data>
+  <data name="SerialWarrantyWhenSold" xml:space="preserve">
+    <value>Mettre autom. n° série sous garantie lors vente de l'article</value>
+  </data>
+  <data name="AccountSetCannotBeSelect" xml:space="preserve">
+    <value>L'option « Autoriser une quantité {0} différente » est activée pour cet article. Il est impossible de sélectionner un ensemble de comptes utilisant la méthode de valorisation {1}.</value>
+  </data>
+  <data name="KittingItemsErrorMsg" xml:space="preserve">
+    <value>Cet article fait partie d'un kit.</value>
+  </data>
+  <data name="Lotted" xml:space="preserve">
+    <value>répartie</value>
+  </data>
+  <data name="NotSerializedLotted" xml:space="preserve">
+    <value>Un ensemble de comptes utilisant la méthode de valorisation {0} est spécifié, mais l'article n'est pas {1}.</value>
+  </data>
+  <data name="Serialized" xml:space="preserve">
+    <value>publié en feuilleton</value>
+  </data>
 </root>

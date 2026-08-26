@@ -120,6 +120,12 @@
   <data name="BatchReadyToPost" xml:space="preserve">
     <value>L&apos;état du lot est Prêt à reporter. Vous pouvez consulter le contenu du lot, mais vous ne pouvez pas modifier les écritures de journal.</value>
   </data>
+  <data name="NoEditImportedBatch" xml:space="preserve">
+    <value>Ce lot est un lot importé et l’option Permettre la modification des lots importés n’est pas sélectionnée dans Options de GL. Vous pouvez le consulter, mais vous ne pouvez pas modifier son contenu.</value>
+  </data>
+  <data name="NoEditSubledgerBatch" xml:space="preserve">
+    <value>Ce lot est un lot du livre auxiliaire et l’option Permettre modif. de lots du livre auxiliaire n’est pas sélectionnée dans Options de GL. Vous pouvez le consulter, mais vous ne pouvez pas modifier son contenu.</value>
+  </data>
   <data name="CreateNewEntry" xml:space="preserve">
     <value>Créer nouvelle écriture</value>
   </data>

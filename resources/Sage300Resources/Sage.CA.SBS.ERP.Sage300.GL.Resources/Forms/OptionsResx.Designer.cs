@@ -547,6 +547,33 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Processing Options.
+        /// </summary>
+        public static string ProcessingOptions {
+            get {
+                return ResourceManager.GetString("ProcessingOptions", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Allow Edit of Imported Batches.
+        /// </summary>
+        public static string EditImportedBatches {
+            get {
+                return ResourceManager.GetString("EditImportedBatches", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Allow Edit of Subledger Batches.
+        /// </summary>
+        public static string EditSubledgerBatches {
+            get {
+                return ResourceManager.GetString("EditSubledgerBatches", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Years of Fiscal Sets.
         /// </summary>
         public static string YearsOfFiscalSets {

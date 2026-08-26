@@ -125,37 +125,9 @@
     <value>自動分配從</value>
     <comment>Check Box</comment>
   </data>
-  <data name="AutoGen" xml:space="preserve">
-    <value>自動產生</value>
-    <comment>Button</comment>
-  </data>
-  <data name="ConfirmClearLots" xml:space="preserve">
-    <value>是否確要從清單中清除所有批別編號？</value>
-    <comment>Message</comment>
-  </data>
-  <data name="ConfirmClearSerials" xml:space="preserve">
-    <value>是否確要從清單中清除所有系列編號？</value>
-    <comment>Message</comment>
-  </data>
-  <data name="ConfirmDeleteLot" xml:space="preserve">
-    <value>是否確要刪除該批別編號？</value>
-    <comment>Message</comment>
-  </data>
-  <data name="ConfirmDeleteSerial" xml:space="preserve">
-    <value>是否確要刪除該系列編號？</value>
-    <comment>Message</comment>
-  </data>
   <data name="ConfirmPost" xml:space="preserve">
     <value>是否過帳此一{0}？</value>
     <comment>Message</comment>
-  </data>
-  <data name="Date" xml:space="preserve">
-    <value>內部使用日期</value>
-    <comment>Field</comment>
-  </data>
-  <data name="DateBus" xml:space="preserve">
-    <value>過帳日期</value>
-    <comment>Field</comment>
   </data>
   <data name="EachLotHas" xml:space="preserve">
     <value>每個批別有</value>
@@ -165,28 +137,8 @@
     <value>存貨控制系列/批別調節</value>
     <comment>Screen Title</comment>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>錯誤</value>
-    <comment>Field</comment>
-  </data>
-  <data name="KITITEMINVOICE" xml:space="preserve">
-    <value>是否顯示配套部件產品？</value>
-    <comment>Message</comment>
-  </data>
-  <data name="LOCATIONINACTIVE" xml:space="preserve">
-    <value>地點{0}不是活動的。</value>
-    <comment>Message</comment>
-  </data>
-  <data name="LOCATIONNOTALLOWED" xml:space="preserve">
-    <value>該地點不允許系列/批別產品。</value>
-    <comment>Error</comment>
-  </data>
   <data name="LotNotAvailable" xml:space="preserve">
     <value>批別編號{0}不可用。</value>
-    <comment>Error</comment>
-  </data>
-  <data name="LOTNUMWRONGFORMAT" xml:space="preserve">
-    <value>批別編號對目前批別編號遮罩無效。</value>
     <comment>Error</comment>
   </data>
   <data name="LotQtyRequired" xml:space="preserve">
@@ -209,25 +161,9 @@
     <value>下一系列編號</value>
     <comment>Field</comment>
   </data>
-  <data name="No" xml:space="preserve">
-    <value>否</value>
-    <comment>Field</comment>
-  </data>
-  <data name="NOLOCATIONFORITEM" xml:space="preserve">
-    <value>未找到對產品 {1}的地點 {0}。</value>
-    <comment>Message</comment>
-  </data>
-  <data name="OEInvoice" xml:space="preserve">
-    <value>銷售訂單發票</value>
-    <comment>Dropdown Item</comment>
-  </data>
   <data name="Or" xml:space="preserve">
     <value>或者</value>
     <comment>Label</comment>
-  </data>
-  <data name="POInvoice" xml:space="preserve">
-    <value>採購訂單發票</value>
-    <comment>Dropdown Item</comment>
   </data>
   <data name="QtyOverflow" xml:space="preserve">
     <value>數量超過最大允許數量。</value>
@@ -241,41 +177,13 @@
     <value>數量不能小於零。</value>
     <comment>Message</comment>
   </data>
-  <data name="Recall" xml:space="preserve">
-    <value>召回</value>
-    <comment>Field</comment>
-  </data>
   <data name="Reconciliation" xml:space="preserve">
     <value>調節</value>
     <comment>Field</comment>
   </data>
-  <data name="Release" xml:space="preserve">
-    <value>放行</value>
-    <comment>Field</comment>
-  </data>
-  <data name="SerialNumsRequired" xml:space="preserve">
-    <value>要求系列編號</value>
-    <comment>Group Item</comment>
-  </data>
   <data name="StartupWarning" xml:space="preserve">
     <value>應該過帳影響存貨的所有交易，而且在使用此一交易之前執行日終處理執行。</value>
     <comment>Message</comment>
-  </data>
-  <data name="UOM" xml:space="preserve">
-    <value>計量單位</value>
-    <comment>Column</comment>
-  </data>
-  <data name="UsedBy" xml:space="preserve">
-    <value>使用者</value>
-    <comment>Field</comment>
-  </data>
-  <data name="Warning" xml:space="preserve">
-    <value>警告</value>
-    <comment>Field</comment>
-  </data>
-  <data name="Yes" xml:space="preserve">
-    <value>是</value>
-    <comment>Field</comment>
   </data>
   <data name="ApplyToInvoiceNumber" xml:space="preserve">
     <value>核銷到發票編號</value>
@@ -285,7 +193,76 @@
     <value>庫存計量單位</value>
     <comment>Field</comment>
   </data>
-  <data name="ReconciliationHeaders" xml:space="preserve">
-    <value>調節標頭</value>
+  <data name="CannotbeBlankErrorMessage" xml:space="preserve">
+    <value>適用文件編號不能為空白。</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>全部清除</value>
+  </data>
+  <data name="CostMustNotBeNegative" xml:space="preserve">
+    <value>成本不能為負數。</value>
+  </data>
+  <data name="DocumentNumberInvalidCharMessage" xml:space="preserve">
+    <value>文件編號包含無效字元（“或\\）。</value>
+  </data>
+  <data name="InvalidApplyDocumentErrorMessage" xml:space="preserve">
+    <value>適用文檔編號 {0} 不存在。</value>
+  </data>
+  <data name="InvalidLotGenSettings" xml:space="preserve">
+    <value>「產生批次」或「每個批次擁有」必須有一個值為零，但兩者不能同時為零。</value>
+  </data>
+  <data name="ItemDoesNotExist" xml:space="preserve">
+    <value>項目 {0} 不存在</value>
+  </data>
+  <data name="ItemNumNotFound" xml:space="preserve">
+    <value>發票 {0} 中未找到商品編號。</value>
+  </data>
+  <data name="NextLotNumberCannotBeBlank" xml:space="preserve">
+    <value>下一個批號被留空。系統無法根據空白的下一個批號新增/產生批號。</value>
+  </data>
+  <data name="NextSerialNumberCannotBeBlank" xml:space="preserve">
+    <value>下一個序號已被留空。系統無法根據空白的下一個序號自動產生序號。</value>
+  </data>
+  <data name="StockDateConfirmMsg" xml:space="preserve">
+    <value>輸入的日期超出公司簡介中規定的日期範圍。</value>
+  </data>
+  <data name="AutoAllocateBlankSerialLotWarning" xml:space="preserve">
+    <value>要分配的 {0} 號為空。將分配下一個可用的 {0} 號。</value>
+  </data>
+  <data name="ConfirmClearSerialsandLots" xml:space="preserve">
+    <value>您確定要清除清單中所有以「0」開頭的數字嗎？</value>
+  </data>
+  <data name="DuplicateSerialOrLotNumber" xml:space="preserve">
+    <value>{0} 對帳明細。記錄已存在。</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>很多</value>
+  </data>
+  <data name="LotLower" xml:space="preserve">
+    <value>很多</value>
+  </data>
+  <data name="Lots" xml:space="preserve">
+    <value>很多</value>
+  </data>
+  <data name="OEItemConfirmation" xml:space="preserve">
+    <value>您是否要顯示套件組件？</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="SerialLower" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="SerialNumsRequired" xml:space="preserve">
+    <value>需要序號</value>
+  </data>
+  <data name="SerialOrLotNumberCannotGenerated" xml:space="preserve">
+    <value>由於下一個 {1} 編號為空，或在先前產生 {2} 編號時已重置，因此無法產生 {0} 編號。根據項目的 {1} 編號掩碼，如果產生了最後一個允許的 {1} 編號，則此欄位將被重設。</value>
+  </data>
+  <data name="SerialOrLotsAllocatedWarning" xml:space="preserve">
+    <value>未分配任何 {0} 號碼。可能沒有可指派的 {1} 號碼。執行日終處理後，可能會有可指派的 {1} 號碼。</value>
+  </data>
+  <data name="Serials" xml:space="preserve">
+    <value>連續劇</value>
   </data>
 </root>

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -2621,7 +2621,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             control.Refresh();
 
             // Add columns to fit size of parent control
-            var cols = parent.Parent.Width / 108;
+            var cols = 4; // NOT SIZING CORRECTLY parent.Parent.Width / 108;
             for (int i = 1; i <= cols; i++)
             {
                 control.Columns.Add(Constants.PrefixColumn + i, "");

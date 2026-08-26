@@ -485,4 +485,142 @@
     <value>Unidades de Medida de Peso</value>
     <comment>Weight Unit of Measure Title</comment>
   </data>
+  <data name="AllowDifferentLotQty" xml:space="preserve">
+    <value>Permitir que la cantidad de lote sea diferente de la cantidad en las entradas</value>
+  </data>
+  <data name="AllowDifferentSerialQty" xml:space="preserve">
+    <value>Permitir que la cantidad de números de serie difiera de la cantidad de las entradas.</value>
+  </data>
+  <data name="AllowDuplicateSerials" xml:space="preserve">
+    <value>Permitir números de serie duplicados</value>
+  </data>
+  <data name="AllowLotQtyMismatch" xml:space="preserve">
+    <value>Permitir discrepancia en la cantidad del lote</value>
+  </data>
+  <data name="AllowLotQuantityDifferent" xml:space="preserve">
+    <value>Permitir que la cantidad de lote sea diferente de la cantidad en las entradas</value>
+  </data>
+  <data name="AllowReuseLotNumbers" xml:space="preserve">
+    <value>Permitir reutilización de números de lote</value>
+  </data>
+  <data name="AllowReuseSerialNumbers" xml:space="preserve">
+    <value>Permitir la reutilización de números de serie</value>
+  </data>
+  <data name="AllowSerialAllocOnQtyOrd" xml:space="preserve">
+    <value>Utilice el campo «Cantidad pedida» en OE para la asignación de números de serie.</value>
+  </data>
+  <data name="AllowSerialQtyMismatch" xml:space="preserve">
+    <value>Permitir discrepancia de cantidad de números de serie</value>
+  </data>
+  <data name="AutoAllocation" xml:space="preserve">
+    <value>Asignación automática</value>
+  </data>
+  <data name="DaysOnQuarantine" xml:space="preserve">
+    <value>Días en cuarentena</value>
+  </data>
+  <data name="DaysToExpiry" xml:space="preserve">
+    <value>Días hasta el vencimiento</value>
+  </data>
+  <data name="Earliest" xml:space="preserve">
+    <value>El más temprano</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ExpiredLotMessage" xml:space="preserve">
+    <value>Mensaje de asignación de lote caducado</value>
+  </data>
+  <data name="ExpiredSerialAllocationMsg" xml:space="preserve">
+    <value>Mensaje de asignación de número de serie caducado</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Fecha de caducidad</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>Primero</value>
+  </data>
+  <data name="InvalidMaskFormat" xml:space="preserve">
+    <value>Formato de máscara no válido</value>
+  </data>
+  <data name="ItemDefaults" xml:space="preserve">
+    <value>Valores predeterminados del elemento</value>
+  </data>
+  <data name="Latest" xml:space="preserve">
+    <value>El último</value>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>Número de lote</value>
+  </data>
+  <data name="LotNumberMask" xml:space="preserve">
+    <value>Máscara de número de lote</value>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>Descripción de la máscara del número de lote</value>
+  </data>
+  <data name="LotReuseMismatchConflict" xml:space="preserve">
+    <value>Conflicto por discrepancia en la reutilización de lotes</value>
+  </data>
+  <data name="LotSeparators" xml:space="preserve">
+    <value>Separadores de lotes</value>
+  </data>
+  <data name="MaskStructure" xml:space="preserve">
+    <value>Estructura de la máscara</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Ninguna</value>
+  </data>
+  <data name="RecordNotFound" xml:space="preserve">
+    <value>no se ha definido para publicaciones seriadas.</value>
+  </data>
+  <data name="RecordNotFoundLot" xml:space="preserve">
+    <value>no se ha definido para los lotes.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>Separador</value>
+  </data>
+  <data name="SeparatorsUsedInLotMask" xml:space="preserve">
+    <value>Separadores utilizados en estructuras de máscara de lote</value>
+  </data>
+  <data name="SeparatorsUsedInSerialMask" xml:space="preserve">
+    <value>Separadores utilizados en estructuras de máscara en serie</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Número de serie</value>
+  </data>
+  <data name="SerialNumberMask" xml:space="preserve">
+    <value>Máscara de número de serie</value>
+  </data>
+  <data name="SerialNumberMaskDescription" xml:space="preserve">
+    <value>Descripción de la máscara del número de serie</value>
+  </data>
+  <data name="SerialReuseMismatchConflict" xml:space="preserve">
+    <value>Conflicto de discrepancia en la reutilización de números de serie</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Ordenar por</value>
+  </data>
+  <data name="SortByChangeWarning" xml:space="preserve">
+    <value>Advertencia. Una vez que se establece que el separador de estructura de máscara serie no está en uso, no se puede volver a configurar como en uso. ¿Desea continuar?</value>
+  </data>
+  <data name="SortLotsByChangeWarning" xml:space="preserve">
+    <value>Advertencia. Una vez que un separador de estructura de máscara de lote se configura como no en uso, no se puede restablecer para que esté en uso nuevamente. ¿Quieres continuar?</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>Fecha de existencias</value>
+  </data>
+  <data name="TabcaptionSerials" xml:space="preserve">
+    <value>Seriales</value>
+  </data>
+  <data name="UseQtyOrderedOEForLotAllocation" xml:space="preserve">
+    <value>Utilice el campo Cantidad pedida en OE para la asignación de números de lote</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="SortByDropdownChangeLotsWarning" xml:space="preserve">
+    <value>Advertencia. Cambiar esta opción podría provocar la reasignación de los lotes previamente asignados durante la entrada de transacciones. Esto puede hacer que el registro de una transacción falle. Puede optar por contabilizar todas las transacciones de I/C guardadas y ejecutar el procesamiento de fin de día antes de cambiar esta opción. ¿Desea continuar cambiando esta opción ahora?</value>
+  </data>
+  <data name="SortByDropdownChangeWarning" xml:space="preserve">
+    <value>Advertencia. Cambiar esta opción podría provocar la reasignación de los lotes previamente asignados durante la entrada de transacciones. Esto puede hacer que el registro de una transacción falle. Puede optar por contabilizar todas las transacciones de I/C guardadas y ejecutar el procesamiento de fin de día antes de cambiar esta opción. ¿Desea continuar cambiando esta opción ahora?</value>
+  </data>
 </root>

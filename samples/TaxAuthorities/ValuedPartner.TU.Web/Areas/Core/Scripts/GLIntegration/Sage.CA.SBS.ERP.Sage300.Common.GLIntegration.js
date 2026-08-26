@@ -243,12 +243,12 @@ glIntegrationUI = {
             // set G/L TransactionDetail Dirty
             glIntegrationUtils.setGLReferenceIntegrationDirty();
         });
-        $("#fromSegmentList").on("dblclick", "div", function (e) {
+        $("#fromSegmentList").on("dblclick", function (e) {
             glIntegrationUtils.moveSegmentItem(glIntegrationUI.fromSegmentList, glIntegrationUI.toSegmentList, true);
             // set G/L TransactionDetail Dirty
             glIntegrationUtils.setGLReferenceIntegrationDirty();
         });
-        $("#toSegmentList").on("dblclick", "div", function (e) {
+        $("#toSegmentList").on("dblclick", function (e) {
             glIntegrationUtils.moveSegmentItem(glIntegrationUI.toSegmentList, glIntegrationUI.fromSegmentList, false);
             // set G/L TransactionDetail Dirty
             glIntegrationUtils.setGLReferenceIntegrationDirty();
@@ -947,10 +947,12 @@ glIntegrationUtils = {
     checkIsDetailDirty: function (ddList, oldValue) {
         var selectedSourceTransactionType = parseInt($("#Data_SourceTransactionType").data("kendoDropDownList").value());
         var selectedGLTransactionField = parseInt($("#Data_GLTransactionField").data("kendoDropDownList").value());
+        var selectedDdlId = ddList.element[0].id;
         if (glIntegrationUI.glIntegrationModel.Data.koIsGLTransactionDetailDirty() === true) {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
                     glIntegrationUI.setWindowData(selectedSourceTransactionType, selectedGLTransactionField);
+                    $("#" + selectedDdlId).focus();
                 },
                 function () { // No
                     ddList.select(function (dataItem) {
@@ -961,6 +963,7 @@ glIntegrationUtils = {
                     selectedGLTransactionField = parseInt($("#Data_GLTransactionField").data("kendoDropDownList").value());
                     glIntegrationUI.glIntegrationModel.Data.koSourceTransactionType(selectedSourceTransactionType);
                     glIntegrationUI.glIntegrationModel.Data.koGLTransactionField(selectedGLTransactionField);
+                    $("#" + selectedDdlId).focus();
                 },
                 $.validator.format(glIntegrationDetailResource.saveConfirm, glIntegrationDetailResource.glIntegrationDetailTitle));
         } else {

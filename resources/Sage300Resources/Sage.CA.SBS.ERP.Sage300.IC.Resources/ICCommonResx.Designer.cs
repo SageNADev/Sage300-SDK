@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ICCommonResx {
@@ -970,6 +970,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contract Expiry Date.
+        /// </summary>
+        public static string ContractExpiryDate {
+            get {
+                return ResourceManager.GetString("ContractExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contract Price.
         /// </summary>
         public static string ContractPrice {
@@ -1146,6 +1155,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         public static string Country {
             get {
                 return ResourceManager.GetString("Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create New.
+        /// </summary>
+        public static string CreateNew {
+            get {
+                return ResourceManager.GetString("CreateNew", resourceCulture);
             }
         }
         
@@ -2320,6 +2338,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From Lot Number.
+        /// </summary>
+        public static string FromLotNumber {
+            get {
+                return ResourceManager.GetString("FromLotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Price List.
         /// </summary>
         public static string FromPriceList {
@@ -2352,6 +2379,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         public static string FromReceiptNumber {
             get {
                 return ResourceManager.GetString("FromReceiptNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Stock Date.
+        /// </summary>
+        public static string FromStockDate {
+            get {
+                return ResourceManager.GetString("FromStockDate", resourceCulture);
             }
         }
         
@@ -2847,6 +2883,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         public static string ItemNumber {
             get {
                 return ResourceManager.GetString("ItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item Numbers.
+        /// </summary>
+        public static string ItemNumbers {
+            get {
+                return ResourceManager.GetString("ItemNumbers", resourceCulture);
             }
         }
         
@@ -5479,6 +5524,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;Warning. Once a serial mask structure separator is set to not in use, it cannot be reset to in use again. Do you want to proceed?.
+        /// </summary>
+        public static string SerialMaskStructureConfirmation {
+            get {
+                return ResourceManager.GetString("SerialMaskStructureConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serial Number.
         /// </summary>
         public static string SerialNumber {
@@ -5848,6 +5902,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String3 {
+            get {
+                return ResourceManager.GetString("String3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Structure Code.
         /// </summary>
         public static string StructureCode {
@@ -6028,11 +6091,29 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To Lot Number.
+        /// </summary>
+        public static string ToLotNumber {
+            get {
+                return ResourceManager.GetString("ToLotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To Receipt Number.
         /// </summary>
         public static string ToReceiptNo {
             get {
                 return ResourceManager.GetString("ToReceiptNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Stock Date.
+        /// </summary>
+        public static string ToStockDate {
+            get {
+                return ResourceManager.GetString("ToStockDate", resourceCulture);
             }
         }
         
@@ -6465,6 +6546,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         public static string Warranty {
             get {
                 return ResourceManager.GetString("Warranty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warranty Expiry Date.
+        /// </summary>
+        public static string WarrantyExpiryDate {
+            get {
+                return ResourceManager.GetString("WarrantyExpiryDate", resourceCulture);
             }
         }
         

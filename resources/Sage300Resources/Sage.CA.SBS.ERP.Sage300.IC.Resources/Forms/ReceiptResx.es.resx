@@ -337,4 +337,23 @@
   <data name="ReceiptDescription" xml:space="preserve">
     <value>Descripción de Recibo</value>
   </data>
+  <data name="ConfirmationErrorMessage" xml:space="preserve">
+    <value>La cantidad de números de serie restante no es cero. No podrá guardar el registro. ¿Desea continuar?</value>
+  </data>
+  <data name="QuantityErrorValidation" xml:space="preserve">
+    <value>La cantidad y los números de serie/lote asignados deben coincidir.</value>
+  </data>
+  <data name="QuantityReceivedValidation" xml:space="preserve">
+    <value>La cantidad recibida no puede ser cero.</value>
+  </data>
+  <data name="LotConfirmationErrorMessage" xml:space="preserve">
+    <value>La cantidad restante del lote no es cero. No podrá guardar el registro. ¿Desea continuar?</value>
+  </data>
+  <data name="SerialConfirmationErrorMessage" xml:space="preserve">
+    <value>La cantidad de números de serie restante no es cero. No podrá guardar el registro. ¿Desea continuar?</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="greaterReturnQTYmsg" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
 </root>

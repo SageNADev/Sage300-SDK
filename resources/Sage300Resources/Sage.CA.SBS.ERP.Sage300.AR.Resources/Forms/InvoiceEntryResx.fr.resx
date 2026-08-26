@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -311,5 +311,47 @@
   </data>
   <data name="LessEstTaxWithheld" xml:space="preserve">
     <value>Moins impôt retenu estimé</value>
+  </data>
+  <data name="BatchDescription" xml:space="preserve">
+    <value>Description-Lot</value>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>Description-Saisie</value>
+  </data>
+  <data name="CreateReverseBatch" xml:space="preserve">
+    <value>Créer lot d'extournes</value>
+  </data>
+  <data name="CreateReverseEntryTitle" xml:space="preserve">
+    <value>Créer écriture d'extourne</value>
+  </data>
+  <data name="ReverseBatch" xml:space="preserve">
+    <value>Voulez-vous vraiment extourner l'ensemble du lot?</value>
+  </data>
+  <data name="ReverseEntry" xml:space="preserve">
+    <value>Extourner l'écriture?</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="OriginalWithPrefix" xml:space="preserve">
+    <value>Original avec préfixe</value>
+  </data>
+  <data name="NewDescription" xml:space="preserve">
+    <value>Nouvelle description</value>
+  </data>
+  <data name="CreatedReverseEntryNo" xml:space="preserve">
+    <value>N° écriture d'extourne créé</value>
+  </data>
+  <data name="DocumentNumberOption" xml:space="preserve">
+    <value>N° document</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>Généré</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>Saisi</value>
+  </data>
+  <data name="ReverseNonARBatches" xml:space="preserve">
+    <value>La contrepassation d'un lot du livre auxiliaire peut entraîner des écarts de rapprochement entre Comptes clients et ses livres auxiliaires associés.</value>
   </data>
 </root>

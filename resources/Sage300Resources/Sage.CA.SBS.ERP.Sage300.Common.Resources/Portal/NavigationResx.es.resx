@@ -435,7 +435,10 @@
   <data name="CS_CompanyProfile" xml:space="preserve">
     <value>Perfil de la Empresa</value>
   </data>
-  <data name="CS_FiscalCalendar" xml:space="preserve">
+	<data name="CS_EmailHistory" xml:space="preserve">
+    <value>Historial de Correos</value>
+  </data>
+	<data name="CS_FiscalCalendar" xml:space="preserve">
     <value>Calendario Fiscal</value>
   </data>
   <data name="Currency" xml:space="preserve">
@@ -1393,7 +1396,7 @@
     <value>Personalice el menú de navegación al ocultar o mostrar pantallas web y categorías. Si usted oculta todas las pantallas de un módulo, el módulo no aparece en le menú de navegación.</value>
   </data>
   <data name="CompanySetup" xml:space="preserve">
-    <value>Configuración de Empresa</value>
+    <value>Empresa</value>
   </data>
   <data name="DataAndMaintenance" xml:space="preserve">
     <value>Datos y Mantenimiento</value>
@@ -1796,16 +1799,64 @@
   <data name="PM_Adjustments" xml:space="preserve">
     <value>Ajustes</value>
   </data>
-  <data name="PM_Timecards" xml:space="preserve">
-    <value>Timecards</value>
-  </data>
   <data name="PM_TransactionHistory" xml:space="preserve">
     <value>Historial de transacciones</value>
+  </data>
+  <data name="PM_Timecards" xml:space="preserve">
+    <value>Timecards</value>
   </data>
   <data name="PM_Transaction_History" xml:space="preserve">
     <value>Historial Transacciones</value>
   </data>
   <data name="PM_BudgetMaintenance" xml:space="preserve">
     <value>Mantenimiento de Presupuesto</value>
+  </data>
+  <data name="IC_Serial_Lot_Stock_Listing_Report" xml:space="preserve">
+    <value>List. de Exist. en Serie/Lote</value>
+  </data>
+  <data name="IC_Mask_Structure" xml:space="preserve">
+    <value>Estructuras de Máscara</value>
+  </data>
+  <data name="IC_Quarantine_Release" xml:space="preserve">
+    <value>Salida de Cuarentena</value>
+  </data>
+  <data name="HelpAgent" xml:space="preserve">
+    <value>Búsqueda asistida</value>
+  </data>
+  <data name="IC_Warranty_Update" xml:space="preserve">
+    <value>Actualización de la garantía</value>
+  </data>
+  <data name="IC_Lot_Number_Inquiry" xml:space="preserve">
+    <value>Consulta de Número de Lote</value>
+  </data>
+  <data name="CF1000" xml:space="preserve">
+    <value>C/F Inquiry</value>
+  </data>
+  <data name="CF1101" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="CF1102" xml:space="preserve">
+    <value>Cash Flow Summary</value>
+  </data>
+  <data name="CF1103" xml:space="preserve">
+    <value>A/R Summary</value>
+  </data>
+  <data name="CF1104" xml:space="preserve">
+    <value>A/P Summary</value>
+  </data>
+  <data name="CF1105" xml:space="preserve">
+    <value>Loan</value>
+  </data>
+  <data name="CF9000" xml:space="preserve">
+    <value>C/F Setup</value>
+  </data>
+  <data name="CF9100" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations" xml:space="preserve">
+    <value>Conciliaciones de Nº Serie/Lote</value>
+  </data>
+  <data name="IC_Lot_Splits_Combine" xml:space="preserve">
+    <value>Repartos/Combinac. de Lotes</value>
   </data>
 </root>

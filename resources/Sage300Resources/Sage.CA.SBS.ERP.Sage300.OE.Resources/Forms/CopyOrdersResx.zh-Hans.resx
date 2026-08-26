@@ -189,4 +189,7 @@
     <value>创建</value>
     <comment>Button</comment>
   </data>
+  <data name="CannotChangeLocationForSerialLotItem" xml:space="preserve">
+    <value>输入订购数量后，您无法更改序列号管理或批次管理物料的库位。</value>
+  </data>
 </root>

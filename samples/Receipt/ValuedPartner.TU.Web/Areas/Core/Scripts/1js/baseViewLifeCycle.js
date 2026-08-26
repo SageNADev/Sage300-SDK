@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2026 Sage Software, Inc.  All rights reserved. */
 
 (function () {
     'use strict';
@@ -1108,7 +1108,7 @@
         makeDocReady: function () {
             let self = this;
 
-            $(document).ready(function(e) {
+            $(function (e) {
                 self.windowBeforeUnload();
                 self.addCustomFields();
                 self.setMainUIVCRBindings();

@@ -180,6 +180,9 @@
   <data name="EmployeeName" xml:space="preserve">
     <value>Nom de l’employé</value>
   </data>
+  <data name="Employer" xml:space="preserve">
+    <value>Employeur</value>
+  </data>
   <data name="EmployerExpenseAccount" xml:space="preserve">
     <value>Cpte de charges-Employeur</value>
   </data>

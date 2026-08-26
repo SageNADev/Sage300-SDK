@@ -1728,4 +1728,7 @@
   <data name="NetReturnTotal" xml:space="preserve">
     <value>净退货合计</value>
   </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>位置不能为空。</value>
+  </data>
 </root>

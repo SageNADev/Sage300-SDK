@@ -977,5 +977,25 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
                 return ResourceManager.GetString("UseSeparateDocuments", resourceCulture);
             }
         }
+
+        public static string EmailOptions {
+            get { return ResourceManager.GetString("EmailOptions", resourceCulture); }
+        }
+
+        public static string SenderEmailForInvoices {
+            get { return ResourceManager.GetString("SenderEmailForInvoices", resourceCulture); }
+        }
+
+        public static string SenderEmailForReceipts {
+            get { return ResourceManager.GetString("SenderEmailForReceipts", resourceCulture); }
+        }
+
+        public static string SenderEmailForStatements {
+            get { return ResourceManager.GetString("SenderEmailForStatements", resourceCulture); }
+        }
+
+        public static string InvalidEmailAddress {
+            get { return ResourceManager.GetString("InvalidEmailAddress", resourceCulture); }
+        }
     }
 }

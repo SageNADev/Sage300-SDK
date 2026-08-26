@@ -133,6 +133,10 @@
     <value>Close Serial Number</value>
     <comment>Used in Export/Import</comment>
   </data>
+  <data name="CostMismatchWarning" xml:space="preserve">
+    <value>Serial/Lot cost does not match with the cost variance.</value>
+    <comment>.</comment>
+  </data>
   <data name="DateCreated" xml:space="preserve">
     <value>Date Created</value>
     <comment>Used in Export/Import</comment>
@@ -247,6 +251,9 @@
   <data name="ProcessAction" xml:space="preserve">
     <value>Process Action</value>
     <comment>Used in Export/Import</comment>
+  </data>
+  <data name="QuantityMismatchWarning" xml:space="preserve">
+    <value>Serial/Lot quantity does not match with the Variance quantity.</value>
   </data>
   <data name="QuantityOnHand" xml:space="preserve">
     <value>Quantity On Hand</value>

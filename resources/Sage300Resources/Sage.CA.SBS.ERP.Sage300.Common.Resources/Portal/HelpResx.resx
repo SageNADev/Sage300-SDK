@@ -1212,6 +1212,9 @@
   <data name="CS_FiscalCalendar_Screen" xml:space="preserve">
     <value>Fiscal Calendar Screen</value>
   </data>
+  <data name="CS_EmailHistory_Screen" xml:space="preserve">
+    <value>Email History Screen</value>
+  </data>
   <data name="CS_Module" xml:space="preserve">
     <value>Browse Administration Articles</value>
     <comment>CSHID 71000001</comment>
@@ -1517,7 +1520,7 @@
   </data>
   <data name="IC_Items_Screen" xml:space="preserve">
     <value>I/C Items Screen</value>
-    <comment>CSHID 211022001</comment>
+    <comment>123041008</comment>
   </data>
   <data name="IC_ManufacturersItems_Article1" xml:space="preserve">
     <value>I/C Items Screen</value>
@@ -1553,7 +1556,7 @@
   </data>
   <data name="IC_Options_Screen" xml:space="preserve">
     <value>I/C Options Screen</value>
-    <comment>CSHID 211001001</comment>
+    <comment>123041007</comment>
   </data>
   <data name="IC_SegmentCodes_Article1" xml:space="preserve">
     <value>About Segment Codes</value>
@@ -1976,23 +1979,23 @@
   </data>
   <data name="IC_Receipts_Article2" xml:space="preserve">
     <value>Entering Adjustments to Existing Receipts</value>
-    <comment>CSHID 211017003</comment>
+    <comment>123043002</comment>
   </data>
   <data name="IC_Receipts_Screen" xml:space="preserve">
     <value>I/C Receipts Screen</value>
-    <comment>CSHID 211017001</comment>
+    <comment>123042001</comment>
   </data>
   <data name="IC_Shipments_Article1" xml:space="preserve">
-    <value>About Shipments</value>
-    <comment>CSHID 211018002</comment>
+    <value>Shipping Goods to Customers</value>
+    <comment>123043008</comment>
   </data>
   <data name="IC_Shipments_Article2" xml:space="preserve">
-    <value>Shipping Goods to Customers</value>
-    <comment>CSHID 211018003</comment>
+    <value>Receive Returned Goods from Customers</value>
+    <comment>123043009</comment>
   </data>
   <data name="IC_Shipments_Screen" xml:space="preserve">
     <value>I/C Shipments Screen</value>
-    <comment>CSHID 211018001</comment>
+    <comment>123042002</comment>
   </data>
   <data name="PO_ShippableBackorders_Report_Article1" xml:space="preserve">
     <value>About Purchase Orders Reports</value>
@@ -2880,7 +2883,7 @@
   </data>
   <data name="IC_Adjustments_Screen" xml:space="preserve">
     <value>I/C Adjustments Screen</value>
-    <comment>CSHID 211021001</comment>
+    <comment>123042003</comment>
   </data>
   <data name="IC_OverstockedItems_Report_Article1" xml:space="preserve">
     <value>Inventory Control Reports</value>
@@ -2928,7 +2931,7 @@
   </data>
   <data name="IC_PhysicalInventoryQuantities_Screen" xml:space="preserve">
     <value>I/C Physical Inventory Quantities Screen</value>
-    <comment>CSHID 211041001</comment>
+    <comment>123042007</comment>
   </data>
   <data name="IC_ReorderQuantities_Article1" xml:space="preserve">
     <value>About Reorder Information</value>
@@ -3060,7 +3063,7 @@
   </data>
   <data name="IC_Transfers_Screen" xml:space="preserve">
     <value>I/C Transfers Screen</value>
-    <comment>CSHID 211029001</comment>
+    <comment>123042004</comment>
   </data>
   <data name="PO_MailingLabels_Article1" xml:space="preserve">
     <value>About Purchase Order Forms</value>
@@ -3116,7 +3119,7 @@
   </data>
   <data name="IC_LocationDetails_Screen" xml:space="preserve">
     <value>I/C Location Details Screen</value>
-    <comment>CSHID 211034001</comment>
+    <comment>123041009</comment>
   </data>
   <data name="IC_InternalUsage_Article1" xml:space="preserve">
     <value>About Transaction Processing in Inventory Control</value>
@@ -3128,7 +3131,7 @@
   </data>
   <data name="IC_InternalUsage_Screen" xml:space="preserve">
     <value>I/C Internal Usage Screen</value>
-    <comment>CSHID 211020001</comment>
+    <comment>123042006</comment>
   </data>
   <data name="GL_ClearHistory_Article1" xml:space="preserve">
     <value>Period-End Procedures</value>
@@ -3236,7 +3239,7 @@
   </data>
   <data name="IC_WarrantyContractList_Report_Screen" xml:space="preserve">
     <value>I/C Warranty/Contract List Report Screen</value>
-    <comment>CSHID 211105001</comment>
+    <comment>123031301</comment>
   </data>
   <data name="IC_CurrentTransactionsInquiry_Article1" xml:space="preserve">
     <value>About Transaction Processing in Inventory Control</value>
@@ -3276,7 +3279,7 @@
   </data>
   <data name="IC_Quarantine_Report_Screen" xml:space="preserve">
     <value>I/C Quarantine Report Screen</value>
-    <comment>CSHID 211099001</comment>
+    <comment>123027001</comment>
   </data>
   <data name="GL_SourceJournalProfiles_Report_Article1" xml:space="preserve">
     <value>About General Ledger Reports</value>
@@ -3336,19 +3339,19 @@
   </data>
   <data name="IC_SerialLotTransactions_Report_Screen" xml:space="preserve">
     <value>I/C Serial/Lot Transactions Report Screen</value>
-    <comment>CSHID 211104001</comment>
+    <comment>123031201</comment>
   </data>
   <data name="IC_SerialNumberInquiry_Article1" xml:space="preserve">
-    <value>About Serialized Inventory and Lot Tracking</value>
-    <comment>CSHID 211098002</comment>
-  </data>
-  <data name="IC_SerialNumberInquiry_Article2" xml:space="preserve">
     <value>Looking Up Serial Number Information</value>
-    <comment>CSHID 211098003</comment>
+    <comment>123051001</comment>
+  </data>
+  <data name="IC_Serial_Lot_NumberInquiry_Article2" xml:space="preserve">
+    <value>Looking Up Transaction History</value>
+    <comment>123051003</comment>
   </data>
   <data name="IC_SerialNumberInquiry_Screen" xml:space="preserve">
     <value>I/C Serial Number Inquiry Screen</value>
-    <comment>CSHID 211098001</comment>
+    <comment>123041004</comment>
   </data>
   <data name="AP_DeleteInactiveRecords_Article1" xml:space="preserve">
     <value>About Deleting Inactive Records</value>
@@ -3372,7 +3375,7 @@
   </data>
   <data name="IC_Recall_Report_Screen" xml:space="preserve">
     <value>I/C Recall Report Screen</value>
-    <comment>CSHID 211100001</comment>
+    <comment>123028001</comment>
   </data>
   <data name="GL_CreateAllocationBatch_Article1" xml:space="preserve">
     <value>Period-End Procedures</value>
@@ -3604,15 +3607,15 @@
   </data>
   <data name="IC_CopyBillOfMaterials_Article1" xml:space="preserve">
     <value>About Bills of Material</value>
-    <comment>CSHID 211066002</comment>
+    <comment>CSHID 123072003</comment>
   </data>
   <data name="IC_CopyBillOfMaterials_Article2" xml:space="preserve">
     <value>Copying Bills of Material</value>
-    <comment>CSHID 211066003</comment>
+    <comment>CSHID 123072003</comment>
   </data>
   <data name="IC_CopyBillOfMaterials_Screen" xml:space="preserve">
     <value>I/C Copy Bills of Material Screen</value>
-    <comment>CSHID 211066001</comment>
+    <comment>CSHID 123072003</comment>
   </data>
   <data name="IC_ItemsWizard_Article1" xml:space="preserve">
     <value>Adding Inventory Items Using the Items Wizard</value>
@@ -3684,7 +3687,7 @@
   </data>
   <data name="IC_SerialLotNumberList_Report_Screen" xml:space="preserve">
     <value>I/C Serial/Lot Number List Report Screen</value>
-    <comment>CSHID 211101001</comment>
+    <comment>123029001</comment>
   </data>
   <data name="IC_SerialLotNumberQuantityOnHand_Report_Article1" xml:space="preserve">
     <value>About Serialized Inventory and Lot Tracking</value>
@@ -3696,7 +3699,7 @@
   </data>
   <data name="IC_SerialLotNumberQuantityOnHand_Report_Screen" xml:space="preserve">
     <value>I/C Serial/Lot Number Quantity on Hand Report Screen</value>
-    <comment>CSHID 211102001</comment>
+    <comment>123030001</comment>
   </data>
   <data name="AR_CustomerGroups_Report_Article1" xml:space="preserve">
     <value>About Accounts Receivable Reports</value>
@@ -3744,7 +3747,7 @@
   </data>
   <data name="IC_LotNumbers_Screen" xml:space="preserve">
     <value>I/C Lot Numbers Screen</value>
-    <comment>CSHID 211069001</comment>
+    <comment>123031701</comment>
   </data>
   <data name="OE_InvoiceEntry_Article1" xml:space="preserve">
     <value>About Orders, Shipments, and Invoices</value>
@@ -3948,7 +3951,7 @@
   </data>
   <data name="IC_ContractCodes_Screen" xml:space="preserve">
     <value>I/C Contract Codes Screen</value>
-    <comment>CSHID 211081001</comment>
+    <comment>123041003</comment>
   </data>
   <data name="AP_ClearHistory_Article1" xml:space="preserve">
     <value>Clearing Obsolete Data from Accounts Payable</value>
@@ -4060,15 +4063,15 @@
   </data>
   <data name="IC_UpdateBillsOfMaterials_Article1" xml:space="preserve">
     <value>About Bills of Material</value>
-    <comment>CSHID 211071002</comment>
+    <comment>CSHID 123071002</comment>
   </data>
   <data name="IC_UpdateBillsOfMaterials_Article2" xml:space="preserve">
     <value>Updating Bills of Material</value>
-    <comment>CSHID 211071003</comment>
+    <comment>CSHID 123071002</comment>
   </data>
   <data name="IC_UpdateBillsOfMaterials_Screen" xml:space="preserve">
     <value>I/C Update Bills of Material Screen</value>
-    <comment>CSHID 211071001</comment>
+    <comment>CSHID 123071002</comment>
   </data>
   <data name="OE_ShipmentEntry_Article1" xml:space="preserve">
     <value>About Orders, Shipments, and Invoices</value>
@@ -4110,11 +4113,11 @@
   </data>
   <data name="IC_SerialRegistration_Article2" xml:space="preserve">
     <value>Registering Serial Numbers for Customer Warranties</value>
-    <comment>CSHID 211079003</comment>
+    <comment>123044001</comment>
   </data>
   <data name="IC_SerialRegistration_Screen" xml:space="preserve">
     <value>I/C Serial Registration Screen</value>
-    <comment>CSHID 211079001</comment>
+    <comment>123041001</comment>
   </data>
   <data name="IC_WarrantyCodes_Article1" xml:space="preserve">
     <value>Warranty Codes</value>
@@ -4126,7 +4129,7 @@
   </data>
   <data name="IC_WarrantyCodes_Screen" xml:space="preserve">
     <value>I/C Warranty Codes Screen</value>
-    <comment>CSHID 211083001</comment>
+    <comment>123051400</comment>
   </data>
   <data name="AR_ShipToLocations_Report_Article1" xml:space="preserve">
     <value>About Accounts Receivable Reports</value>
@@ -4345,7 +4348,7 @@
     <value>Knowledgebase</value>
   </data>
   <data name="SageSupport_LiveChat" xml:space="preserve">
-    <value>Live Chat</value>
+    <value>Chat</value>
   </data>
   <data name="SageSupport_Remote" xml:space="preserve">
     <value>Remote Support Session</value>
@@ -5498,17 +5501,17 @@
     <value>Printing the I/C Item Structures Report</value>
     <comment>CSHID 211122003</comment>
   </data>
-  <data name="IC_MaskStructures_Report_Screen" xml:space="preserve">
-    <value>I/C Mask Structures Report</value>
-    <comment>CSHID 211127001</comment>
+  <data name="IC_MaskStructures_Report_Article3" xml:space="preserve">
+    <value>Changing or Deleting Mask Structures</value>
+    <comment>677003000</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211127002</comment>
+    <value>Printing Mask Structures Report</value>
+    <comment>211127003</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Mask Structures Report</value>
-    <comment>CSHID 211127003</comment>
+    <value>Adding Mask Structures</value>
+    <comment>677002009</comment>
   </data>
   <data name="IC_SegmentCodes_Report_Screen" xml:space="preserve">
     <value>I/C Segment Codes Report</value>
@@ -5764,5 +5767,120 @@
   <data name="PM_Setup_Subcontractors_Screen" xml:space="preserve">
     <value>Subcontractors</value>
     <comment>123018001</comment>
+  </data>
+  <data name="IC_SerialLotStockListingReport_Screen" xml:space="preserve">
+    <value>I/C Serial/Lot Stock Listing Report</value>
+    <comment>123031101</comment>
+  </data>
+  <data name="IC_QuarantineRelease_Screen" xml:space="preserve">
+    <value>I/C Quarantine Release Screen</value>
+    <comment>123031601</comment>
+  </data>
+  <data name="IC_MaskStructures_Screen" xml:space="preserve">
+    <value>I/C Mask Structures Screen</value>
+    <comment>123031501</comment>
+  </data>
+  <data name="IC_WarrantyUpdate_Screen" xml:space="preserve">
+    <value>I/C Warranty Update Screen</value>
+    <comment>123041002</comment>
+  </data>
+  <data name="IC_QuarantineRelease_Article1" xml:space="preserve">
+    <value>Releasing Lots from Quarantine</value>
+    <comment>211000001</comment>
+  </data>
+  <data name="IC_Receipts_Article3" xml:space="preserve">
+    <value>Returning Goods to Vendor</value>
+    <comment>123042008</comment>
+  </data>
+  <data name="IC_Receipts_Article4" xml:space="preserve">
+    <value>Receiving Goods from Vendor</value>
+    <comment>123042009</comment>
+  </data>
+  <data name="IC_Receipts_Article5" xml:space="preserve">
+    <value>Posting Saved Receipts</value>
+    <comment>123043001</comment>
+  </data>
+  <data name="IC_Transfers_Article3" xml:space="preserve">
+    <value>Posting Inventory Transactions</value>
+    <comment>123043003</comment>
+  </data>
+  <data name="IC_Receipts_Article8" xml:space="preserve">
+    <value>Receiving Goods from Goods-In-Transit Location</value>
+    <comment>123043005</comment>
+  </data>
+  <data name="IC_Transfers_Article4" xml:space="preserve">
+    <value>Assigning Serial Lot Number</value>
+    <comment>123043004</comment>
+  </data>
+  <data name="IC_LotNumberInquiry_Screen" xml:space="preserve">
+    <value>I/C Lot Numbers Inquiry</value>
+    <comment>123041006</comment>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations" xml:space="preserve">
+    <value>I/C Serial/Lot Reconciliation Screen</value>
+    <comment>123031901</comment>
+  </data>
+  <data name="IC_Receipts_Article6" xml:space="preserve">
+    <value>Posting Inventory Transactions</value>
+    <comment>123050000</comment>
+  </data>
+  <data name="IC_Receipts_Article7" xml:space="preserve">
+    <value>Assigning Serial Lot Number</value>
+    <comment>123043004</comment>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations_Article1" xml:space="preserve">
+    <value>Reconciling Serial and Lot Numbers</value>
+    <comment>123043006</comment>
+  </data>
+  <data name="IC_Shipments_Article3" xml:space="preserve">
+    <value>Assigning Serial/Lot Numbers for Shipments</value>
+    <comment>123043007</comment>
+  </data>
+  <data name="IC_Shipments_Article4" xml:space="preserve">
+    <value>Posting Inventory Transactions</value>
+    <comment>123050000</comment>
+  </data>
+  <data name="CF_Dashboard_Inquiry" xml:space="preserve">
+    <value>C/F Dashboard Inquiry</value>
+  </data>
+  <data name="CF_Setup_Options" xml:space="preserve">
+    <value>C/F Options Screen </value>
+  </data>
+  <data name="CF_Cash_Flow_Summary" xml:space="preserve">
+    <value>C/F Cash Flow Summary </value>
+  </data>
+  <data name="CF_AR_Summary" xml:space="preserve">
+    <value>C/F AR Summary </value>
+  </data>
+  <data name="CF_AR_Top_10_Customers" xml:space="preserve">
+    <value>A/R Top 10 Customers by Outstanding Balance and Forecast </value>
+  </data>
+  <data name="CF_AP_Summary" xml:space="preserve">
+    <value>C/F AP Summary </value>
+  </data>
+  <data name="CF_AP_Top_10_Vendors" xml:space="preserve">
+    <value>A/P Top 10 Vendors by Outstanding Balance and Forecast </value>
+  </data>
+  <data name="CF_Cash_Flow_Summary_Report" xml:space="preserve">
+    <value>Cash Flow Summary Reports </value>
+  </data>
+  <data name="CF_Dashboard_Reports" xml:space="preserve">
+    <value>Dashboard Reports</value>
+  </data>
+  <data name="IC_Serial_Lot_NumberInquiry_Article3" xml:space="preserve">
+    <value>Looking Up Transaction Statistics</value>
+    <comment>123051004</comment>
+  </data>
+  <data name="IC_LotNumberInquiry_Article1" xml:space="preserve">
+    <value>Looking Up Lot Number Information</value>
+    <comment>123051002</comment>
+  </data>
+  <data name="IC_Lot_Split_Combine_Article1" xml:space="preserve">
+    <value>Splitting and Combining Lots</value>
+    <comment>123031801</comment>
+  </data>
+  <data name="IC_Lot_Split_Combine_Screen" xml:space="preserve">
+    <value>I/C Lot Splits/Combines</value>
+    <comment>123031801</comment>
   </data>
 </root>

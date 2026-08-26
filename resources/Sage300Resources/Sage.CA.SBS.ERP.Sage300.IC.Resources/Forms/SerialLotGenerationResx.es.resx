@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustAll" xml:space="preserve">
+    <value>Ajustar todo</value>
+  </data>
+  <data name="AdjustedCost" xml:space="preserve">
+    <value>Costo ajustado</value>
+  </data>
+  <data name="AdjustmentCost" xml:space="preserve">
+    <value>Costo de ajuste</value>
+  </data>
+  <data name="Allocated" xml:space="preserve">
+    <value>Asignado</value>
+  </data>
+  <data name="Allocation" xml:space="preserve">
+    <value>Asignación</value>
+  </data>
+  <data name="AllocLotNoneWarning" xml:space="preserve">
+    <value>No se asignaron números de lote. Es posible que no haya lotes con cantidad suficiente disponible para asignar. Después de ejecutar el procesamiento de fin de día, podrían existir lotes con cantidad disponible para asignar.</value>
+  </data>
+  <data name="AllocLotSomeWarning" xml:space="preserve">
+    <value>No se asignó toda la cantidad de lotes requerida. Es posible que no existan más lotes con cantidad suficiente para asignar. Después del procesamiento de fin de día, podrían estar disponibles más lotes.</value>
+  </data>
+  <data name="AllocSerialNoneWarning" xml:space="preserve">
+    <value>No se asignaron números de serie. Es posible que no haya números de serie disponibles para asignar. Después del procesamiento de fin de día, podrían estar disponibles.</value>
+  </data>
+  <data name="AllocSerialSomeWarning" xml:space="preserve">
+    <value>No se asignaron todos los números de serie requeridos. Es posible que no haya más números de serie disponibles. Después del procesamiento de fin de día, podrían estar disponibles más números de serie.</value>
+  </data>
+  <data name="Assigned" xml:space="preserve">
+    <value>Asignado</value>
+  </data>
+  <data name="AutoAllocFrom" xml:space="preserve">
+    <value>Auto-asignar Desde</value>
+  </data>
+  <data name="AutoGenFailedMessage" xml:space="preserve">
+    <value>Error al generar automáticamente los números {0}.</value>
+  </data>
+  <data name="CannotBeBlankErrorMessage" xml:space="preserve">
+    <value>El número {0} no puede estar vacío.</value>
+  </data>
+  <data name="ClearLotNumbersConfirmMessage" xml:space="preserve">
+    <value>¿Está seguro de que desea eliminar todos los números de lote de la lista?</value>
+  </data>
+  <data name="ClearSerialNumbersConfirmMessage" xml:space="preserve">
+    <value>¿Está seguro de que desea eliminar todos los números de serie de la lista?</value>
+  </data>
+  <data name="CloseWithLotRemainingMessage" xml:space="preserve">
+    <value>La cantidad restante del lote no es cero. No podrá guardar el registro.</value>
+  </data>
+  <data name="CloseWithSerialAndLotRemainingMessage" xml:space="preserve">
+    <value>Tanto las cantidades restantes de serie como de lote no son cero. No podrá guardar el registro.</value>
+  </data>
+  <data name="CloseWithSerialRemainingMessage" xml:space="preserve">
+    <value>La cantidad restante de serie no es cero. No podrá guardar el registro.</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>¿Desea continuar?</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Costo</value>
+  </data>
+  <data name="CostAdjustAll" xml:space="preserve">
+    <value>Ajustar todos los costos</value>
+  </data>
+  <data name="CostAdjusted" xml:space="preserve">
+    <value>Costo ajustado</value>
+  </data>
+  <data name="DeletelineWarning" xml:space="preserve">
+    <value>Seleccione una fila para eliminar.</value>
+  </data>
+  <data name="EmptyNextLotNo" xml:space="preserve">
+    <value>El siguiente número de lote está vacío. El sistema no puede agregar/generar un número de lote basándose en un valor vacío.</value>
+  </data>
+  <data name="EmptyNextSerialNumber" xml:space="preserve">
+    <value>El siguiente número de serie está vacío. El sistema no puede agregar/generar un número de serie basándose en un valor vacío.</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Fch. Caducidad</value>
+  </data>
+  <data name="ExpiryDateBeforeStockDateWarning" xml:space="preserve">
+    <value>Advertencia. La fecha de vencimiento es anterior a la fecha de inventario para el lote {0}.</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>Generado</value>
+  </data>
+  <data name="GeneratedAllocated" xml:space="preserve">
+    <value>Generado/Asignado</value>
+  </data>
+  <data name="Generation" xml:space="preserve">
+    <value>Generación</value>
+  </data>
+  <data name="GenerationAllocation" xml:space="preserve">
+    <value>Generación/Asignación</value>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>N° Artículo</value>
+  </data>
+  <data name="LAssigned" xml:space="preserve">
+    <value>Lotes asignados</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="LotEntity" xml:space="preserve">
+    <value>Generación/Asignación de números de lote</value>
+  </data>
+  <data name="LotNoRequired" xml:space="preserve">
+    <value>Cantidad de lote requerida</value>
+  </data>
+  <data name="LotNumbers" xml:space="preserve">
+    <value>Nº Lote</value>
+  </data>
+  <data name="LotNumberValidationMessage" xml:space="preserve">
+    <value>El siguiente número de lote no es válido para la máscara actual.</value>
+  </data>
+  <data name="LotsAdjusted" xml:space="preserve">
+    <value>Lotes ajustados</value>
+  </data>
+  <data name="LotsReceived" xml:space="preserve">
+    <value>Lotes recibidos</value>
+  </data>
+  <data name="LotsReturned" xml:space="preserve">
+    <value>Lotes devueltos</value>
+  </data>
+  <data name="LotsShipped" xml:space="preserve">
+    <value>Lotes enviados</value>
+  </data>
+  <data name="NextSerialOrLotNumberBlankError" xml:space="preserve">
+    <value>El siguiente número {0} está vacío. El sistema no puede agregar/generar un número {0} basándose en un valor vacío.</value>
+  </data>
+  <data name="NoSerialOrLotNumberGeneratedWarning" xml:space="preserve">
+    <value>No se generaron números {0}. Verifique que el artículo tenga una máscara válida configurada.</value>
+  </data>
+  <data name="NotSerializedLottedWarnMsg" xml:space="preserve">
+    <value>El artículo no está serializado ni controlado por lote: el formulario no se mostrará.</value>
+  </data>
+  <data name="QtyAdjusted" xml:space="preserve">
+    <value>Cantidad ajustada</value>
+  </data>
+  <data name="QtyReceived" xml:space="preserve">
+    <value>Cantidad recibida</value>
+  </data>
+  <data name="QtyReturned" xml:space="preserve">
+    <value>Cantidad devuelta</value>
+  </data>
+  <data name="QtyShipped" xml:space="preserve">
+    <value>Cantidad enviada</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="QuantityAdjusted" xml:space="preserve">
+    <value>Cantidad ajustada</value>
+  </data>
+  <data name="QuantityReceived" xml:space="preserve">
+    <value>Cantidad recibida</value>
+  </data>
+  <data name="QuantityReturned" xml:space="preserve">
+    <value>Cantidad devuelta</value>
+  </data>
+  <data name="QuantityShipped" xml:space="preserve">
+    <value>Cantidad enviada</value>
+  </data>
+  <data name="ReceiveAll" xml:space="preserve">
+    <value>Recibir todo</value>
+  </data>
+  <data name="Received" xml:space="preserve">
+    <value>Recibido</value>
+  </data>
+  <data name="RecordAlreadyExistError" xml:space="preserve">
+    <value>El número {0} {1} ya existe.</value>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>Restante</value>
+  </data>
+  <data name="ReturnAll" xml:space="preserve">
+    <value>Devolver todo</value>
+  </data>
+  <data name="Returned" xml:space="preserve">
+    <value>Devuelto</value>
+  </data>
+  <data name="SAssgined" xml:space="preserve">
+    <value>Series asignadas</value>
+  </data>
+  <data name="SAssignedUOM" xml:space="preserve">
+    <value>Unidad de medida</value>
+  </data>
+  <data name="SerialEntity" xml:space="preserve">
+    <value>Generación/Asignación de números de serie</value>
+  </data>
+  <data name="SerialLotEntity" xml:space="preserve">
+    <value>Generación de números de serie/lote</value>
+  </data>
+  <data name="SerialLotNumbers" xml:space="preserve">
+    <value>Números de serie/lote</value>
+  </data>
+  <data name="SerialNoGenerated" xml:space="preserve">
+    <value>Generado</value>
+  </data>
+  <data name="SerialNoRemaining" xml:space="preserve">
+    <value>Restante</value>
+  </data>
+  <data name="SerialNoRequired" xml:space="preserve">
+    <value>Números de serie requeridos</value>
+  </data>
+  <data name="SerialNumbers" xml:space="preserve">
+    <value>N° Serie</value>
+  </data>
+  <data name="SerialNumberValidationMessage" xml:space="preserve">
+    <value>El número de serie no es válido para la máscara de número de serie actual.</value>
+  </data>
+  <data name="SerialOrLotNumberGeneratedWarning" xml:space="preserve">
+    <value>Se han generado todos los números {0} requeridos.</value>
+  </data>
+  <data name="SerialsAdjusted" xml:space="preserve">
+    <value>Series ajustadas</value>
+  </data>
+  <data name="SerialsReceived" xml:space="preserve">
+    <value>Series recibidas</value>
+  </data>
+  <data name="SerialsReturned" xml:space="preserve">
+    <value>Series devueltas</value>
+  </data>
+  <data name="SerialsShipped" xml:space="preserve">
+    <value>Series enviadas</value>
+  </data>
+  <data name="Shipped" xml:space="preserve">
+    <value>Enviado</value>
+  </data>
+  <data name="SQTYAssigned" xml:space="preserve">
+    <value>Cantidad asignada</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>Fch. Inventario</value>
+  </data>
+  <data name="UOM" xml:space="preserve">
+    <value>Unidad de medida</value>
+  </data>
+  <data name="ZeroWarning" xml:space="preserve">
+    <value>Make Lots' o 'Each Lot Has' debe ser cero, pero no ambos al mismo tiempo.</value>
+  </data>
+  <data name="CloseWithSerialCostNoMatchMessage" xml:space="preserve">
+    <value>Los costos de ajuste restantes de serie no son cero.</value>
+  </data>
+  <data name="CloseWithLotCostNoMatchMessage" xml:space="preserve">
+    <value>Los costos de ajuste de lote restantes no son cero.</value>
+  </data>
+  <data name="CloseWithSerialAndLotCostNoMatchMessage" xml:space="preserve">
+    <value>Los costos de ajuste restantes de series y lotes no son cero.</value>
+  </data>
+  <data name="AssignAll" xml:space="preserve">
+    <value>Asignar todo</value>
+  </data>
+  <data name="AutoAlloc" xml:space="preserve">
+    <value>Auto-asign.</value>
+  </data>
+  <data name="AutoGen" xml:space="preserve">
+    <value>Auto-gen.</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Borrar Todo</value>
+  </data>
+  <data name="NextSerialNumber" xml:space="preserve">
+    <value>N° Serie Siguiente</value>
+  </data>
+  <data name="EachLotHas" xml:space="preserve">
+    <value>Cada Lote Tiene</value>
+  </data>
+  <data name="Make" xml:space="preserve">
+    <value>Hacer</value>
+  </data>
+  <data name="NextLotNo" xml:space="preserve">
+    <value>N° Lote Siguiente</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="FractionalQty" xml:space="preserve">
+    <value>No se puede utilizar una cantidad fraccionaria con un artículo serializado.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ShipAll" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>Lote</value>
+  </data>
+  <data name="Lots" xml:space="preserve">
+    <value>Lotes</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Série</value>
+  </data>
+</root>

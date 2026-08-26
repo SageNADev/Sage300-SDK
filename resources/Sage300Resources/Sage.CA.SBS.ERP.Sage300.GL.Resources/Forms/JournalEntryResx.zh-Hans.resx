@@ -120,6 +120,12 @@
   <data name="BatchReadyToPost" xml:space="preserve">
     <value>批次已设为待过帐。您可以查看批次内容，但您不能编辑日志分录。</value>
   </data>
+  <data name="NoEditImportedBatch" xml:space="preserve">
+    <value>此批次为导入的批次，且在总账（G/L）选项中未选择“允许编辑导入的批次”。您可以查看，但不能修改其内容。</value>
+  </data>
+  <data name="NoEditSubledgerBatch" xml:space="preserve">
+    <value>此批次为子分类账批次，且在总账（G/L）选项中未选择“允许编辑子分类账批次”。您可以查看，但不能修改其内容。</value>
+  </data>
   <data name="CreateNewEntry" xml:space="preserve">
     <value>创建新分录</value>
   </data>

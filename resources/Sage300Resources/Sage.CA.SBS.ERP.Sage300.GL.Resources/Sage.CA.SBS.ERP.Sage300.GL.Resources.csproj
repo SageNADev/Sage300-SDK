@@ -113,6 +113,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JournalEntryResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Options2Resx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Options2Resx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OptionsResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -393,6 +398,7 @@
     <EmbeddedResource Include="Forms\JournalEntryResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>JournalEntryResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\JournalEntryResx.es.resx" />
     <EmbeddedResource Include="Forms\JournalEntryResx.fr.resx" />
@@ -430,6 +436,10 @@
     <EmbeddedResource Include="Forms\PostBatchesResx.fr.resx" />
     <EmbeddedResource Include="Forms\PostBatchesResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\PostBatchesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\Options2Resx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Options2Resx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OptionsResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>OptionsResx.Designer.cs</LastGenOutput>

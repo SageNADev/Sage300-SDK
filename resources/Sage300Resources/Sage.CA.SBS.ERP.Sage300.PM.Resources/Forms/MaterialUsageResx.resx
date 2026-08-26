@@ -333,4 +333,28 @@
   <data name="MaterialUsageDetails" xml:space="preserve">
     <value>Material Usage Details</value>
   </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Expiry Date</value>
+  </data>
+  <data name="FormattedLotNumber" xml:space="preserve">
+    <value>Formatted Lot Number</value>
+  </data>
+  <data name="FormattedSerialNumber" xml:space="preserve">
+    <value>Formatted Serial Number</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Line Number</value>
+  </data>
+  <data name="QTYSQ" xml:space="preserve">
+    <value>QTYSQ</value>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>Sequence Number</value>
+  </data>
+  <data name="SerialQuantity" xml:space="preserve">
+    <value>Serial Quantity</value>
+  </data>
+  <data name="TransactionQuantity" xml:space="preserve">
+    <value>Transaction Quantity</value>
+  </data>
 </root>

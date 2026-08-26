@@ -485,4 +485,140 @@
     <value>Unités de mesure de poids</value>
     <comment>Weight Unit of Measure Title</comment>
   </data>
+  <data name="AllowDifferentLotQty" xml:space="preserve">
+    <value>Permettre qté n° lot d'être différente de celle dans les saisies</value>
+  </data>
+  <data name="AllowDifferentSerialQty" xml:space="preserve">
+    <value>Permettre qté n° lot d'être différente de celle dans les saisies
+Permettre qté n° série d'être différente de celle dans les saisies</value>
+  </data>
+  <data name="AllowDuplicateSerials" xml:space="preserve">
+    <value>Autoriser numéros de série en double </value>
+  </data>
+  <data name="AllowLotQtyMismatch" xml:space="preserve">
+    <value>Autoriser une différence de quantité de lot</value>
+  </data>
+  <data name="AllowLotQuantityDifferent" xml:space="preserve">
+    <value>Permettre qté n° lot d'être différente de celle dans les saisies</value>
+  </data>
+  <data name="AllowReuseLotNumbers" xml:space="preserve">
+    <value>Autoriser la réutilisation des numéros de lot</value>
+  </data>
+  <data name="AllowReuseSerialNumbers" xml:space="preserve">
+    <value>Autoriser la réutilisation des numéros de série</value>
+  </data>
+  <data name="AllowSerialAllocOnQtyOrd" xml:space="preserve">
+    <value>Utiliser le champ Qté commandée dans CmC pour attribuer numéros de série</value>
+  </data>
+  <data name="AllowSerialQtyMismatch" xml:space="preserve">
+    <value>Autoriser une incohérence de quantité en série</value>
+  </data>
+  <data name="AutoAllocation" xml:space="preserve">
+    <value>Attribution automatique</value>
+  </data>
+  <data name="DaysOnQuarantine" xml:space="preserve">
+    <value>Jours en quarant.</value>
+  </data>
+  <data name="DaysToExpiry" xml:space="preserve">
+    <value>Jours avant expiration</value>
+  </data>
+  <data name="Earliest" xml:space="preserve">
+    <value>Le plus ancien</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="ExpiredLotMessage" xml:space="preserve">
+    <value>Message d'attribution de lot expiré</value>
+  </data>
+  <data name="ExpiredSerialAllocationMsg" xml:space="preserve">
+    <value>Message d'allocation série expiré</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Fch. Caducidad</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>Primero</value>
+  </data>
+  <data name="InvalidMaskFormat" xml:space="preserve">
+    <value>Format de masque non valide</value>
+  </data>
+  <data name="ItemDefaults" xml:space="preserve">
+    <value>Valores Predet. del Artículo</value>
+  </data>
+  <data name="Latest" xml:space="preserve">
+    <value>Más Reciente</value>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>N° lot</value>
+  </data>
+  <data name="LotNumberMask" xml:space="preserve">
+    <value>Masque numéro de lot</value>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>Numéro de lot Description du masque</value>
+  </data>
+  <data name="LotReuseMismatchConflict" xml:space="preserve">
+    <value>Conflit d'incompatibilité lié à la réutilisation des lots</value>
+  </data>
+  <data name="LotSeparators" xml:space="preserve">
+    <value>Séparateurs de lots</value>
+  </data>
+  <data name="MaskStructure" xml:space="preserve">
+    <value>Structure du masque</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="RecordNotFound" xml:space="preserve">
+    <value>n'a pas été défini pour les séries.</value>
+  </data>
+  <data name="RecordNotFoundLot" xml:space="preserve">
+    <value>n'a pas été défini pour les lots.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>Séparateur</value>
+  </data>
+  <data name="SeparatorsUsedInLotMask" xml:space="preserve">
+    <value>Séparateurs utilisés dans les structures de masques de lot</value>
+  </data>
+  <data name="SeparatorsUsedInSerialMask" xml:space="preserve">
+    <value>Séparateurs utilisés dans les structures de masques en série</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>N° série</value>
+  </data>
+  <data name="SerialNumberMask" xml:space="preserve">
+    <value>Masque numéro série</value>
+  </data>
+  <data name="SerialNumberMaskDescription" xml:space="preserve">
+    <value>Description du masque de numéro de série</value>
+  </data>
+  <data name="SerialReuseMismatchConflict" xml:space="preserve">
+    <value>Conflit de réutilisation en série</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Trier par</value>
+  </data>
+  <data name="SortByChangeWarning" xml:space="preserve">
+    <value>Attention : une fois qu’un séparateur de structure de masque série est désactivé, il ne peut plus être réactivé. Voulez-vous continuer ?</value>
+  </data>
+  <data name="SortLotsByChangeWarning" xml:space="preserve">
+    <value>Attention : une fois qu’un séparateur de structure de masque de lot est désactivé, il ne peut plus être réactivé. Voulez-vous continuer ?</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>Date stock</value>
+  </data>
+  <data name="UseQtyOrderedOEForLotAllocation" xml:space="preserve">
+    <value>Utiliser le champ Qté commandée dans CmC pour attribuer numéros de lot</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Avertissement</value>
+  </data>
+  <data name="SortByDropdownChangeLotsWarning" xml:space="preserve">
+    <value>Avertissement. La modification de cette option pourrait entraîner la réallocation des lots déjà attribués lors de la saisie des transactions. Cela peut provoquer l’échec de la validation d’une transaction. Vous pouvez choisir de comptabiliser toutes les transactions I/C enregistrées et d’exécuter le traitement de fin de journée avant de modifier cette option. Voulez-vous continuer à modifier cette option maintenant ?</value>
+  </data>
+  <data name="SortByDropdownChangeWarning" xml:space="preserve">
+    <value>Avertissement. La modification de cette option pourrait entraîner la réallocation des numéros de série déjà attribués lors de la saisie des transactions. Cela peut provoquer l’échec de la validation d’une transaction. Vous pouvez choisir de comptabiliser toutes les transactions I/C enregistrées et d’exécuter le traitement de fin de journée avant de modifier cette option. Voulez-vous continuer à modifier cette option maintenant ?</value>
+  </data>
 </root>

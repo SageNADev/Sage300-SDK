@@ -435,7 +435,10 @@
   <data name="CS_CompanyProfile" xml:space="preserve">
     <value>Profil de l’entreprise</value>
   </data>
-  <data name="CS_FiscalCalendar" xml:space="preserve">
+	<data name="CS_EmailHistory" xml:space="preserve">
+    <value>Historique des courriels</value>
+  </data>
+	<data name="CS_FiscalCalendar" xml:space="preserve">
     <value>Calendrier fiscal</value>
   </data>
   <data name="Currency" xml:space="preserve">
@@ -1393,7 +1396,7 @@
     <value>Personnalisez le menu de navigation en masquant ou affichant des écrans web et des catégories. Si vous masquez tous les écrans d’un module, le module n’apparaît pas dans le menu de navigation.</value>
   </data>
   <data name="CompanySetup" xml:space="preserve">
-    <value>Configuration de l’entreprise</value>
+    <value>Entreprise</value>
   </data>
   <data name="DataAndMaintenance" xml:space="preserve">
     <value>Données et maintenance</value>
@@ -1571,6 +1574,15 @@
   </data>
   <data name="TaxCodeMapping" xml:space="preserve">
     <value>Mappage des codes de taxe</value>
+  </data>
+  <data name="PR_EmployeeTimeCard" xml:space="preserve">
+    <value>Feuilles de temps des employés</value>
+  </data>
+  <data name="PR_EmployeeTimeCard_CA" xml:space="preserve">
+    <value>Feuilles de temps des employés pour Paie Canada</value>
+  </data>
+  <data name="PR_EmployeeTimeCard_US" xml:space="preserve">
+    <value>Feuilles de temps des employés pour Paie É.&amp;#8209;U.</value>
   </data>
   <data name="MT_Contacts" xml:space="preserve">
     <value>Contacts de M/T</value>
@@ -1775,47 +1787,11 @@
   <data name="GL_Print_Financial_Statements" xml:space="preserve">
     <value>Impression des états financiers</value>
   </data>
-  <data name="IC_Serial_Numbers" xml:space="preserve">
-    <value>Numéros de série</value>
+  <data name="Module_CanadianPayroll" xml:space="preserve">
+    <value>Paie</value>
   </data>
-  <data name="Financial_Reporter" xml:space="preserve">
-    <value>Générateur d'état financier</value>
-  </data>
-  <data name="AS_UserActivityReport" xml:space="preserve">
-    <value>Activité des utilisateurs</value>
-  </data>
-  <data name="PM_Adjustments" xml:space="preserve">
-    <value>Ajustements</value>
-  </data>
-  <data name="PM_Timecards" xml:space="preserve">
-    <value>Feuilles de temps</value>
-  </data>
-  <data name="PM_TransactionHistory" xml:space="preserve">
-    <value>Historique des transaction</value>
-  </data>
-  <data name="PM_Transaction_History" xml:space="preserve">
-    <value>Historique des transaction</value>
-  </data>
-  <data name="PM_BudgetMaintenance" xml:space="preserve">
-    <value>Mise à jour du budget</value>
-  </data>
-  <data name="CS_SageHR" xml:space="preserve">
-    <value>Configuration de Sage RH</value>
-  </data>
-  <data name="PR_SageHR" xml:space="preserve">
-    <value>SageHR</value>
-  </data>
-  <data name="PR_SageHR_Employee" xml:space="preserve">
-    <value>Synchroniser l'employé</value>
-  </data>
-  <data name="HQ_SageHR_Setup" xml:space="preserve">
-    <value>Configuration de Sage RH</value>
-  </data>
-  <data name="HQ_Sync_Employee" xml:space="preserve">
-    <value>Synchronisation des employés</value>
-  </data>
-  <data name="HQ_SageHR_Integration" xml:space="preserve">
-    <value>Intégration de Sage RH</value>
+  <data name="Module_USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
   </data>
   <data name="PR_Accruals_Report" xml:space="preserve">
     <value>Cumuls</value>
@@ -1924,15 +1900,6 @@
   </data>
   <data name="PR_Employees" xml:space="preserve">
     <value>Employés</value>
-  </data>
-  <data name="PR_EmployeeTimeCard" xml:space="preserve">
-    <value>Feuilles de temps des employés</value>
-  </data>
-  <data name="PR_EmployeeTimeCard_CA" xml:space="preserve">
-    <value>Feuilles de temps des employés pour Paie Canada</value>
-  </data>
-  <data name="PR_EmployeeTimeCard_US" xml:space="preserve">
-    <value>Feuilles de temps des employés pour Paie É.&amp;#8209;U.</value>
   </data>
   <data name="PR_Employee_Activity" xml:space="preserve">
     <value>Activité de l’employé</value>
@@ -2204,13 +2171,97 @@
   <data name="PR_Work_Classification_Codes_Report" xml:space="preserve">
     <value>Codes de classification d’activité</value>
   </data>
-  <data name="Module_CanadianPayroll" xml:space="preserve">
-    <value>Paie</value>
+  <data name="IC_Serial_Numbers" xml:space="preserve">
+    <value>Numéros de série</value>
   </data>
-  <data name="Module_USPayroll" xml:space="preserve">
-    <value>US Payroll</value>
+  <data name="Financial_Reporter" xml:space="preserve">
+    <value>Générateur d'état financier</value>
+  </data>
+  <data name="AS_UserActivityReport" xml:space="preserve">
+    <value>Activité des utilisateurs</value>
+  </data>
+  <data name="PM_Adjustments" xml:space="preserve">
+    <value>Ajustements</value>
+  </data>
+  <data name="PM_TransactionHistory" xml:space="preserve">
+    <value>Historique des transaction</value>
+  </data>
+  <data name="PM_Timecards" xml:space="preserve">
+    <value>Feuilles de temps</value>
+  </data>
+  <data name="PM_Transaction_History" xml:space="preserve">
+    <value>Historique des transaction</value>
+  </data>
+  <data name="PM_BudgetMaintenance" xml:space="preserve">
+    <value>Mise à jour du budget</value>
+  </data>
+  <data name="CS_SageHR" xml:space="preserve">
+    <value>Configuration de Sage RH</value>
+  </data>
+  <data name="PR_SageHR" xml:space="preserve">
+    <value>SageHR</value>
+  </data>
+  <data name="PR_SageHR_Employee" xml:space="preserve">
+    <value>Synchroniser l'employé</value>
+  </data>
+  <data name="HQ_SageHR_Setup" xml:space="preserve">
+    <value>Configuration de Sage RH</value>
+  </data>
+  <data name="HQ_Sync_Employee" xml:space="preserve">
+    <value>Synchronisation des employés</value>
+  </data>
+  <data name="HQ_SageHR_Integration" xml:space="preserve">
+    <value>Intégration de Sage RH</value>
   </data>
   <data name="HQ_Publish_Payslip" xml:space="preserve">
     <value>Publication des bulletins de paie</value>
+  </data>
+  <data name="IC_Serial_Lot_Stock_Listing_Report" xml:space="preserve">
+    <value>Liste inventaire n° série/lot</value>
+  </data>
+  <data name="IC_Mask_Structure" xml:space="preserve">
+    <value>Structures de masque</value>
+  </data>
+  <data name="IC_Quarantine_Release" xml:space="preserve">
+    <value>Levée de quarantaine</value>
+  </data>
+  <data name="HelpAgent" xml:space="preserve">
+    <value>Recherche assistée</value>
+  </data>
+  <data name="IC_Warranty_Update" xml:space="preserve">
+    <value>Mise à jour de la garantie</value>
+  </data>
+  <data name="IC_Lot_Number_Inquiry" xml:space="preserve">
+    <value>Consultation de numéro de lot</value>
+  </data>
+  <data name="CF1000" xml:space="preserve">
+    <value>C/F Inquiry</value>
+  </data>
+  <data name="CF1101" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="CF1102" xml:space="preserve">
+    <value>Cash Flow Summary</value>
+  </data>
+  <data name="CF1103" xml:space="preserve">
+    <value>A/R Summary</value>
+  </data>
+  <data name="CF1104" xml:space="preserve">
+    <value>A/P Summary</value>
+  </data>
+  <data name="CF1105" xml:space="preserve">
+    <value>Loan</value>
+  </data>
+  <data name="CF9000" xml:space="preserve">
+    <value>C/F Setup</value>
+  </data>
+  <data name="CF9100" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations" xml:space="preserve">
+    <value>Ajustements n° série/lot</value>
+  </data>
+  <data name="IC_Lot_Splits_Combine" xml:space="preserve">
+    <value>Diviser/Combiner lots</value>
   </data>
 </root>

@@ -129,4 +129,19 @@
     <value>日期不在已知的期间内。</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="DateOutsideRange" xml:space="preserve">
+    <value>输入的日期不在公司简介中规定的范围内。</value>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>来自商品编号</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>来自批号</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>至商品编号</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>至批号</value>
+  </data>
 </root>

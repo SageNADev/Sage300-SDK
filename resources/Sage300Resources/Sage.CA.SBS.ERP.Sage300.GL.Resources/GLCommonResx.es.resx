@@ -288,4 +288,7 @@
   <data name="PayrollWebScreenNotInstalled" xml:space="preserve">
     <value>No se pudo encontrar información de búsqueda detallada para este registro. Verifique que las pantallas web de Nómina estén instaladas.</value>
   </data>
+  <data name="ReverseNonGLBatches" xml:space="preserve">
+    <value>La reversión de un lote de LM auxiliar puede generar discrepancias de conciliación entre el LM y sus libros mayores auxiliares asociados.</value>
+  </data>
 </root>

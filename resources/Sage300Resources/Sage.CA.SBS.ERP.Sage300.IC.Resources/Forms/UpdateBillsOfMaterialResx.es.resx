@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+  <!-- Portions co-modified with Claude Code -->
+  <!--
     Microsoft ResX Schema 
     
     Version 2.0
@@ -129,6 +130,18 @@
     <value>Base</value>
     <comment>List</comment>
   </data>
+  <data name="BOMNumber" xml:space="preserve">
+    <value>Número L.MAT</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ComponentBomNo" xml:space="preserve">
+    <value>Número L.MAT de Componente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ComponentItemNo" xml:space="preserve">
+    <value>Número Artículo Componente</value>
+    <comment>Field</comment>
+  </data>
   <data name="ComponentItemNumberDesc" xml:space="preserve">
     <value>Descripción Número Artículo Componente</value>
     <comment>Field</comment>
@@ -137,9 +150,17 @@
     <value>Componentes</value>
     <comment>List Item</comment>
   </data>
+  <data name="ComponentType" xml:space="preserve">
+    <value>Tipo de Componente</value>
+    <comment>Field</comment>
+  </data>
   <data name="Cost" xml:space="preserve">
     <value>Costo</value>
     <comment>List Item</comment>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>Tipo de Costo</value>
+    <comment>Field</comment>
   </data>
   <data name="Decrease" xml:space="preserve">
     <value>Disminuir</value>
@@ -185,8 +206,24 @@
     <value>Reemplazar</value>
     <comment>List Item</comment>
   </data>
+  <data name="ReplacementBomNo" xml:space="preserve">
+    <value>Reemplazar por Número L.MAT</value>
+    <comment>Field</comment>
+  </data>
   <data name="RplByItemNo" xml:space="preserve">
-    <value>Reemplazar por N° Artículor</value>
+    <value>Reemplazar por N° Artículo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToBomNo" xml:space="preserve">
+    <value>Hasta Número L.MAT</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToItemNo" xml:space="preserve">
+    <value>Hasta N° Artículo Maestro</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Actualizar</value>
     <comment>Field</comment>
   </data>
   <data name="Using" xml:space="preserve">

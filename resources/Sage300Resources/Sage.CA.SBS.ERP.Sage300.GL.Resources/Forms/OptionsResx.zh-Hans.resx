@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Entity" xml:space="preserve">
+	<data name="ProcessingOptions" xml:space="preserve">
+    <value>处理设置</value>
+    <comment>Auto-Generated</comment>
+  </data>
+	<data name="EditImportedBatches" xml:space="preserve">
+    <value>允许编辑导入的批次</value>
+    <comment>Auto-Generated</comment>
+  </data>
+	<data name="EditSubledgerBatches" xml:space="preserve">
+    <value>允许编辑子账的批次</value>
+    <comment>Auto-Generated</comment>
+  </data>
+	<data name="Entity" xml:space="preserve">
     <value>总帐选项</value>
     <comment>Auto-Generated</comment>
   </data>

@@ -3019,4 +3019,11 @@
     <value>Utiliser l’emplacement défini pour la commande comme emplacement de tous les détails?  L’emplacement ne sera pas modifié si l’article spécifié pour le détail n’est pas admis à cet endroit.</value>
     <comment>confirmation message</comment>
   </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>L'emplacement n'est pas renseigné. Le formulaire de numéros de série/lots ne s'affichera pas.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GreaterShippedQtyErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
 </root>

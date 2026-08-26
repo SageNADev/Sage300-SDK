@@ -572,5 +572,21 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources.Forms {
                 return ResourceManager.GetString("Weekly", resourceCulture);
             }
         }
+
+        public static string EmailOptions {
+            get { return ResourceManager.GetString("EmailOptions", resourceCulture); }
+        }
+
+        public static string SenderEmailForPurchaseOrders {
+            get { return ResourceManager.GetString("SenderEmailForPurchaseOrders", resourceCulture); }
+        }
+
+        public static string SenderEmailForReturns {
+            get { return ResourceManager.GetString("SenderEmailForReturns", resourceCulture); }
+        }
+
+        public static string InvalidEmailAddress {
+            get { return ResourceManager.GetString("InvalidEmailAddress", resourceCulture); }
+        }
     }
 }

@@ -129,4 +129,19 @@
     <value>La fecha está fuera de período conocido.</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="DateOutsideRange" xml:space="preserve">
+    <value>La fecha ingresada está fuera del rango especificado en el perfil de la empresa.</value>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>Desde el número de artículo</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>Del número de lote</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>Al número de artículo</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>Al número de lote</value>
+  </data>
 </root>

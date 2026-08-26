@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Portions co-modified with OpenAI Codex -->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Entity" xml:space="preserve"><value>Historial de Correos Electrónicos</value></data>
+  <data name="EmailId" xml:space="preserve"><value>ID de Correo Electrónico</value></data>
+  <data name="SourceApplication" xml:space="preserve"><value>Aplicación de Origen</value></data>
+  <data name="SourceType" xml:space="preserve"><value>Tipo de Origen</value></data>
+  <data name="SourceLabel" xml:space="preserve"><value>Etiqueta de Identificador de Origen</value></data>
+  <data name="Subject" xml:space="preserve"><value>Asunto del Correo Electrónico</value></data>
+  <data name="ToEmail" xml:space="preserve"><value>Dirección de Correo Electrónico del Destinatario</value></data>
+  <data name="CcEmail" xml:space="preserve"><value>Dirección de Correo Electrónico en Copia</value></data>
+  <data name="BccEmail" xml:space="preserve"><value>Dirección en Copia Oculta</value></data>
+  <data name="FromEmail" xml:space="preserve"><value>Dirección de Correo Electrónico del Remitente</value></data>
+  <data name="CreatedBy" xml:space="preserve"><value>Generado por ID de Usuario</value></data>
+  <data name="CreateDate" xml:space="preserve"><value>Fecha de Generación</value></data>
+  <data name="CreateTime" xml:space="preserve"><value>Hora de Generación</value></data>
+  <data name="SentDate" xml:space="preserve"><value>Fecha de Envío</value></data>
+  <data name="SentTime" xml:space="preserve"><value>Hora de Envío</value></data>
+  <data name="Status" xml:space="preserve"><value>Estado de Envío del Correo Electrónico</value></data>
+  <data name="Attempts" xml:space="preserve"><value>Número de Intentos de Envío Realizados</value></data>
+  <data name="ErrorCode" xml:space="preserve"><value>Código de Error</value></data>
+  <data name="ErrorMessage" xml:space="preserve"><value>Mensaje de Error</value></data>
+  <data name="NumberOfAttachments" xml:space="preserve"><value>Número de Archivos Adjuntos</value></data>
+  <data name="AttachmentFileName" xml:space="preserve"><value>Nombre de Archivo Adjunto Generado</value></data>
+  <data name="SearchText" xml:space="preserve"><value>Texto de Búsqueda</value></data>
+  <data name="GenerationDateRangeError" xml:space="preserve"><value>La fecha de generación inicial es posterior a la fecha de generación final.</value></data>
+  <data name="SourceApplicationRangeError" xml:space="preserve"><value>La aplicación de origen inicial es posterior a la aplicación de origen final.</value></data>
+</root>

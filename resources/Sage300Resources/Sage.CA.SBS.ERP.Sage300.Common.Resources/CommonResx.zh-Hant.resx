@@ -996,10 +996,10 @@
     <comment>DatePicker Placeholder</comment>
   </data>
   <data name="SymbolLeftBracket" xml:space="preserve">
-    <value>( 左括弧</value>
+    <value>[ 左方括號</value>
   </data>
   <data name="SymbolRightBracket" xml:space="preserve">
-    <value>) 右括弧</value>
+    <value>] 右方括號</value>
   </data>
   <data name="SelectForm" xml:space="preserve">
     <value>選擇表格</value>
@@ -1759,5 +1759,11 @@
   </data>
   <data name="ProxyUseSecureProtocol" xml:space="preserve">
     <value>The proxy is configured to use a secure protocol and the request is not secure.</value>
+  </data>
+  <data name="SymbolLeftBrace" xml:space="preserve">
+    <value>{ 左大括號</value>
+  </data>
+  <data name="SymbolRightBrace" xml:space="preserve">
+    <value>} 右大括號</value>
   </data>
 </root>

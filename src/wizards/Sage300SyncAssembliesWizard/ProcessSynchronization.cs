@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -284,6 +284,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SyncAssembliesWizard
             CopyMenu(source, target, "Columbus-AP", "AP");
             CopyMenu(source, target, "Columbus-AR", "AR");
             CopyMenu(source, target, "Columbus-AS", "AS");
+            CopyMenu(source, target, "Columbus-CF", "CF");
             CopyMenu(source, target, "Columbus-CS", "CS", "BK");
             CopyMenu(target, target, "Areas", "Core"); // Non-standard location for Core
             CopyMenu(source, target, "Columbus-CS", "CS");
@@ -343,6 +344,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SyncAssembliesWizard
             CopyArea(source, target, "Columbus-AR", "AR");
             CopyArea(source, target, "Columbus-AS", "AS");
             CopyArea(source, target, "Columbus-CS", "CS");
+            CopyArea(source, target, "Columbus-CF", "CF");
             CopyArea(source, target, "Columbus-GL", "GL");
             CopyArea(source, target, "Columbus-IC", "IC");
             CopyArea(source, target, "Columbus-KN", "KN");

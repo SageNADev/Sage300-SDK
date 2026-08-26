@@ -785,4 +785,52 @@
   <data name="LessReverseCharges" xml:space="preserve">
     <value>Less Reverse Charges</value>
   </data>
+  <data name="CreateReverseBatch" xml:space="preserve">
+    <value>Create Reverse Batch</value>
+    <comment>Title of the Create Reverse popup (batch mode)</comment>
+  </data>
+  <data name="CreateReverseEntryTitle" xml:space="preserve">
+    <value>Create Reverse Entry</value>
+    <comment>Title of the Create Reverse popup (entry mode)</comment>
+  </data>
+  <data name="ReverseBatch" xml:space="preserve">
+    <value>Reverse the entire batch?</value>
+    <comment>Confirmation dialog for batch-mode reverse</comment>
+  </data>
+  <data name="ReverseEntry" xml:space="preserve">
+    <value>Reverse the entry?</value>
+    <comment>Confirmation dialog for entry-mode reverse</comment>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original</value>
+    <comment>Header description option in Create Reverse popup</comment>
+  </data>
+  <data name="OriginalWithPrefix" xml:space="preserve">
+    <value>Original with Prefix</value>
+    <comment>Header description option in Create Reverse popup</comment>
+  </data>
+  <data name="NewDescription" xml:space="preserve">
+    <value>New Description</value>
+    <comment>Header description option in Create Reverse popup</comment>
+  </data>
+  <data name="CreatedReverseEntryNo" xml:space="preserve">
+    <value>Created Reverse Entry Number</value>
+    <comment>Display label in Create Reverse popup</comment>
+  </data>
+  <data name="DocumentNumberOption" xml:space="preserve">
+    <value>Document Number</value>
+    <comment>Document number option label in Create Reverse popup</comment>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>Generated</value>
+    <comment>Document number option in Create Reverse popup</comment>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>Entered</value>
+    <comment>Document number option in Create Reverse popup</comment>
+  </data>
+  <data name="ReverseNonAPBatches" xml:space="preserve">
+    <value>Reversing a subledger batch can introduce reconciliation discrepancies between AP and its associated subledgers.</value>
+    <comment>Warning shown before launching the Create Reverse popup when SRCEAPPL != "AP" (mirrors VB6 AP2100ID.IDS_MSG_ReverseNonAPBatches).</comment>
+  </data>
 </root>

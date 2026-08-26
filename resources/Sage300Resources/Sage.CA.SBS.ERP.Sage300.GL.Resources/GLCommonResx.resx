@@ -288,4 +288,8 @@
   <data name="PayrollWebScreenNotInstalled" xml:space="preserve">
     <value>Cannot find drill down information for this record. Please make sure Payroll web screens are installed.</value>
   </data>
+  <data name="ReverseNonGLBatches" xml:space="preserve">
+    <value>Reversing a subledger batch can introduce reconciliation discrepancies between GL and its associated subledgers.</value>
+    <comment>Auto-Generated</comment>
+  </data>
 </root>

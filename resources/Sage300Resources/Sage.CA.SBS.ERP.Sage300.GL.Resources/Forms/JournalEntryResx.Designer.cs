@@ -248,7 +248,25 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
                 return ResourceManager.GetString("BatchReadyToPost", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to This batch is an imported batch and the option to Allow Edit of Imported Batches is not selected in G/L Options. You may view but cannot modify its contents..
+        /// </summary>
+        public static string NoEditImportedBatch {
+            get {
+                return ResourceManager.GetString("NoEditImportedBatch", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to This batch is a subledger batch and the option to Allow Edit of Subledger Batches is not selected in G/L Options. You may view but cannot modify its contents..
+        /// </summary>
+        public static string NoEditSubledgerBatch {
+            get {
+                return ResourceManager.GetString("NoEditSubledgerBatch", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Batch Summary.
         /// </summary>

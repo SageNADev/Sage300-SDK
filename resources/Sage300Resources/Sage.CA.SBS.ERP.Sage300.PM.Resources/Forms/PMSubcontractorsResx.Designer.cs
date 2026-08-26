@@ -223,15 +223,6 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Default Settings for Standard Projects.
-        /// </summary>
-        public static string DefaultSettingsforStandardProjects {
-            get {
-                return ResourceManager.GetString("DefaultSettingsforStandardProjects", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Delete {

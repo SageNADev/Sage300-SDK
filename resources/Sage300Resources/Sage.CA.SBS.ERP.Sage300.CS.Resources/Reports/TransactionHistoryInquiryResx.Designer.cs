@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Reports {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class TransactionHistoryInquiryResx {
@@ -156,6 +156,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Reports {
         public static string BankTransactionDetail {
             get {
                 return ResourceManager.GetString("BankTransactionDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canadian Payroll.
+        /// </summary>
+        public static string CanadianPayroll {
+            get {
+                return ResourceManager.GetString("CanadianPayroll", resourceCulture);
             }
         }
         
@@ -417,6 +426,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Reports {
         public static string SRCEAPP {
             get {
                 return ResourceManager.GetString("SRCEAPP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to US Payroll.
+        /// </summary>
+        public static string USPayroll {
+            get {
+                return ResourceManager.GetString("USPayroll", resourceCulture);
             }
         }
         

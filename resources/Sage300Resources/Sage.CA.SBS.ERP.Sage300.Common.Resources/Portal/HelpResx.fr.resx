@@ -1212,6 +1212,9 @@
   <data name="CS_FiscalCalendar_Screen" xml:space="preserve">
     <value>Écran Calendrier fiscal</value>
   </data>
+  <data name="CS_EmailHistory_Screen" xml:space="preserve">
+    <value>Écran Historique des courriels</value>
+  </data>
   <data name="CS_Module" xml:space="preserve">
     <value>Parcourir les articles d'administration</value>
     <comment>CSH ID 71000001</comment>
@@ -1517,7 +1520,7 @@
   </data>
   <data name="IC_Items_Screen" xml:space="preserve">
     <value>Écran Articles de GS</value>
-    <comment>CSH ID 211022001</comment>
+    <comment>123041008</comment>
   </data>
   <data name="IC_ManufacturersItems_Article1" xml:space="preserve">
     <value>Écran Articles de GS</value>
@@ -1553,7 +1556,7 @@
   </data>
   <data name="IC_Options_Screen" xml:space="preserve">
     <value>Écran Options de GS</value>
-    <comment>CSH ID 211001001</comment>
+    <comment>123041007</comment>
   </data>
   <data name="IC_SegmentCodes_Article1" xml:space="preserve">
     <value>À propos des codes de segment</value>
@@ -1976,23 +1979,23 @@
   </data>
   <data name="IC_Receipts_Article2" xml:space="preserve">
     <value>Saisir des ajustements à des réceptions existantes</value>
-    <comment>CSH ID 211017003</comment>
+    <comment>123043002</comment>
   </data>
   <data name="IC_Receipts_Screen" xml:space="preserve">
     <value>Écran Réceptions de GS</value>
-    <comment>CSH ID 211017001</comment>
+    <comment>123042001</comment>
   </data>
   <data name="IC_Shipments_Article1" xml:space="preserve">
-    <value>À propos des expéditions</value>
-    <comment>CSH ID 211018002</comment>
+    <value>Expédition de marchandises aux clients</value>
+    <comment>123043008</comment>
   </data>
   <data name="IC_Shipments_Article2" xml:space="preserve">
-    <value>Expédier des marchandises aux clients</value>
-    <comment>CSH ID 211018003</comment>
+    <value>Réceptionner les marchandises retournées par les clients</value>
+    <comment>123043009</comment>
   </data>
   <data name="IC_Shipments_Screen" xml:space="preserve">
     <value>Écran Expéditions de GS</value>
-    <comment>CSH ID 211018001</comment>
+    <comment>123042002</comment>
   </data>
   <data name="PO_ShippableBackorders_Report_Article1" xml:space="preserve">
     <value>À propos des rapports de Commandes fournisseurs</value>
@@ -2880,7 +2883,7 @@
   </data>
   <data name="IC_Adjustments_Screen" xml:space="preserve">
     <value>Écran Ajustements de GS</value>
-    <comment>CSH ID 211021001</comment>
+    <comment>123042003</comment>
   </data>
   <data name="IC_OverstockedItems_Report_Article1" xml:space="preserve">
     <value>Rapports de Gestion des stocks</value>
@@ -2928,7 +2931,7 @@
   </data>
   <data name="IC_PhysicalInventoryQuantities_Screen" xml:space="preserve">
     <value>Écran Quantités de l'inventaire physique de GS</value>
-    <comment>CSH ID 211041001</comment>
+    <comment>123042007</comment>
   </data>
   <data name="IC_ReorderQuantities_Article1" xml:space="preserve">
     <value>À propos des critères de réapprovisionnement</value>
@@ -3060,7 +3063,7 @@
   </data>
   <data name="IC_Transfers_Screen" xml:space="preserve">
     <value>Écran Transferts de GS</value>
-    <comment>CSH ID 211029001</comment>
+    <comment>123042004</comment>
   </data>
   <data name="PO_MailingLabels_Article1" xml:space="preserve">
     <value>À propos des formulaires de Commandes fournisseurs</value>
@@ -3116,7 +3119,7 @@
   </data>
   <data name="IC_LocationDetails_Screen" xml:space="preserve">
     <value>Écran Emplacements des articles de GS</value>
-    <comment>CSH ID 211034001</comment>
+    <comment>123041009</comment>
   </data>
   <data name="IC_InternalUsage_Article1" xml:space="preserve">
     <value>À propos du traitement des transactions dans Gestion des stocks</value>
@@ -3128,7 +3131,7 @@
   </data>
   <data name="IC_InternalUsage_Screen" xml:space="preserve">
     <value>Écran Usage interne de GS</value>
-    <comment>CSH ID 211020001</comment>
+    <comment>123042006</comment>
   </data>
   <data name="GL_ClearHistory_Article1" xml:space="preserve">
     <value>Procédures de fin de période</value>
@@ -3236,7 +3239,7 @@
   </data>
   <data name="IC_WarrantyContractList_Report_Screen" xml:space="preserve">
     <value>Écran du rapport Liste de garanties/contrats de GS</value>
-    <comment>CSH ID 211105001</comment>
+    <comment>123031301</comment>
   </data>
   <data name="IC_CurrentTransactionsInquiry_Article1" xml:space="preserve">
     <value>À propos du traitement des transactions dans Gestion des stocks</value>
@@ -3276,7 +3279,7 @@
   </data>
   <data name="IC_Quarantine_Report_Screen" xml:space="preserve">
     <value>Écran du rapport Quarantaine de GS</value>
-    <comment>CSH ID 211099001</comment>
+    <comment>123027001</comment>
   </data>
   <data name="GL_SourceJournalProfiles_Report_Article1" xml:space="preserve">
     <value>À propos des rapports de Grand livre</value>
@@ -3336,19 +3339,19 @@
   </data>
   <data name="IC_SerialLotTransactions_Report_Screen" xml:space="preserve">
     <value>Écran du rapport Transactions de numéros de série/lot de GS</value>
-    <comment>CSH ID 211104001</comment>
+    <comment>123031201</comment>
   </data>
   <data name="IC_SerialNumberInquiry_Article1" xml:space="preserve">
-    <value>À propos de Stocks en série et Suivi des lots</value>
-    <comment>CSH ID 211098002</comment>
+    <value>Recherche d'informations sur le numéro de série</value>
+    <comment>123051001</comment>
   </data>
-  <data name="IC_SerialNumberInquiry_Article2" xml:space="preserve">
-    <value>Consulter des informations sur les numéros de série</value>
-    <comment>CSH ID 211098003</comment>
+  <data name="IC_Serial_Lot_NumberInquiry_Article2" xml:space="preserve">
+    <value>Consulter l'historique des transactions</value>
+    <comment>123051003</comment>
   </data>
   <data name="IC_SerialNumberInquiry_Screen" xml:space="preserve">
     <value>Écran Consultation de numéro de série de GS</value>
-    <comment>CSH ID 211098001</comment>
+    <comment>123041004</comment>
   </data>
   <data name="AP_DeleteInactiveRecords_Article1" xml:space="preserve">
     <value>À propos de la suppression des enregistrements inactifs</value>
@@ -3372,7 +3375,7 @@
   </data>
   <data name="IC_Recall_Report_Screen" xml:space="preserve">
     <value>Écran du rapport Rappel de GS</value>
-    <comment>CSH ID 211100001</comment>
+    <comment>123028001</comment>
   </data>
   <data name="GL_CreateAllocationBatch_Article1" xml:space="preserve">
     <value>Procédures de fin de période</value>
@@ -3604,15 +3607,15 @@
   </data>
   <data name="IC_CopyBillOfMaterials_Article1" xml:space="preserve">
     <value>À propos des nomenclatures</value>
-    <comment>CSH ID 211066002</comment>
+    <comment>CSH ID 123072003</comment>
   </data>
   <data name="IC_CopyBillOfMaterials_Article2" xml:space="preserve">
     <value>Copier des nomenclatures</value>
-    <comment>CSH ID 211066003</comment>
+    <comment>CSH ID 123072003</comment>
   </data>
   <data name="IC_CopyBillOfMaterials_Screen" xml:space="preserve">
     <value>Écran Copier les nomenclatures de GS</value>
-    <comment>CSH ID 211066001</comment>
+    <comment>CSH ID 123072003</comment>
   </data>
   <data name="IC_ItemsWizard_Article1" xml:space="preserve">
     <value>Ajouter des articles de stock dans l'assistant Articles</value>
@@ -3684,7 +3687,7 @@
   </data>
   <data name="IC_SerialLotNumberList_Report_Screen" xml:space="preserve">
     <value>Écran du rapport Liste des numéros de série/lot de GS</value>
-    <comment>CSH ID 211101001</comment>
+    <comment>123029001</comment>
   </data>
   <data name="IC_SerialLotNumberQuantityOnHand_Report_Article1" xml:space="preserve">
     <value>À propos de Stocks en série et Suivi des lots</value>
@@ -3696,7 +3699,7 @@
   </data>
   <data name="IC_SerialLotNumberQuantityOnHand_Report_Screen" xml:space="preserve">
     <value>Écran du rapport Quantité de numéros de série/lot en magasin de GS</value>
-    <comment>CSH ID 211102001</comment>
+    <comment>123030001</comment>
   </data>
   <data name="AR_CustomerGroups_Report_Article1" xml:space="preserve">
     <value>À propos des rapports de Comptes clients</value>
@@ -3744,7 +3747,7 @@
   </data>
   <data name="IC_LotNumbers_Screen" xml:space="preserve">
     <value>Écran Numéros de lot de GS</value>
-    <comment>CSH ID 211069001</comment>
+    <comment>123031701</comment>
   </data>
   <data name="OE_InvoiceEntry_Article1" xml:space="preserve">
     <value>À propos des commandes, des expéditions et des factures</value>
@@ -3948,7 +3951,7 @@
   </data>
   <data name="IC_ContractCodes_Screen" xml:space="preserve">
     <value>Écran Codes de contrat de GS</value>
-    <comment>CSH ID 211081001</comment>
+    <comment>123041003</comment>
   </data>
   <data name="AP_ClearHistory_Article1" xml:space="preserve">
     <value>Effacer des données obsolètes de Comptes fournisseurs</value>
@@ -4060,15 +4063,15 @@
   </data>
   <data name="IC_UpdateBillsOfMaterials_Article1" xml:space="preserve">
     <value>À propos des nomenclatures</value>
-    <comment>CSH ID 211071002</comment>
+    <comment>CSH ID 123071002</comment>
   </data>
   <data name="IC_UpdateBillsOfMaterials_Article2" xml:space="preserve">
     <value>Mettre à jour des nomenclatures</value>
-    <comment>CSH ID 211071003</comment>
+    <comment>CSH ID 123071002</comment>
   </data>
   <data name="IC_UpdateBillsOfMaterials_Screen" xml:space="preserve">
     <value>Écran Mise à jour des nomenclatures de GS</value>
-    <comment>CSH ID 211071001</comment>
+    <comment>CSH ID 123071002</comment>
   </data>
   <data name="OE_ShipmentEntry_Article1" xml:space="preserve">
     <value>À propos des commandes, des expéditions et des factures</value>
@@ -4110,11 +4113,11 @@
   </data>
   <data name="IC_SerialRegistration_Article2" xml:space="preserve">
     <value>Enregistrer des numéros de série pour la garantie du client</value>
-    <comment>CSH ID 211079003</comment>
+    <comment>123044001</comment>
   </data>
   <data name="IC_SerialRegistration_Screen" xml:space="preserve">
     <value>Écran Enregistrement de numéro de série de GS</value>
-    <comment>CSH ID 211079001</comment>
+    <comment>123041001</comment>
   </data>
   <data name="IC_WarrantyCodes_Article1" xml:space="preserve">
     <value>Codes de garantie</value>
@@ -4126,7 +4129,7 @@
   </data>
   <data name="IC_WarrantyCodes_Screen" xml:space="preserve">
     <value>Écran Codes de garantie de GS</value>
-    <comment>CSH ID 211083001</comment>
+    <comment>123051400</comment>
   </data>
   <data name="AR_ShipToLocations_Report_Article1" xml:space="preserve">
     <value>À propos des rapports de Comptes clients</value>
@@ -4345,7 +4348,7 @@
     <value>Base de connaissances</value>
   </data>
   <data name="SageSupport_LiveChat" xml:space="preserve">
-    <value>Clavarder en direct</value>
+    <value>Clavardage</value>
   </data>
   <data name="SageSupport_Remote" xml:space="preserve">
     <value>Session d'assistance à distance</value>
@@ -5498,17 +5501,17 @@
     <value>Imprimez le rapport Structures des articles de GS</value>
     <comment>CSHID 211122003</comment>
   </data>
-  <data name="IC_MaskStructures_Report_Screen" xml:space="preserve">
-    <value>Rapport Structures de masque de GS</value>
-    <comment>CSHID 211127001</comment>
+  <data name="IC_MaskStructures_Report_Article3" xml:space="preserve">
+    <value>Modification ou suppression des structures de masque</value>
+    <comment>677003000</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article1" xml:space="preserve">
-    <value>Rapports de Gestion des stocks</value>
-    <comment>CSHID 211127002</comment>
+    <value>Rapport sur les structures des masques d'impression</value>
+    <comment>211127003</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article2" xml:space="preserve">
-    <value>Imprimer le rapport Structures de masque de GS</value>
-    <comment>CSHID 211127003</comment>
+    <value>Ajout de structures de masque</value>
+    <comment>677002009</comment>
   </data>
   <data name="IC_SegmentCodes_Report_Screen" xml:space="preserve">
     <value>Rapport Codes de segments de GS</value>
@@ -5764,5 +5767,120 @@
   <data name="PM_Setup_Subcontractors_Screen" xml:space="preserve">
     <value>Sous-traitants</value>
     <comment>123018001</comment>
+  </data>
+  <data name="IC_SerialLotStockListingReport_Screen" xml:space="preserve">
+    <value>Rapport de liste des stocks par numéro de série/lot</value>
+    <comment>123031101</comment>
+  </data>
+  <data name="IC_QuarantineRelease_Screen" xml:space="preserve">
+    <value>Levée de quarantaine de GS</value>
+    <comment>123031601</comment>
+  </data>
+  <data name="IC_MaskStructures_Screen" xml:space="preserve">
+    <value>Structures des masques de GS</value>
+    <comment>123031501</comment>
+  </data>
+  <data name="IC_WarrantyUpdate_Screen" xml:space="preserve">
+    <value>Mise à jour de garantie de GS</value>
+    <comment>123041002</comment>
+  </data>
+  <data name="IC_QuarantineRelease_Article1" xml:space="preserve">
+    <value>Sortie de quarantaine</value>
+    <comment>211000001</comment>
+  </data>
+  <data name="IC_Receipts_Article3" xml:space="preserve">
+    <value>Retourner des marchandises au fournisseur</value>
+    <comment>123042008</comment>
+  </data>
+  <data name="IC_Receipts_Article4" xml:space="preserve">
+    <value>Réception des marchandises du fournisseur</value>
+    <comment>123042009</comment>
+  </data>
+  <data name="IC_Receipts_Article5" xml:space="preserve">
+    <value>Publication des reçus enregistrés</value>
+    <comment>123043001</comment>
+  </data>
+  <data name="IC_Transfers_Article3" xml:space="preserve">
+    <value>Enregistrement des transactions d'inventaire</value>
+    <comment>123043003</comment>
+  </data>
+  <data name="IC_Receipts_Article8" xml:space="preserve">
+    <value>Réception des marchandises en provenance de l'entrepôt de marchandises en transit</value>
+    <comment>123043005</comment>
+  </data>
+  <data name="IC_Transfers_Article4" xml:space="preserve">
+    <value>Attribution du numéro de lot en série</value>
+    <comment>123043004</comment>
+  </data>
+  <data name="IC_LotNumberInquiry_Screen" xml:space="preserve">
+    <value>Consultation de numéro de lot de G.S.</value>
+    <comment>123041006</comment>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations" xml:space="preserve">
+    <value>Ajustements n° série/lot de G.S.</value>
+    <comment>123031901</comment>
+  </data>
+  <data name="IC_Receipts_Article6" xml:space="preserve">
+    <value>Comptabilisation des mouvements de stock</value>
+    <comment>123050000</comment>
+  </data>
+  <data name="IC_Receipts_Article7" xml:space="preserve">
+    <value>Attribution du numéro de lot en série</value>
+    <comment>123043004</comment>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations_Article1" xml:space="preserve">
+    <value>Rapprochement des numéros de série et de lot</value>
+    <comment>123043006</comment>
+  </data>
+  <data name="IC_Shipments_Article3" xml:space="preserve">
+    <value>Affectation de numéros de série/lot pour les expéditions</value>
+    <comment>123043007</comment>
+  </data>
+  <data name="IC_Shipments_Article4" xml:space="preserve">
+    <value>Comptabilisation des mouvements de stock</value>
+    <comment>123050000</comment>
+  </data>
+  <data name="CF_Dashboard_Inquiry" xml:space="preserve">
+    <value>C/F Dashboard Inquiry</value>
+  </data>
+  <data name="CF_Setup_Options" xml:space="preserve">
+    <value>C/F Options Screen </value>
+  </data>
+  <data name="CF_Cash_Flow_Summary" xml:space="preserve">
+    <value>C/F Cash Flow Summary </value>
+  </data>
+  <data name="CF_AR_Summary" xml:space="preserve">
+    <value>C/F AR Summary </value>
+  </data>
+  <data name="CF_AR_Top_10_Customers" xml:space="preserve">
+    <value>A/R Top 10 Customers by Outstanding Balance and Forecast </value>
+  </data>
+  <data name="CF_AP_Summary" xml:space="preserve">
+    <value>C/F AP Summary </value>
+  </data>
+  <data name="CF_AP_Top_10_Vendors" xml:space="preserve">
+    <value>A/P Top 10 Vendors by Outstanding Balance and Forecast </value>
+  </data>
+  <data name="CF_Cash_Flow_Summary_Report" xml:space="preserve">
+    <value>Cash Flow Summary Reports </value>
+  </data>
+  <data name="CF_Dashboard_Reports" xml:space="preserve">
+    <value>Dashboard Reports</value>
+  </data>
+  <data name="IC_Serial_Lot_NumberInquiry_Article3" xml:space="preserve">
+    <value>Consultation des statistiques de transactions</value>
+    <comment>123051004</comment>
+  </data>
+  <data name="IC_LotNumberInquiry_Article1" xml:space="preserve">
+    <value>Recherche d'informations sur le numéro de lot</value>
+    <comment>123051002</comment>
+  </data>
+  <data name="IC_Lot_Split_Combine_Article1" xml:space="preserve">
+    <value>Division et regroupement de lots</value>
+    <comment>123031801</comment>
+  </data>
+  <data name="IC_Lot_Split_Combine_Screen" xml:space="preserve">
+    <value>Division/regroupement de lots GS</value>
+    <comment>123031801</comment>
   </data>
 </root>

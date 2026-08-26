@@ -247,4 +247,10 @@
     <value>Transacciones</value>
     <comment>Tab</comment>
   </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>La date de début de stock est invalide</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>La date limite de consommation n'est pas valide</value>
+  </data>
 </root>

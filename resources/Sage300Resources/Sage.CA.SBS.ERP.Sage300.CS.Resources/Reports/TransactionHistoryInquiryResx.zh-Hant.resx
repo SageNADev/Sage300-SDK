@@ -161,6 +161,9 @@
     <value>銀行交易明細</value>
     <comment>finder title</comment>
   </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>加拿大薪資</value>
+  </data>
   <data name="CHECKPAYMENTNO" xml:space="preserve">
     <value>支票/付款編號</value>
     <comment>Table - Column</comment>
@@ -275,6 +278,9 @@
   <data name="SRCEAPP" xml:space="preserve">
     <value>來源應用程式</value>
     <comment>List</comment>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
   </data>
   <data name="VENDORNAME" xml:space="preserve">
     <value>供應商名稱</value>

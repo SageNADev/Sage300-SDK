@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sage Software Inc.")]
 [assembly: AssemblyProduct("WebAPISubclassWizard")]
-[assembly: AssemblyCopyright("Copyright © Sage Software Inc. 2025")]
+[assembly: AssemblyCopyright("Copyright © Sage Software Inc. 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

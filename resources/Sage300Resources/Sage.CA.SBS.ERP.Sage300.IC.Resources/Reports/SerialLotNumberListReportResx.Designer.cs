@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Reports {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class SerialLotNumberListReportResx {
@@ -61,11 +61,119 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Reports {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Serial/Lot Number List Report.
+        ///   Looks up a localized string similar to I/C Serial/Lot List Report.
         /// </summary>
         public static string Entity {
             get {
                 return ResourceManager.GetString("Entity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Customer Number.
+        /// </summary>
+        public static string FromCustomerNumber {
+            get {
+                return ResourceManager.GetString("FromCustomerNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Expiry Date.
+        /// </summary>
+        public static string FromExpiryDate {
+            get {
+                return ResourceManager.GetString("FromExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Item Number.
+        /// </summary>
+        public static string FromItemNumber {
+            get {
+                return ResourceManager.GetString("FromItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Location.
+        /// </summary>
+        public static string FromLocation {
+            get {
+                return ResourceManager.GetString("FromLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Lot Number.
+        /// </summary>
+        public static string FromLotNumber {
+            get {
+                return ResourceManager.GetString("FromLotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Serial Number.
+        /// </summary>
+        public static string FromSerialNumber {
+            get {
+                return ResourceManager.GetString("FromSerialNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Sold Date.
+        /// </summary>
+        public static string FromSoldDate {
+            get {
+                return ResourceManager.GetString("FromSoldDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Expiry Date.
+        /// </summary>
+        public static string FromThirdExpiryDate {
+            get {
+                return ResourceManager.GetString("FromThirdExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Location.
+        /// </summary>
+        public static string FromThirdLocation {
+            get {
+                return ResourceManager.GetString("FromThirdLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Sold Date.
+        /// </summary>
+        public static string FromThirdSoldDate {
+            get {
+                return ResourceManager.GetString("FromThirdSoldDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Vendor Number.
+        /// </summary>
+        public static string FromThirdVendorNumber {
+            get {
+                return ResourceManager.GetString("FromThirdVendorNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Vendor Number.
+        /// </summary>
+        public static string FromVendorNumber {
+            get {
+                return ResourceManager.GetString("FromVendorNumber", resourceCulture);
             }
         }
         
@@ -75,6 +183,114 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Reports {
         public static string OptionFields {
             get {
                 return ResourceManager.GetString("OptionFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Customer Number.
+        /// </summary>
+        public static string ToCustomerNumber {
+            get {
+                return ResourceManager.GetString("ToCustomerNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Expiry Date.
+        /// </summary>
+        public static string ToExpiryDate {
+            get {
+                return ResourceManager.GetString("ToExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Item Number.
+        /// </summary>
+        public static string ToItemNumber {
+            get {
+                return ResourceManager.GetString("ToItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Location.
+        /// </summary>
+        public static string ToLocation {
+            get {
+                return ResourceManager.GetString("ToLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Lot Number.
+        /// </summary>
+        public static string ToLotNumber {
+            get {
+                return ResourceManager.GetString("ToLotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Serial Number.
+        /// </summary>
+        public static string ToSerialNumber {
+            get {
+                return ResourceManager.GetString("ToSerialNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Sold Date.
+        /// </summary>
+        public static string ToSoldDate {
+            get {
+                return ResourceManager.GetString("ToSoldDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Expiry Date.
+        /// </summary>
+        public static string ToThirdExpiryDate {
+            get {
+                return ResourceManager.GetString("ToThirdExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Location.
+        /// </summary>
+        public static string ToThirdLocation {
+            get {
+                return ResourceManager.GetString("ToThirdLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Sold Date.
+        /// </summary>
+        public static string ToThirdSoldDate {
+            get {
+                return ResourceManager.GetString("ToThirdSoldDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Vendor Number.
+        /// </summary>
+        public static string ToThirdVendorNumber {
+            get {
+                return ResourceManager.GetString("ToThirdVendorNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Vendor Number.
+        /// </summary>
+        public static string ToVendorNumber {
+            get {
+                return ResourceManager.GetString("ToVendorNumber", resourceCulture);
             }
         }
     }
