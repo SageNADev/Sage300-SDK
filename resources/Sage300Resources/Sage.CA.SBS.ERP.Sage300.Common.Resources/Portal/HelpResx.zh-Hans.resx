@@ -1212,6 +1212,9 @@
   <data name="CS_FiscalCalendar_Screen" xml:space="preserve">
     <value>财务日历屏幕</value>
   </data>
+  <data name="CS_EmailHistory_Screen" xml:space="preserve">
+    <value>电子邮件历史记录屏幕</value>
+  </data>
   <data name="CS_Module" xml:space="preserve">
     <value>浏览管理文章</value>
     <comment>CSHID 71000001</comment>
@@ -1517,7 +1520,7 @@
   </data>
   <data name="IC_Items_Screen" xml:space="preserve">
     <value>存货控制货品屏幕</value>
-    <comment>CSHID 211022001</comment>
+    <comment>123041008</comment>
   </data>
   <data name="IC_ManufacturersItems_Article1" xml:space="preserve">
     <value>存货控制货品屏幕</value>
@@ -1553,7 +1556,7 @@
   </data>
   <data name="IC_Options_Screen" xml:space="preserve">
     <value>存货控制选项屏幕</value>
-    <comment>CSHID 211001001</comment>
+    <comment>123041007</comment>
   </data>
   <data name="IC_SegmentCodes_Article1" xml:space="preserve">
     <value>关于节段代码</value>
@@ -1992,7 +1995,7 @@
   </data>
   <data name="IC_Shipments_Screen" xml:space="preserve">
     <value>存货控制发货屏幕</value>
-    <comment>CSHID 211018001</comment>
+    <comment>123042002</comment>
   </data>
   <data name="PO_ShippableBackorders_Report_Article1" xml:space="preserve">
     <value>关于采购订单报表</value>
@@ -2880,7 +2883,7 @@
   </data>
   <data name="IC_Adjustments_Screen" xml:space="preserve">
     <value>存货控制调整屏幕</value>
-    <comment>CSHID 211021001</comment>
+    <comment>123042003</comment>
   </data>
   <data name="IC_OverstockedItems_Report_Article1" xml:space="preserve">
     <value>存货控制报表</value>
@@ -2928,7 +2931,7 @@
   </data>
   <data name="IC_PhysicalInventoryQuantities_Screen" xml:space="preserve">
     <value>存货控制实物盘存数量屏幕</value>
-    <comment>CSHID 211041001</comment>
+    <comment>123042007</comment>
   </data>
   <data name="IC_ReorderQuantities_Article1" xml:space="preserve">
     <value>关于再订购信息</value>
@@ -3060,7 +3063,7 @@
   </data>
   <data name="IC_Transfers_Screen" xml:space="preserve">
     <value>存货控制转移屏幕</value>
-    <comment>CSHID 211029001</comment>
+    <comment>123042004</comment>
   </data>
   <data name="PO_MailingLabels_Article1" xml:space="preserve">
     <value>关于采购订单表格</value>
@@ -3116,7 +3119,7 @@
   </data>
   <data name="IC_LocationDetails_Screen" xml:space="preserve">
     <value>存货控制地点明细屏幕</value>
-    <comment>CSHID 211034001</comment>
+    <comment>123041009</comment>
   </data>
   <data name="IC_InternalUsage_Article1" xml:space="preserve">
     <value>关于存货控制中的交易处理</value>
@@ -3128,7 +3131,7 @@
   </data>
   <data name="IC_InternalUsage_Screen" xml:space="preserve">
     <value>存货控制内部使用屏幕</value>
-    <comment>CSHID 211020001</comment>
+    <comment>123042006</comment>
   </data>
   <data name="GL_ClearHistory_Article1" xml:space="preserve">
     <value>期末步骤</value>
@@ -3604,15 +3607,15 @@
   </data>
   <data name="IC_CopyBillOfMaterials_Article1" xml:space="preserve">
     <value>关于用料单</value>
-    <comment>CSHID 211066002</comment>
+    <comment>CSHID 123072003</comment>
   </data>
   <data name="IC_CopyBillOfMaterials_Article2" xml:space="preserve">
     <value>复制用料单</value>
-    <comment>CSHID 211066003</comment>
+    <comment>CSHID 123072003</comment>
   </data>
   <data name="IC_CopyBillOfMaterials_Screen" xml:space="preserve">
     <value>存货控制复制用料单屏幕</value>
-    <comment>CSHID 211066001</comment>
+    <comment>CSHID 123072003</comment>
   </data>
   <data name="IC_ItemsWizard_Article1" xml:space="preserve">
     <value>使用货品向导添加存货货品</value>
@@ -4060,15 +4063,15 @@
   </data>
   <data name="IC_UpdateBillsOfMaterials_Article1" xml:space="preserve">
     <value>关于用料单</value>
-    <comment>CSHID 211071002</comment>
+    <comment>CSHID 123071002</comment>
   </data>
   <data name="IC_UpdateBillsOfMaterials_Article2" xml:space="preserve">
     <value>更新用料单</value>
-    <comment>CSHID 211071003</comment>
+    <comment>CSHID 123071002</comment>
   </data>
   <data name="IC_UpdateBillsOfMaterials_Screen" xml:space="preserve">
     <value>存货控制更新用料单屏幕</value>
-    <comment>CSHID 211071001</comment>
+    <comment>CSHID 123071002</comment>
   </data>
   <data name="OE_ShipmentEntry_Article1" xml:space="preserve">
     <value>关于销货单，发货，和发票</value>
@@ -5871,5 +5874,13 @@
   <data name="IC_LotNumberInquiry_Article1" xml:space="preserve">
     <value>查询批号信息</value>
     <comment>123051002</comment>
+  </data>
+  <data name="IC_Lot_Split_Combine_Article1" xml:space="preserve">
+    <value>地块分割与合并</value>
+    <comment>123031801</comment>
+  </data>
+  <data name="IC_Lot_Split_Combine_Screen" xml:space="preserve">
+    <value>内部地块分割/合并</value>
+    <comment>123031801</comment>
   </data>
 </root>

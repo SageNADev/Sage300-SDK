@@ -435,7 +435,10 @@
   <data name="CS_CompanyProfile" xml:space="preserve">
     <value>公司概況</value>
   </data>
-  <data name="CS_FiscalCalendar" xml:space="preserve">
+	<data name="CS_EmailHistory" xml:space="preserve">
+    <value>電郵歷史記錄</value>
+  </data>
+	<data name="CS_FiscalCalendar" xml:space="preserve">
     <value>會計年曆</value>
   </data>
   <data name="Currency" xml:space="preserve">
@@ -1393,7 +1396,7 @@
     <value>通過隱藏或顯示網頁螢幕和類別來自訂導航功能表。如果您隱藏一個模組的所有螢幕，該模組不會出現在導航功能表中。</value>
   </data>
   <data name="CompanySetup" xml:space="preserve">
-    <value>公司設定</value>
+    <value>公司</value>
   </data>
   <data name="DataAndMaintenance" xml:space="preserve">
     <value>資料和維護</value>

@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CloseWithSerialCostNoMatchMessage" xml:space="preserve">
-    <value>剩餘序號調整成本不為零。</value>
-  </data>
-  <data name="CloseWithLotCostNoMatchMessage" xml:space="preserve">
-    <value>剩餘批次調整成本不為零。</value>
-  </data>
-  <data name="CloseWithSerialAndLotCostNoMatchMessage" xml:space="preserve">
-    <value>剩餘序號和批次調整成本不為零。</value>
-  </data>
   <data name="AdjustAll" xml:space="preserve">
     <value>全部調整</value>
   </data>
@@ -153,29 +144,17 @@
   <data name="AllocSerialSomeWarning" xml:space="preserve">
     <value>未分配所需的全部序號。可能沒有更多可供分配的序號。執行日終處理後，可能會有更多可供分配的序號。</value>
   </data>
-  <data name="AssignAll" xml:space="preserve">
-    <value>全部分配</value>
-  </data>
   <data name="Assigned" xml:space="preserve">
     <value>已分配</value>
   </data>
-  <data name="AutoAlloc" xml:space="preserve">
-    <value>自動分配</value>
-  </data>
   <data name="AutoAllocFrom" xml:space="preserve">
     <value>自動分配來源</value>
-  </data>
-  <data name="AutoGen" xml:space="preserve">
-    <value>自動產生</value>
   </data>
   <data name="AutoGenFailedMessage" xml:space="preserve">
     <value>自動產生 {0} 編號失敗。</value>
   </data>
   <data name="CannotBeBlankErrorMessage" xml:space="preserve">
     <value>{0} 編號不能為空。</value>
-  </data>
-  <data name="ClearAll" xml:space="preserve">
-    <value>全部清除</value>
   </data>
   <data name="ClearLotNumbersConfirmMessage" xml:space="preserve">
     <value>確定要清除清單中的所有批號嗎？</value>
@@ -263,9 +242,6 @@
   </data>
   <data name="LotsShipped" xml:space="preserve">
     <value>已出貨批次</value>
-  </data>
-  <data name="NextSerialNumber" xml:space="preserve">
-    <value>下一個序號</value>
   </data>
   <data name="NextSerialOrLotNumberBlankError" xml:space="preserve">
     <value>下一個 {0} 編號為空。系統無法根據空白的下一個 {0} 編號新增或產生 {0} 編號。</value>
@@ -381,6 +357,30 @@
   <data name="ZeroWarning" xml:space="preserve">
     <value>「建立批次」或「每個批次包含」其中一個必須為零，但兩者不可同時為零。</value>
   </data>
+  <data name="CloseWithSerialCostNoMatchMessage" xml:space="preserve">
+    <value>剩餘序號調整成本不為零。</value>
+  </data>
+  <data name="CloseWithLotCostNoMatchMessage" xml:space="preserve">
+    <value>剩餘批次調整成本不為零。</value>
+  </data>
+  <data name="CloseWithSerialAndLotCostNoMatchMessage" xml:space="preserve">
+    <value>剩餘序號和批次調整成本不為零。</value>
+  </data>
+  <data name="AssignAll" xml:space="preserve">
+    <value>全部分配</value>
+  </data>
+  <data name="AutoAlloc" xml:space="preserve">
+    <value>自動分配</value>
+  </data>
+  <data name="AutoGen" xml:space="preserve">
+    <value>自動產生</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>全部清除</value>
+  </data>
+  <data name="NextSerialNumber" xml:space="preserve">
+    <value>下一個序號</value>
+  </data>
   <data name="EachLotHas" xml:space="preserve">
     <value>每塊地塊均擁有</value>
   </data>
@@ -395,5 +395,18 @@
   </data>
   <data name="FractionalQty" xml:space="preserve">
     <value>帶有序號的物料不能使用小數數。</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ShipAll" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>很多</value>
+  </data>
+  <data name="Lots" xml:space="preserve">
+    <value>很多</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>連載</value>
   </data>
 </root>

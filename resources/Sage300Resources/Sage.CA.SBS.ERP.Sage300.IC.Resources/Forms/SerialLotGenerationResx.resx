@@ -238,7 +238,7 @@
     <value>Lots Received</value>
   </data>
   <data name="LotsReturned" xml:space="preserve">
-    <value>Lots Returned</value>
+    <value>Allocated</value>
   </data>
   <data name="LotsShipped" xml:space="preserve">
     <value>Lots Shipped</value>
@@ -398,5 +398,17 @@
   </data>
   <data name="RemoveSerialLotData" xml:space="preserve">
     <value>All the generated/allocated serials/lots will be cleaned up. Continue to proceed?</value>
+  </data>
+  <data name="ShipAll" xml:space="preserve">
+    <value>Ship All</value>
+  </data>
+  <data name="Lots" xml:space="preserve">
+    <value>Lots</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>Lot</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Serial</value>
   </data>
 </root>

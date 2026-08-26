@@ -344,4 +344,8 @@
   <data name="PurchaseOrder" xml:space="preserve">
     <value>Orden de Compra</value>
   </data>
+  <data name="EmailOptions" xml:space="preserve"><value>Opciones de Correo Electrónico</value></data>
+  <data name="SenderEmailForPurchaseOrders" xml:space="preserve"><value>Remitente para Órd. Compra</value></data>
+  <data name="SenderEmailForReturns" xml:space="preserve"><value>Remitente para Devoluciones</value></data>
+  <data name="InvalidEmailAddress" xml:space="preserve"><value>Escriba una dirección de correo electrónico válida.</value></data>
 </root>

@@ -510,4 +510,9 @@
   <data name="PaymentsAcceptanceDefaultBankCodeDesc" xml:space="preserve">
     <value>付款承兑银行代码描述</value>
   </data>
+  <data name="EmailOptions" xml:space="preserve"><value>电子邮件选项</value></data>
+  <data name="SenderEmailForInvoices" xml:space="preserve"><value>发票发件人电子邮件</value></data>
+  <data name="SenderEmailForReceipts" xml:space="preserve"><value>收据发件人电子邮件</value></data>
+  <data name="SenderEmailForStatements" xml:space="preserve"><value>对账单发件人电子邮件</value></data>
+  <data name="InvalidEmailAddress" xml:space="preserve"><value>输入有效的电子邮件地址。</value></data>
 </root>

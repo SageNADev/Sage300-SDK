@@ -245,11 +245,11 @@
     <comment>Lot - Field</comment>
   </data>
   <data name="QUARANTINEDON" xml:space="preserve">
-    <value>Fecha Cuarentena</value>
+    <value>Fch. Cuarent.</value>
     <comment>Lot - Check Box</comment>
   </data>
   <data name="RECALLDATE" xml:space="preserve">
-    <value>Fecha Retirada</value>
+    <value>Fch. Retir.</value>
     <comment>Lot - Field</comment>
   </data>
   <data name="Recalled" xml:space="preserve">
@@ -409,7 +409,7 @@
   </data>
   <data name="TitleLotNumberTransactionInquiry" xml:space="preserve">
     <value>Consulta de Transacción de N° de Lote</value>
-    </data>
+  </data>
   <data name="OptionalField" xml:space="preserve">
     <value>Campos Opcionales</value>
   </data>

@@ -405,4 +405,7 @@
     <value>凭证编号</value>
     <comment>Retainage Tab </comment>
   </data>
+  <data name="EmailOptions" xml:space="preserve"><value>电子邮件选项</value></data>
+  <data name="SenderEmailForLetters" xml:space="preserve"><value>信函发件人电子邮件</value></data>
+  <data name="InvalidEmailAddress" xml:space="preserve"><value>输入有效的电子邮件地址。</value></data>
 </root>

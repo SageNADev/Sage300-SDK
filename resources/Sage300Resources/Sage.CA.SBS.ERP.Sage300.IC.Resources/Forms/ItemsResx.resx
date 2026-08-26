@@ -383,12 +383,6 @@
   <data name="LotMaskStructure" xml:space="preserve">
     <value>Lot Mask Structure</value>
   </data>
-  <data name="LotNumber" xml:space="preserve">
-    <value>Lot Number</value>
-  </data>
-  <data name="LotNumberMask" xml:space="preserve">
-    <value>Lot Number Mask</value>
-  </data>
   <data name="LotNumbersInUse" xml:space="preserve">
     <value>Lot Numbers in Use</value>
   </data>
@@ -436,12 +430,6 @@
   </data>
   <data name="SerialMaskStructure" xml:space="preserve">
     <value>Serial Mask Structure</value>
-  </data>
-  <data name="SerialNumber" xml:space="preserve">
-    <value>Serial Number</value>
-  </data>
-  <data name="SerialNumberMask" xml:space="preserve">
-    <value>Serial Number Mask</value>
   </data>
   <data name="SerialNumbers" xml:space="preserve">
     <value>Serial Numbers</value>
@@ -495,10 +483,6 @@
     <value>Place the Lot Automatically on Contract When Received</value>
     <comment>Label</comment>
   </data>
-  <data name="LotWarrantyWhenRegistered" xml:space="preserve">
-    <value>Place the Lot Automatically on Warranty When Registered</value>
-    <comment>Label</comment>
-  </data>
   <data name="LotWarrantyWhenSold" xml:space="preserve">
     <value>Place the Lot Automatically on Warranty When Sold</value>
     <comment>Label</comment>
@@ -545,5 +529,24 @@
   </data>
   <data name="SerialConfirmationPopup" xml:space="preserve">
     <value>serial</value>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>Lot Number Mask Description</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AccountSetCannotBeSelect" xml:space="preserve">
+    <value>'Allow {0} Quantity to be Different' is set for this item. An account set that uses a {1} costing method cannot be selected.</value>
+  </data>
+  <data name="KittingItemsErrorMsg" xml:space="preserve">
+    <value>This item is in kitting items.</value>
+  </data>
+  <data name="Lotted" xml:space="preserve">
+    <value>lotted</value>
+  </data>
+  <data name="NotSerializedLotted" xml:space="preserve">
+    <value>An account set is specified that uses a {0} costing method but the item is not {1}.</value>
+  </data>
+  <data name="Serialized" xml:space="preserve">
+    <value>serialized</value>
   </data>
 </root>

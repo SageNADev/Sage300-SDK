@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class MaterialUsageResx {
@@ -178,6 +178,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expiry Date.
+        /// </summary>
+        public static string ExpiryDate {
+            get {
+                return ResourceManager.GetString("ExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total Cost.
         /// </summary>
         public static string EXTCOSTHM {
@@ -219,6 +228,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string FiscalYear {
             get {
                 return ResourceManager.GetString("FiscalYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Formatted Lot Number.
+        /// </summary>
+        public static string FormattedLotNumber {
+            get {
+                return ResourceManager.GetString("FormattedLotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Formatted Serial Number.
+        /// </summary>
+        public static string FormattedSerialNumber {
+            get {
+                return ResourceManager.GetString("FormattedSerialNumber", resourceCulture);
             }
         }
         
@@ -273,6 +300,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string InternalUsage {
             get {
                 return ResourceManager.GetString("InternalUsage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Line Number.
+        /// </summary>
+        public static string LineNumber {
+            get {
+                return ResourceManager.GetString("LineNumber", resourceCulture);
             }
         }
         
@@ -583,6 +619,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QTYSQ.
+        /// </summary>
+        public static string QTYSQ {
+            get {
+                return ResourceManager.GetString("QTYSQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ready to process.
         /// </summary>
         public static string ReadyToProcess {
@@ -606,6 +651,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string Sequence {
             get {
                 return ResourceManager.GetString("Sequence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sequence Number.
+        /// </summary>
+        public static string SequenceNumber {
+            get {
+                return ResourceManager.GetString("SequenceNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial Quantity.
+        /// </summary>
+        public static string SerialQuantity {
+            get {
+                return ResourceManager.GetString("SerialQuantity", resourceCulture);
             }
         }
         
@@ -678,6 +741,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string TransactionDate {
             get {
                 return ResourceManager.GetString("TransactionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction Quantity.
+        /// </summary>
+        public static string TransactionQuantity {
+            get {
+                return ResourceManager.GetString("TransactionQuantity", resourceCulture);
             }
         }
         

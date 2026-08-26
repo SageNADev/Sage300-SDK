@@ -572,5 +572,29 @@ namespace Sage.CA.SBS.ERP.Sage300.OE.Resources.Forms {
                 return ResourceManager.GetString("WUOMBy", resourceCulture);
             }
         }
+
+        public static string EmailOptions {
+            get { return ResourceManager.GetString("EmailOptions", resourceCulture); }
+        }
+
+        public static string SenderEmailForOrderConfirmations {
+            get { return ResourceManager.GetString("SenderEmailForOrderConfirmations", resourceCulture); }
+        }
+
+        public static string SenderEmailForInvoices {
+            get { return ResourceManager.GetString("SenderEmailForInvoices", resourceCulture); }
+        }
+
+        public static string SenderEmailForCreditDebitNotes {
+            get { return ResourceManager.GetString("SenderEmailForCreditDebitNotes", resourceCulture); }
+        }
+
+        public static string SenderEmailForQuotes {
+            get { return ResourceManager.GetString("SenderEmailForQuotes", resourceCulture); }
+        }
+
+        public static string InvalidEmailAddress {
+            get { return ResourceManager.GetString("InvalidEmailAddress", resourceCulture); }
+        }
     }
 }

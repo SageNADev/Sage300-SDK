@@ -448,6 +448,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lot.
+        /// </summary>
+        public static string Lot {
+            get {
+                return ResourceManager.GetString("Lot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lot Numbers Generation/Allocation.
         /// </summary>
         public static string LotEntity {
@@ -484,6 +493,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lots.
+        /// </summary>
+        public static string Lots {
+            get {
+                return ResourceManager.GetString("Lots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lots Adjusted.
         /// </summary>
         public static string LotsAdjusted {
@@ -502,7 +520,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lots Returned.
+        ///   Looks up a localized string similar to Allocated.
         /// </summary>
         public static string LotsReturned {
             get {
@@ -745,6 +763,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Serial.
+        /// </summary>
+        public static string Serial {
+            get {
+                return ResourceManager.GetString("Serial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serial Numbers Generation/Allocation.
         /// </summary>
         public static string SerialEntity {
@@ -858,6 +885,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string SerialsShipped {
             get {
                 return ResourceManager.GetString("SerialsShipped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ship All.
+        /// </summary>
+        public static string ShipAll {
+            get {
+                return ResourceManager.GetString("ShipAll", resourceCulture);
             }
         }
         

@@ -345,4 +345,10 @@
     <value>Hebdomadaire</value>
     <comment>Process Tab</comment>
   </data>
+  <data name="EmailOptions" xml:space="preserve"><value>Options de courriel</value></data>
+  <data name="SenderEmailForOrderConfirmations" xml:space="preserve"><value>Expéd. confirm. cde</value></data>
+  <data name="SenderEmailForInvoices" xml:space="preserve"><value>Expéd. factures</value></data>
+  <data name="SenderEmailForCreditDebitNotes" xml:space="preserve"><value>Expéd. notes cr./déb.</value></data>
+  <data name="SenderEmailForQuotes" xml:space="preserve"><value>Expéd. devis</value></data>
+  <data name="InvalidEmailAddress" xml:space="preserve"><value>Saisissez une adresse de courriel valide.</value></data>
 </root>

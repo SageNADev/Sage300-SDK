@@ -950,7 +950,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="Lots" xml:space="preserve">
-    <value>Lots</value>
+    <value>Numéros lot</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="LotTracking" xml:space="preserve">
@@ -1526,11 +1526,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="SerialNumbers" xml:space="preserve">
-    <value>N° série suivant</value>
+    <value>N° série</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Serials" xml:space="preserve">
-    <value>N° série</value>
+    <value>Numéros série</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Settings" xml:space="preserve">

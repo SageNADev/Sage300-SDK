@@ -5452,6 +5452,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email History Screen.
+        /// </summary>
+        public static string CS_EmailHistory_Screen {
+            get {
+                return ResourceManager.GetString("CS_EmailHistory_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Maintaining the Fiscal Calendar.
         /// </summary>
         public static string CS_FiscalCalendar_Article1 {
@@ -8310,6 +8319,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Locations_Screen {
             get {
                 return ResourceManager.GetString("IC_Locations_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Splitting and Combining Lots.
+        /// </summary>
+        public static string IC_Lot_Split_Combine_Article1 {
+            get {
+                return ResourceManager.GetString("IC_Lot_Split_Combine_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Lot Splits/Combines.
+        /// </summary>
+        public static string IC_Lot_Split_Combine_Screen {
+            get {
+                return ResourceManager.GetString("IC_Lot_Split_Combine_Screen", resourceCulture);
             }
         }
         

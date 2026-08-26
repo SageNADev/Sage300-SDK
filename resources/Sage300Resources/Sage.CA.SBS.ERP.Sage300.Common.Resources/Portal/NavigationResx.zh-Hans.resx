@@ -435,7 +435,10 @@
   <data name="CS_CompanyProfile" xml:space="preserve">
     <value>公司概览</value>
   </data>
-  <data name="CS_FiscalCalendar" xml:space="preserve">
+	<data name="CS_EmailHistory" xml:space="preserve">
+    <value>电子邮件历史记录</value>
+  </data>
+	<data name="CS_FiscalCalendar" xml:space="preserve">
     <value>财务日历</value>
   </data>
   <data name="Currency" xml:space="preserve">
@@ -1393,7 +1396,7 @@
     <value>通过隐藏或显示网页屏幕和类别来自定义导航菜单。如果您隐藏一个模块的所有屏幕，该模块不会出现在导航菜单中。</value>
   </data>
   <data name="CompanySetup" xml:space="preserve">
-    <value>公司设置</value>
+    <value>公司</value>
   </data>
   <data name="DataAndMaintenance" xml:space="preserve">
     <value>数据和维护</value>

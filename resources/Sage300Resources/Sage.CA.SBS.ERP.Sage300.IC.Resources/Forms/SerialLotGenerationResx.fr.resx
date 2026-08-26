@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CloseWithSerialCostNoMatchMessage" xml:space="preserve">
-    <value>Les coûts d'ajustement restants des séries ne sont pas nuls.</value>
-  </data>
-  <data name="CloseWithLotCostNoMatchMessage" xml:space="preserve">
-    <value>Les coûts d'ajustement restants des lots ne sont pas nuls.</value>
-  </data>
-  <data name="CloseWithSerialAndLotCostNoMatchMessage" xml:space="preserve">
-    <value>Les coûts d'ajustement restants des séries et lots ne sont pas nuls.</value>
-  </data>
   <data name="AdjustAll" xml:space="preserve">
     <value>Tout ajuster</value>
   </data>
@@ -136,10 +127,10 @@
     <value>Coût d'ajustement</value>
   </data>
   <data name="Allocated" xml:space="preserve">
-    <value>Alloué</value>
+    <value>Attribué</value>
   </data>
   <data name="Allocation" xml:space="preserve">
-    <value>Allocation</value>
+    <value>Attribution</value>
   </data>
   <data name="AllocLotNoneWarning" xml:space="preserve">
     <value>Aucun numéro de lot n'a été attribué. Il se peut qu'aucun lot ne dispose d'une quantité suffisante à attribuer. Après le traitement de fin de journée, des lots avec des quantités disponibles pourront être attribués.</value>
@@ -153,29 +144,17 @@
   <data name="AllocSerialSomeWarning" xml:space="preserve">
     <value>Tous les numéros de série requis n'ont pas été attribués. Il se peut qu'il n'y en ait pas davantage disponibles. Après le traitement de fin de journée, d'autres numéros pourront être disponibles.</value>
   </data>
-  <data name="AssignAll" xml:space="preserve">
-    <value>Attribuer tout</value>
-  </data>
   <data name="Assigned" xml:space="preserve">
     <value>Attribué</value>
   </data>
-  <data name="AutoAlloc" xml:space="preserve">
-    <value>Attribution automatique</value>
-  </data>
   <data name="AutoAllocFrom" xml:space="preserve">
     <value>Attribution automatique depuis</value>
-  </data>
-  <data name="AutoGen" xml:space="preserve">
-    <value>Génération automatique</value>
   </data>
   <data name="AutoGenFailedMessage" xml:space="preserve">
     <value>Échec de la génération automatique des numéros {0}.</value>
   </data>
   <data name="CannotBeBlankErrorMessage" xml:space="preserve">
     <value>Le numéro {0} ne peut pas être vide.</value>
-  </data>
-  <data name="ClearAll" xml:space="preserve">
-    <value>Tout effacer</value>
   </data>
   <data name="ClearLotNumbersConfirmMessage" xml:space="preserve">
     <value>Voulez-vous vraiment supprimer tous les numéros de lot de la liste ?</value>
@@ -214,25 +193,25 @@
     <value>Le prochain numéro de série est vide. Le système ne peut pas ajouter/générer un numéro de série à partir d'une valeur vide.</value>
   </data>
   <data name="ExpiryDate" xml:space="preserve">
-    <value>Date d'expiration</value>
+    <value>Date expiration</value>
   </data>
   <data name="ExpiryDateBeforeStockDateWarning" xml:space="preserve">
     <value>Avertissement. La date d'expiration est antérieure à la date de stock pour le lot {0}.</value>
   </data>
   <data name="Generated" xml:space="preserve">
-    <value>Généré</value>
+    <value>Créé</value>
   </data>
   <data name="GeneratedAllocated" xml:space="preserve">
     <value>Généré/Attribué</value>
   </data>
   <data name="Generation" xml:space="preserve">
-    <value>Génération</value>
+    <value>Création</value>
   </data>
   <data name="GenerationAllocation" xml:space="preserve">
-    <value>Génération/Attribution</value>
+    <value>Création/Attribution</value>
   </data>
   <data name="ItemNumber" xml:space="preserve">
-    <value>Numéro d'article</value>
+    <value>N° article</value>
   </data>
   <data name="LAssigned" xml:space="preserve">
     <value>Lots attribués</value>
@@ -241,13 +220,13 @@
     <value>Emplacement</value>
   </data>
   <data name="LotEntity" xml:space="preserve">
-    <value>Génération/Attribution des numéros de lot</value>
+    <value>Création/Attribution de numéros lot</value>
   </data>
   <data name="LotNoRequired" xml:space="preserve">
     <value>Quantité de lot requise</value>
   </data>
   <data name="LotNumbers" xml:space="preserve">
-    <value>Numéros de lot</value>
+    <value>N° lot</value>
   </data>
   <data name="LotNumberValidationMessage" xml:space="preserve">
     <value>Le prochain numéro de lot n'est pas valide pour le masque actuel.</value>
@@ -263,9 +242,6 @@
   </data>
   <data name="LotsShipped" xml:space="preserve">
     <value>Lots expédiés</value>
-  </data>
-  <data name="NextSerialNumber" xml:space="preserve">
-    <value>Prochain numéro de série</value>
   </data>
   <data name="NextSerialOrLotNumberBlankError" xml:space="preserve">
     <value>Le prochain numéro {0} est vide. Le système ne peut pas ajouter/générer un numéro {0} à partir d'une valeur vide.</value>
@@ -346,7 +322,7 @@
     <value>Numéros de série requis</value>
   </data>
   <data name="SerialNumbers" xml:space="preserve">
-    <value>Numéros de série</value>
+    <value>N° série</value>
   </data>
   <data name="SerialNumberValidationMessage" xml:space="preserve">
     <value>Le numéro de série n'est pas valide pour le masque actuel.</value>
@@ -373,27 +349,64 @@
     <value>Qté attribuée</value>
   </data>
   <data name="StockDate" xml:space="preserve">
-    <value>Date de stock</value>
+    <value>Date stock</value>
   </data>
   <data name="UOM" xml:space="preserve">
     <value>Unité de mesure</value>
   </data>
   <data name="ZeroWarning" xml:space="preserve">
-    <value>Soit « Créer des lots », soit « Chaque lot contient » doit être égal à zéro, mais pas les deux</value>
+    <value>Soit  Créer des lots , soit  Chaque lot contient  doit être égal à zéro, mais pas les deux</value>
+  </data>
+  <data name="CloseWithSerialCostNoMatchMessage" xml:space="preserve">
+    <value>Les coûts d'ajustement restants des séries ne sont pas nuls.</value>
+  </data>
+  <data name="CloseWithLotCostNoMatchMessage" xml:space="preserve">
+    <value>Les coûts d'ajustement restants des lots ne sont pas nuls.</value>
+  </data>
+  <data name="CloseWithSerialAndLotCostNoMatchMessage" xml:space="preserve">
+    <value>Les coûts d'ajustement restants des séries et lots ne sont pas nuls.</value>
+  </data>
+  <data name="AssignAll" xml:space="preserve">
+    <value>Attribuer tout</value>
+  </data>
+  <data name="AutoAlloc" xml:space="preserve">
+    <value>Attribution automatique</value>
+  </data>
+  <data name="AutoGen" xml:space="preserve">
+    <value>Créer auto</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Effacer tout</value>
+  </data>
+  <data name="NextSerialNumber" xml:space="preserve">
+    <value>N° série suivant</value>
   </data>
   <data name="EachLotHas" xml:space="preserve">
-    <value>Chaque lot dispose de</value>
+    <value>Chaque lot a</value>
   </data>
   <data name="Make" xml:space="preserve">
-    <value>Faire</value>
+    <value>Créer</value>
   </data>
   <data name="NextLotNo" xml:space="preserve">
-    <value>Numéro du lot suivant</value>
+    <value>N° lot suivant</value>
   </data>
   <data name="OR" xml:space="preserve">
     <value>OU</value>
   </data>
   <data name="FractionalQty" xml:space="preserve">
     <value>Une quantité fractionnaire ne peut pas être utilisée avec un article sérialisé.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ShipAll" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Lots" xml:space="preserve">
+    <value>lots</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>Lot</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Série</value>
   </data>
 </root>

@@ -1636,6 +1636,15 @@ namespace Sage.CA.SBS.ERP.Sage300.OE.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quantity shipped cannot be greater than quantity ordered..
+        /// </summary>
+        public static string GreaterShippedQtyErrorMessage {
+            get {
+                return ResourceManager.GetString("GreaterShippedQtyErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Has Retainage.
         /// </summary>
         public static string HasRetainage {

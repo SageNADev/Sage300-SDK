@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+  <!-- Portions co-modified with Claude Code -->
+  <!--
     Microsoft ResX Schema 
     
     Version 2.0
@@ -132,8 +133,20 @@
   <data name="BOMNumber" xml:space="preserve">
     <value>BOM Number</value>
   </data>
+  <data name="ComponentBomNo" xml:space="preserve">
+    <value>Component's BOM Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ComponentItemNo" xml:space="preserve">
+    <value>Component Item Number</value>
+    <comment>Field</comment>
+  </data>
   <data name="ComponentItemNumberDesc" xml:space="preserve">
     <value>Component Item Number Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ComponentType" xml:space="preserve">
+    <value>Component Type</value>
     <comment>Field</comment>
   </data>
   <data name="Components" xml:space="preserve">
@@ -143,6 +156,10 @@
   <data name="Cost" xml:space="preserve">
     <value>Cost</value>
     <comment>List Item</comment>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>Cost Type</value>
+    <comment>Field</comment>
   </data>
   <data name="Decrease" xml:space="preserve">
     <value>Decrease</value>
@@ -188,8 +205,24 @@
     <value>Replace</value>
     <comment>List Item</comment>
   </data>
+  <data name="ReplacementBomNo" xml:space="preserve">
+    <value>Replace by BOM Number</value>
+    <comment>Field</comment>
+  </data>
   <data name="RplByItemNo" xml:space="preserve">
     <value>Replace by Item Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToBomNo" xml:space="preserve">
+    <value>To BOM Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToItemNo" xml:space="preserve">
+    <value>To Master Item Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
     <comment>Field</comment>
   </data>
   <data name="Using" xml:space="preserve">

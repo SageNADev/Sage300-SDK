@@ -188,7 +188,7 @@
     <comment>Modal - Table Column</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>Numéros de lot de GS</value>
+    <value>Numéros de lot de G.S.</value>
     <comment>Screen Title</comment>
   </data>
   <data name="Items" xml:space="preserve">
@@ -245,7 +245,7 @@
     <comment>Lot - Field</comment>
   </data>
   <data name="QUARANTINEDON" xml:space="preserve">
-    <value>Mis en quarantaine le</value>
+    <value>En quarantaine</value>
     <comment>Lot - Check Box</comment>
   </data>
   <data name="RECALLDATE" xml:space="preserve">
@@ -409,7 +409,7 @@
   </data>
   <data name="TitleLotNumberTransactionInquiry" xml:space="preserve">
     <value>Consultation transaction–N° lot</value>
-</data>
+  </data>
   <data name="OptionalField" xml:space="preserve">
     <value>Champs optionnels</value>
   </data>

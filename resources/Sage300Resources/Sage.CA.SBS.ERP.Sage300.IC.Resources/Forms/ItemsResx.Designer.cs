@@ -61,6 +61,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;Allow {0} Quantity to be Different&apos; is set for this item. An account set that uses a {1} costing method cannot be selected..
+        /// </summary>
+        public static string AccountSetCannotBeSelect {
+            get {
+                return ResourceManager.GetString("AccountSetCannotBeSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account set has been changed. This will affect all future postings related to this item. Do you really want to change this account set? .
         /// </summary>
         public static string AccountSetConfirmationMessage {
@@ -475,6 +484,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This item is in kitting items..
+        /// </summary>
+        public static string KittingItemsErrorMsg {
+            get {
+                return ResourceManager.GetString("KittingItemsErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last Generated Lot.
         /// </summary>
         public static string LastGeneratedLot {
@@ -556,20 +574,11 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lot Number.
+        ///   Looks up a localized string similar to Lot Number Mask Description.
         /// </summary>
-        public static string LotNumber {
+        public static string LotNumberMaskDescription {
             get {
-                return ResourceManager.GetString("LotNumber", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lot Number Mask.
-        /// </summary>
-        public static string LotNumberMask {
-            get {
-                return ResourceManager.GetString("LotNumberMask", resourceCulture);
+                return ResourceManager.GetString("LotNumberMaskDescription", resourceCulture);
             }
         }
         
@@ -619,11 +628,11 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Place the Lot Automatically on Warranty When Registered.
+        ///   Looks up a localized string similar to lotted.
         /// </summary>
-        public static string LotWarrantyWhenRegistered {
+        public static string Lotted {
             get {
-                return ResourceManager.GetString("LotWarrantyWhenRegistered", resourceCulture);
+                return ResourceManager.GetString("Lotted", resourceCulture);
             }
         }
         
@@ -660,6 +669,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string NonStockItemMessage {
             get {
                 return ResourceManager.GetString("NonStockItemMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An account set is specified that uses a {0} costing method but the item is not {1}..
+        /// </summary>
+        public static string NotSerializedLotted {
+            get {
+                return ResourceManager.GetString("NotSerializedLotted", resourceCulture);
             }
         }
         
@@ -907,6 +925,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to serialized.
+        /// </summary>
+        public static string Serialized {
+            get {
+                return ResourceManager.GetString("Serialized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serial Mask Description.
         /// </summary>
         public static string SerialMaskDescription {
@@ -921,24 +948,6 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string SerialMaskStructure {
             get {
                 return ResourceManager.GetString("SerialMaskStructure", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Serial Number.
-        /// </summary>
-        public static string SerialNumber {
-            get {
-                return ResourceManager.GetString("SerialNumber", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Serial Number Mask.
-        /// </summary>
-        public static string SerialNumberMask {
-            get {
-                return ResourceManager.GetString("SerialNumberMask", resourceCulture);
             }
         }
         

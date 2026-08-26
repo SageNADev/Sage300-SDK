@@ -3022,4 +3022,7 @@
   <data name="InvalidLocation" xml:space="preserve">
     <value>The location is blank. The serials/lot form will not be displayed.</value>
   </data>
+  <data name="GreaterShippedQtyErrorMessage" xml:space="preserve">
+    <value>Quantity shipped cannot be greater than quantity ordered.</value>
+  </data>
 </root>

@@ -707,5 +707,17 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
                 return ResourceManager.GetString("VendorAndGroupStats", resourceCulture);
             }
         }
+
+        public static string EmailOptions {
+            get { return ResourceManager.GetString("EmailOptions", resourceCulture); }
+        }
+
+        public static string SenderEmailForLetters {
+            get { return ResourceManager.GetString("SenderEmailForLetters", resourceCulture); }
+        }
+
+        public static string InvalidEmailAddress {
+            get { return ResourceManager.GetString("InvalidEmailAddress", resourceCulture); }
+        }
     }
 }

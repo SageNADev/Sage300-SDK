@@ -345,4 +345,10 @@
     <value>Semanal</value>
     <comment>Process Tab</comment>
   </data>
+  <data name="EmailOptions" xml:space="preserve"><value>Opciones de Correo Electrónico</value></data>
+  <data name="SenderEmailForOrderConfirmations" xml:space="preserve"><value>Remitente para Confirm. Órd.</value></data>
+  <data name="SenderEmailForInvoices" xml:space="preserve"><value>Remitente para Facturas</value></data>
+  <data name="SenderEmailForCreditDebitNotes" xml:space="preserve"><value>Remitente para Notas Cr./Déb.</value></data>
+  <data name="SenderEmailForQuotes" xml:space="preserve"><value>Remitente para Cotizaciones</value></data>
+  <data name="InvalidEmailAddress" xml:space="preserve"><value>Escriba una dirección de correo electrónico válida.</value></data>
 </root>

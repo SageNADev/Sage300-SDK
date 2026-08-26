@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CloseWithSerialCostNoMatchMessage" xml:space="preserve">
-    <value>Los costos de ajuste restantes de serie no son cero.</value>
-  </data>
-  <data name="CloseWithLotCostNoMatchMessage" xml:space="preserve">
-    <value>Los costos de ajuste de lote restantes no son cero.</value>
-  </data>
-  <data name="CloseWithSerialAndLotCostNoMatchMessage" xml:space="preserve">
-    <value>Los costos de ajuste restantes de series y lotes no son cero.</value>
-  </data>
   <data name="AdjustAll" xml:space="preserve">
     <value>Ajustar todo</value>
   </data>
@@ -153,29 +144,17 @@
   <data name="AllocSerialSomeWarning" xml:space="preserve">
     <value>No se asignaron todos los números de serie requeridos. Es posible que no haya más números de serie disponibles. Después del procesamiento de fin de día, podrían estar disponibles más números de serie.</value>
   </data>
-  <data name="AssignAll" xml:space="preserve">
-    <value>Asignar todo</value>
-  </data>
   <data name="Assigned" xml:space="preserve">
     <value>Asignado</value>
   </data>
-  <data name="AutoAlloc" xml:space="preserve">
-    <value>Asignación automática</value>
-  </data>
   <data name="AutoAllocFrom" xml:space="preserve">
-    <value>Asignar automáticamente desde</value>
-  </data>
-  <data name="AutoGen" xml:space="preserve">
-    <value>Generación automática</value>
+    <value>Auto-asignar Desde</value>
   </data>
   <data name="AutoGenFailedMessage" xml:space="preserve">
     <value>Error al generar automáticamente los números {0}.</value>
   </data>
   <data name="CannotBeBlankErrorMessage" xml:space="preserve">
     <value>El número {0} no puede estar vacío.</value>
-  </data>
-  <data name="ClearAll" xml:space="preserve">
-    <value>Borrar todo</value>
   </data>
   <data name="ClearLotNumbersConfirmMessage" xml:space="preserve">
     <value>¿Está seguro de que desea eliminar todos los números de lote de la lista?</value>
@@ -214,7 +193,7 @@
     <value>El siguiente número de serie está vacío. El sistema no puede agregar/generar un número de serie basándose en un valor vacío.</value>
   </data>
   <data name="ExpiryDate" xml:space="preserve">
-    <value>Fecha de vencimiento</value>
+    <value>Fch. Caducidad</value>
   </data>
   <data name="ExpiryDateBeforeStockDateWarning" xml:space="preserve">
     <value>Advertencia. La fecha de vencimiento es anterior a la fecha de inventario para el lote {0}.</value>
@@ -232,7 +211,7 @@
     <value>Generación/Asignación</value>
   </data>
   <data name="ItemNumber" xml:space="preserve">
-    <value>Número de artículo</value>
+    <value>N° Artículo</value>
   </data>
   <data name="LAssigned" xml:space="preserve">
     <value>Lotes asignados</value>
@@ -247,7 +226,7 @@
     <value>Cantidad de lote requerida</value>
   </data>
   <data name="LotNumbers" xml:space="preserve">
-    <value>Números de lote</value>
+    <value>Nº Lote</value>
   </data>
   <data name="LotNumberValidationMessage" xml:space="preserve">
     <value>El siguiente número de lote no es válido para la máscara actual.</value>
@@ -263,9 +242,6 @@
   </data>
   <data name="LotsShipped" xml:space="preserve">
     <value>Lotes enviados</value>
-  </data>
-  <data name="NextSerialNumber" xml:space="preserve">
-    <value>Siguiente número de serie</value>
   </data>
   <data name="NextSerialOrLotNumberBlankError" xml:space="preserve">
     <value>El siguiente número {0} está vacío. El sistema no puede agregar/generar un número {0} basándose en un valor vacío.</value>
@@ -346,7 +322,7 @@
     <value>Números de serie requeridos</value>
   </data>
   <data name="SerialNumbers" xml:space="preserve">
-    <value>Números de serie</value>
+    <value>N° Serie</value>
   </data>
   <data name="SerialNumberValidationMessage" xml:space="preserve">
     <value>El número de serie no es válido para la máscara de número de serie actual.</value>
@@ -373,7 +349,7 @@
     <value>Cantidad asignada</value>
   </data>
   <data name="StockDate" xml:space="preserve">
-    <value>Fecha de inventario</value>
+    <value>Fch. Inventario</value>
   </data>
   <data name="UOM" xml:space="preserve">
     <value>Unidad de medida</value>
@@ -381,19 +357,56 @@
   <data name="ZeroWarning" xml:space="preserve">
     <value>Make Lots' o 'Each Lot Has' debe ser cero, pero no ambos al mismo tiempo.</value>
   </data>
+  <data name="CloseWithSerialCostNoMatchMessage" xml:space="preserve">
+    <value>Los costos de ajuste restantes de serie no son cero.</value>
+  </data>
+  <data name="CloseWithLotCostNoMatchMessage" xml:space="preserve">
+    <value>Los costos de ajuste de lote restantes no son cero.</value>
+  </data>
+  <data name="CloseWithSerialAndLotCostNoMatchMessage" xml:space="preserve">
+    <value>Los costos de ajuste restantes de series y lotes no son cero.</value>
+  </data>
+  <data name="AssignAll" xml:space="preserve">
+    <value>Asignar todo</value>
+  </data>
+  <data name="AutoAlloc" xml:space="preserve">
+    <value>Auto-asign.</value>
+  </data>
+  <data name="AutoGen" xml:space="preserve">
+    <value>Auto-gen.</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Borrar Todo</value>
+  </data>
+  <data name="NextSerialNumber" xml:space="preserve">
+    <value>N° Serie Siguiente</value>
+  </data>
   <data name="EachLotHas" xml:space="preserve">
-    <value>Cada lote cuenta con</value>
+    <value>Cada Lote Tiene</value>
   </data>
   <data name="Make" xml:space="preserve">
     <value>Hacer</value>
   </data>
   <data name="NextLotNo" xml:space="preserve">
-    <value>Número del siguiente lote</value>
+    <value>N° Lote Siguiente</value>
   </data>
   <data name="OR" xml:space="preserve">
     <value>O</value>
   </data>
   <data name="FractionalQty" xml:space="preserve">
     <value>No se puede utilizar una cantidad fraccionaria con un artículo serializado.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ShipAll" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>Lote</value>
+  </data>
+  <data name="Lots" xml:space="preserve">
+    <value>Lotes</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Série</value>
   </data>
 </root>

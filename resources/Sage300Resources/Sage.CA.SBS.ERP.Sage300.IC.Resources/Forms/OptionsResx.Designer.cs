@@ -97,7 +97,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Allow Serial Quantity to be Different from the Quantity in the Entries.
+        ///   Looks up a localized string similar to Allow Lot Quantity to be Different from the Quantity in the Entries.
         /// </summary>
         public static string AllowDifferentLotQty {
             get {
@@ -160,7 +160,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Allow Serial Quantity to be Different from the Quantity in the Entries.
+        ///   Looks up a localized string similar to Allow Lot Quantity to be Different from the Quantity in the Entries.
         /// </summary>
         public static string AllowLotQuantityDifferent {
             get {
@@ -709,7 +709,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ItemDefaults.
+        ///   Looks up a localized string similar to Item Defaults.
         /// </summary>
         public static string ItemDefaults {
             get {
@@ -1105,7 +1105,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warning. Changing this option could result in previously allocated serials to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?.
+        ///   Looks up a localized string similar to Warning. Once a serial mask structure separator is set to not in use, it cannot be reset to in use again. Do you want to proceed?.
         /// </summary>
         public static string SortByChangeWarning {
             get {
@@ -1115,6 +1115,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         
         /// <summary>
         ///   Looks up a localized string similar to Warning. Changing this option could result in previously allocated lots to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?.
+        /// </summary>
+        public static string SortByDropdownChangeLotsWarning {
+            get {
+                return ResourceManager.GetString("SortByDropdownChangeLotsWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning. Changing this option could result in previously allocated serials to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?.
+        /// </summary>
+        public static string SortByDropdownChangeWarning {
+            get {
+                return ResourceManager.GetString("SortByDropdownChangeWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning. Once a lot mask structure separator is set to not in use, it cannot be reset to in use again. Do you want to proceed?.
         /// </summary>
         public static string SortLotsByChangeWarning {
             get {

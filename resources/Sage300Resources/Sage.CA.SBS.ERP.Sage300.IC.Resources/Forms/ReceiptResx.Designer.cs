@@ -232,6 +232,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  Return quantity cannot be greater than receipt quantity..
+        /// </summary>
+        public static string greaterReturnQTYmsg {
+            get {
+                return ResourceManager.GetString("greaterReturnQTYmsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Receipt Details.
         /// </summary>
         public static string IC0580 {

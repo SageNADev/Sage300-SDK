@@ -435,7 +435,10 @@
   <data name="CS_CompanyProfile" xml:space="preserve">
     <value>Profil de l’entreprise</value>
   </data>
-  <data name="CS_FiscalCalendar" xml:space="preserve">
+	<data name="CS_EmailHistory" xml:space="preserve">
+    <value>Historique des courriels</value>
+  </data>
+	<data name="CS_FiscalCalendar" xml:space="preserve">
     <value>Calendrier fiscal</value>
   </data>
   <data name="Currency" xml:space="preserve">
@@ -1393,7 +1396,7 @@
     <value>Personnalisez le menu de navigation en masquant ou affichant des écrans web et des catégories. Si vous masquez tous les écrans d’un module, le module n’apparaît pas dans le menu de navigation.</value>
   </data>
   <data name="CompanySetup" xml:space="preserve">
-    <value>Configuration de l’entreprise</value>
+    <value>Entreprise</value>
   </data>
   <data name="DataAndMaintenance" xml:space="preserve">
     <value>Données et maintenance</value>

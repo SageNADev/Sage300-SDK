@@ -1753,7 +1753,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Company Setup.
+        ///   Looks up a localized string similar to Company.
         /// </summary>
         public static string CompanySetup {
             get {
@@ -1787,7 +1787,18 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
                 return ResourceManager.GetString("CS_CompanyProfile", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Email History
+        /// </summary>
+        public static string CS_EmailHistory
+        {
+            get
+            {
+                return ResourceManager.GetString("CS_EmailHistory", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Fiscal Calendar.
         /// </summary>

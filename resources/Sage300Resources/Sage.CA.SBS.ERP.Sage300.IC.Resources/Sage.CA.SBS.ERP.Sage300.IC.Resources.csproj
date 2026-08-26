@@ -226,7 +226,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TransfersResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdateBillsOfMaterialResx1.Designer.cs">
+    <Compile Include="Forms\UpdateBillsOfMaterialResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateBillsOfMaterialResx.resx</DependentUpon>
@@ -817,7 +817,7 @@
     <EmbeddedResource Include="Forms\TransfersResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\UpdateBillsOfMaterialResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>UpdateBillsOfMaterialResx1.Designer.cs</LastGenOutput>
+      <LastGenOutput>UpdateBillsOfMaterialResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateBillsOfMaterialResx.es.resx" />
     <EmbeddedResource Include="Forms\UpdateBillsOfMaterialResx.fr.resx" />

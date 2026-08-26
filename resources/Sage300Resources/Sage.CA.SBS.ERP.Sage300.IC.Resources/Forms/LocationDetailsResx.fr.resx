@@ -150,11 +150,11 @@
     <comment>Field</comment>
   </data>
   <data name="LOTCOST" xml:space="preserve">
-    <value>Coût lot</value>
+    <value>N° lot-Coût</value>
     <comment>Field</comment>
   </data>
   <data name="LOTCOST1" xml:space="preserve">
-    <value>Coût lot...</value>
+    <value>N° lot-Coûts</value>
     <comment>Button</comment>
   </data>
   <data name="NumberofUncontestedTransactions" xml:space="preserve">
@@ -174,19 +174,19 @@
     <comment>Field</comment>
   </data>
   <data name="SERIALCOST" xml:space="preserve">
-    <value>Coût numéro série</value>
+    <value>N° série-Coût</value>
     <comment>Field</comment>
   </data>
   <data name="SERIALCOST1" xml:space="preserve">
-    <value>Coût numéro série...</value>
+    <value>N° série-Coûts</value>
     <comment>Button</comment>
   </data>
   <data name="TitleLOTCOST" xml:space="preserve">
-    <value>Coûts lots</value>
+    <value>N° lot-Coûts</value>
     <comment>Field</comment>
   </data>
   <data name="TitleSERIALCOST" xml:space="preserve">
-    <value>Coûts numéros série</value>
+    <value>N° série-Coûts</value>
     <comment>Field</comment>
   </data>
   <data name="VENDOR" xml:space="preserve">

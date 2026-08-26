@@ -259,4 +259,7 @@
   <data name="quarantine" xml:space="preserve">
     <value>quarantine</value>
   </data>
+  <data name="New" xml:space="preserve">
+    <value>***NEW***</value>
+  </data>
 </root>

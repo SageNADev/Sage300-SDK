@@ -7,6 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+// Portions co-modified with Claude Code
 
 namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     using System;
@@ -97,6 +98,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Component's BOM Number.
+        /// </summary>
+        public static string ComponentBomNo {
+            get {
+                return ResourceManager.GetString("ComponentBomNo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Component Item Number.
+        /// </summary>
+        public static string ComponentItemNo {
+            get {
+                return ResourceManager.GetString("ComponentItemNo", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Component Item Number Description.
         /// </summary>
         public static string ComponentItemNumberDesc {
@@ -104,7 +123,16 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
                 return ResourceManager.GetString("ComponentItemNumberDesc", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Component Type.
+        /// </summary>
+        public static string ComponentType {
+            get {
+                return ResourceManager.GetString("ComponentType", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Components.
         /// </summary>
@@ -113,7 +141,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
                 return ResourceManager.GetString("Components", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cost.
         /// </summary>
@@ -122,7 +150,16 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
                 return ResourceManager.GetString("Cost", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Cost Type.
+        /// </summary>
+        public static string CostType {
+            get {
+                return ResourceManager.GetString("CostType", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Decrease.
         /// </summary>
@@ -223,6 +260,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Replace by BOM Number.
+        /// </summary>
+        public static string ReplacementBomNo {
+            get {
+                return ResourceManager.GetString("ReplacementBomNo", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Replace by Item Number.
         /// </summary>
         public static string RplByItemNo {
@@ -230,7 +276,34 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
                 return ResourceManager.GetString("RplByItemNo", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to To BOM Number.
+        /// </summary>
+        public static string ToBomNo {
+            get {
+                return ResourceManager.GetString("ToBomNo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to To Master Item Number.
+        /// </summary>
+        public static string ToItemNo {
+            get {
+                return ResourceManager.GetString("ToItemNo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string Update {
+            get {
+                return ResourceManager.GetString("Update", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Using.
         /// </summary>

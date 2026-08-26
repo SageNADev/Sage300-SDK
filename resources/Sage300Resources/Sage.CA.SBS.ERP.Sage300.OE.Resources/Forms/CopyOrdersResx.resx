@@ -189,4 +189,7 @@
     <value>Create</value>
     <comment>Button</comment>
   </data>
+  <data name="CannotChangeLocationForSerialLotItem" xml:space="preserve">
+    <value>You cannot change the location for a serialized or lotted item after you enter the quantity ordered.</value>
+  </data>
 </root>

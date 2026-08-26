@@ -352,4 +352,7 @@
   <data name="SerialConfirmationErrorMessage" xml:space="preserve">
     <value>The remaining serial quantity is not zero. You will not be able to save the record. Do you want to continue?</value>
   </data>
+  <data name="greaterReturnQTYmsg" xml:space="preserve">
+    <value> Return quantity cannot be greater than receipt quantity.</value>
+  </data>
 </root>

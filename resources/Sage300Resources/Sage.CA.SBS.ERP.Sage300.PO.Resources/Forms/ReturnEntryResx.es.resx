@@ -1728,4 +1728,7 @@
   <data name="NetReturnTotal" xml:space="preserve">
     <value>Total de Devolución Neto</value>
   </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>La ubicación no puede estar vacía.</value>
+  </data>
 </root>

@@ -510,4 +510,9 @@
   <data name="PaymentsAcceptanceDefaultBankCodeDesc" xml:space="preserve">
     <value>Payments Acceptance Bank Code Description</value>
   </data>
+  <data name="EmailOptions" xml:space="preserve"><value>Email Options</value></data>
+  <data name="SenderEmailForInvoices" xml:space="preserve"><value>Sender Email for Invoices</value></data>
+  <data name="SenderEmailForReceipts" xml:space="preserve"><value>Sender Email for Receipts</value></data>
+  <data name="SenderEmailForStatements" xml:space="preserve"><value>Sender Email for Statements</value></data>
+  <data name="InvalidEmailAddress" xml:space="preserve"><value>Enter a valid email address.</value></data>
 </root>

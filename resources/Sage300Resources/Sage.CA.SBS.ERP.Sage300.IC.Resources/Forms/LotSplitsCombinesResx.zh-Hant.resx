@@ -121,6 +121,18 @@
     <value>合併</value>
     <comment>Button</comment>
   </data>
+  <data name="CombineNumber" xml:space="preserve">
+    <value>合併編號</value>
+  </data>
+  <data name="DateOutsideRange" xml:space="preserve">
+    <value>輸入的日期超出公司設定檔中指定的範圍。</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>分拆編號</value>
+  </data>
+  <data name="DocumentNumberErrMsg" xml:space="preserve">
+    <value>單據編號不可為空。</value>
+  </data>
   <data name="Each" xml:space="preserve">
     <value>各個</value>
     <comment>Field</comment>
@@ -129,9 +141,60 @@
     <value>存貨控制批別分拆/合併</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>到期日</value>
+  </data>
+  <data name="FromCombineNumber" xml:space="preserve">
+    <value>合併數量</value>
+  </data>
+  <data name="FromSplitNumber" xml:space="preserve">
+    <value>要分拆的數量</value>
+  </data>
+  <data name="GridQtyCombine" xml:space="preserve">
+    <value>要合併的數量</value>
+  </data>
+  <data name="GridQtySplit" xml:space="preserve">
+    <value>分拆數量</value>
+  </data>
+  <data name="InvalidItemMsg" xml:space="preserve">
+    <value>品項 {0} 不存在。</value>
+  </data>
+  <data name="InvalidLocationMsg" xml:space="preserve">
+    <value>位置 {0} 不存在。</value>
+  </data>
+  <data name="InvalidLotNumberErrMsg" xml:space="preserve">
+    <value>該批號不符合目前的批號格式。</value>
+  </data>
+  <data name="InvalidLotNumMsg" xml:space="preserve">
+    <value>找不到批號 {0}，或該批號不適用於品項 {1}、位置 {2}。</value>
+  </data>
+  <data name="ItemNumberErrMsg" xml:space="preserve">
+    <value>品項編號不可為空。</value>
+  </data>
+  <data name="LocationErrMsg" xml:space="preserve">
+    <value>位置不可為空</value>
+  </data>
+  <data name="LotNumberDuplicationErrMsg" xml:space="preserve">
+    <value>分拆/合併明細記錄已存在。</value>
+  </data>
+  <data name="HeaderDetailLotSameErrMsg" xml:space="preserve">
+    <value>主檔與明細的批號不可相同。</value>
+  </data>
+  <data name="LotNumberErrMsg" xml:space="preserve">
+    <value>批號不可為空。</value>
+  </data>
   <data name="QtyCombine" xml:space="preserve">
     <value>數量合併</value>
     <comment>Field</comment>
+  </data>
+  <data name="QtyExceedErrMsg" xml:space="preserve">
+    <value>要分拆的數量不得超過可出貨數量。</value>
+  </data>
+  <data name="QtyShippable" xml:space="preserve">
+    <value>可出貨數量</value>
   </data>
   <data name="QtySplit" xml:space="preserve">
     <value>數量分拆</value>
@@ -145,6 +208,9 @@
     <value>要分拆的數量</value>
     <comment>Field</comment>
   </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>剩餘</value>
+  </data>
   <data name="SAVECOMBINE" xml:space="preserve">
     <value>是否過帳合併編號？</value>
     <comment>Message</comment>
@@ -156,5 +222,44 @@
   <data name="Split" xml:space="preserve">
     <value>分拆</value>
     <comment>Button</comment>
+  </data>
+  <data name="SplitNumber" xml:space="preserve">
+    <value>分拆編號</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>庫存日期</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>交易日期</value>
+  </data>
+  <data name="CombineExceedErrMsg" xml:space="preserve">
+    <value>合併明細數量不得超過可出貨數量。</value>
+  </data>
+  <data name="DateInvalidErrMsg" xml:space="preserve">
+    <value>{0} 無效。</value>
+  </data>
+  <data name="ExpiryNotGreaterStockErrMsg" xml:space="preserve">
+    <value>到期日不得早於庫存日期。</value>
+  </data>
+  <data name="QuantityErrMsg" xml:space="preserve">
+    <value>數量必須大於零。</value>
+  </data>
+  <data name="InvalidLotItemMsg" xml:space="preserve">
+    <value>由於尚未輸入批號格式，因此無法取得批號。s</value>
+  </data>
+  <data name="LotQuarantineErrMsg" xml:space="preserve">
+    <value>品項 {1} 的批號 {0}，位置 {2} 不能處於 {3} 狀態以進行分拆/合併。</value>
+  </data>
+  <data name="contract" xml:space="preserve">
+    <value>合約</value>
+  </data>
+  <data name="LotNotFound" xml:space="preserve">
+    <value>找不到批號 {0}。</value>
+  </data>
+  <data name="quarantine" xml:space="preserve">
+    <value>隔離</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>***NEW***</value>
   </data>
 </root>

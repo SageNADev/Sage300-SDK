@@ -405,4 +405,7 @@
     <value>Document Numbering</value>
     <comment>Retainage Tab </comment>
   </data>
+  <data name="EmailOptions" xml:space="preserve"><value>Email Options</value></data>
+  <data name="SenderEmailForLetters" xml:space="preserve"><value>Sender Email for Letters</value></data>
+  <data name="InvalidEmailAddress" xml:space="preserve"><value>Enter a valid email address.</value></data>
 </root>

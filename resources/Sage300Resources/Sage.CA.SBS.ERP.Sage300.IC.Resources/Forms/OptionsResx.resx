@@ -543,7 +543,7 @@
     <value>InvalidMaskFormat</value>
   </data>
   <data name="ItemDefaults" xml:space="preserve">
-    <value>ItemDefaults</value>
+    <value>Item Defaults</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
@@ -570,10 +570,10 @@
     <value>Latest</value>
   </data>
   <data name="AllowDifferentLotQty" xml:space="preserve">
-    <value>Allow Serial Quantity to be Different from the Quantity in the Entries</value>
+    <value>Allow Lot Quantity to be Different from the Quantity in the Entries</value>
   </data>
   <data name="AllowLotQuantityDifferent" xml:space="preserve">
-    <value>Allow Serial Quantity to be Different from the Quantity in the Entries</value>
+    <value>Allow Lot Quantity to be Different from the Quantity in the Entries</value>
   </data>
   <data name="DaysOnQuarantine" xml:space="preserve">
     <value>Days On Quarantine</value>
@@ -597,7 +597,7 @@
     <value>Lot Number</value>
   </data>
   <data name="SortLotsByChangeWarning" xml:space="preserve">
-    <value>Warning. Changing this option could result in previously allocated lots to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?</value>
+    <value>Warning. Once a lot mask structure separator is set to not in use, it cannot be reset to in use again. Do you want to proceed?</value>
   </data>
   <data name="SerialNumberMaskDescription" xml:space="preserve">
     <value>Serial Number Mask Description</value>
@@ -615,6 +615,12 @@
     <value>has not been defined for lots.</value>
   </data>
   <data name="SortByChangeWarning" xml:space="preserve">
+    <value>Warning. Once a serial mask structure separator is set to not in use, it cannot be reset to in use again. Do you want to proceed?</value>
+  </data>
+  <data name="SortByDropdownChangeLotsWarning" xml:space="preserve">
+    <value>Warning. Changing this option could result in previously allocated lots to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?</value>
+  </data>
+  <data name="SortByDropdownChangeWarning" xml:space="preserve">
     <value>Warning. Changing this option could result in previously allocated serials to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?</value>
   </data>
 </root>

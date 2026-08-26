@@ -142,13 +142,13 @@
     <value>寿命</value>
   </data>
   <data name="Lots" xml:space="preserve">
-    <value>很多</value>
+    <value>批别</value>
   </data>
   <data name="Period" xml:space="preserve">
     <value>时期</value>
   </data>
   <data name="Serials" xml:space="preserve">
-    <value>连载</value>
+    <value>系列</value>
   </data>
   <data name="StartDate" xml:space="preserve">
     <value>开始日期</value>

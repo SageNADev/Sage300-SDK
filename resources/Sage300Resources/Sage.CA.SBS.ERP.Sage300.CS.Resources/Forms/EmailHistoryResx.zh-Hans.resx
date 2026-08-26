@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Portions co-modified with OpenAI Codex -->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Entity" xml:space="preserve"><value>电子邮件历史记录</value></data>
+  <data name="EmailId" xml:space="preserve"><value>电子邮件 ID</value></data>
+  <data name="SourceApplication" xml:space="preserve"><value>源应用程序</value></data>
+  <data name="SourceType" xml:space="preserve"><value>源类型</value></data>
+  <data name="SourceLabel" xml:space="preserve"><value>源标识符标签</value></data>
+  <data name="Subject" xml:space="preserve"><value>电子邮件主题</value></data>
+  <data name="ToEmail" xml:space="preserve"><value>收件人电子邮件地址</value></data>
+  <data name="CcEmail" xml:space="preserve"><value>抄送电子邮件地址</value></data>
+  <data name="BccEmail" xml:space="preserve"><value>密送电子邮件地址</value></data>
+  <data name="FromEmail" xml:space="preserve"><value>发件人电子邮件地址</value></data>
+  <data name="CreatedBy" xml:space="preserve"><value>生成者用户 ID</value></data>
+  <data name="CreateDate" xml:space="preserve"><value>生成日期</value></data>
+  <data name="CreateTime" xml:space="preserve"><value>生成时间</value></data>
+  <data name="SentDate" xml:space="preserve"><value>发送日期</value></data>
+  <data name="SentTime" xml:space="preserve"><value>发送时间</value></data>
+  <data name="Status" xml:space="preserve"><value>电子邮件发送状态</value></data>
+  <data name="Attempts" xml:space="preserve"><value>发送尝试次数</value></data>
+  <data name="ErrorCode" xml:space="preserve"><value>错误代码</value></data>
+  <data name="ErrorMessage" xml:space="preserve"><value>错误消息</value></data>
+  <data name="NumberOfAttachments" xml:space="preserve"><value>附件数</value></data>
+  <data name="AttachmentFileName" xml:space="preserve"><value>生成的附件文件名</value></data>
+  <data name="SearchText" xml:space="preserve"><value>搜索文本</value></data>
+  <data name="GenerationDateRangeError" xml:space="preserve"><value>起始生成日期晚于结束生成日期。</value></data>
+  <data name="SourceApplicationRangeError" xml:space="preserve"><value>起始来源模块不能大于结束来源模块。</value></data>
+</root>

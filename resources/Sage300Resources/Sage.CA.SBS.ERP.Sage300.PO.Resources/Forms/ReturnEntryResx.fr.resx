@@ -1728,4 +1728,7 @@
   <data name="NetReturnTotal" xml:space="preserve">
     <value>Total retour nette</value>
   </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>L'emplacement ne peut pas être vide.</value>
+  </data>
 </root>

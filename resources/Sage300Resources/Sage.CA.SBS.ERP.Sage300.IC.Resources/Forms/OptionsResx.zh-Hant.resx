@@ -485,4 +485,142 @@
     <value>重量計量單位</value>
     <comment>Weight Unit of Measure Title</comment>
   </data>
+  <data name="AllowDifferentLotQty" xml:space="preserve">
+    <value>允許批次數量與輸入數量不同</value>
+  </data>
+  <data name="AllowDifferentSerialQty" xml:space="preserve">
+    <value>允許序號數量與條目中的數量不同</value>
+  </data>
+  <data name="AllowDuplicateSerials" xml:space="preserve">
+    <value>允許重複序號</value>
+  </data>
+  <data name="AllowLotQtyMismatch" xml:space="preserve">
+    <value>允許批次數量不匹配</value>
+  </data>
+  <data name="AllowLotQuantityDifferent" xml:space="preserve">
+    <value>允許批次數量與輸入數量不同</value>
+  </data>
+  <data name="AllowReuseLotNumbers" xml:space="preserve">
+    <value>允許重複使用批號</value>
+  </data>
+  <data name="AllowReuseSerialNumbers" xml:space="preserve">
+    <value>允許重用序號</value>
+  </data>
+  <data name="AllowSerialAllocOnQtyOrd" xml:space="preserve">
+    <value>在 OE 系統中，使用「訂購數量」欄位來分配序號。</value>
+  </data>
+  <data name="AllowSerialQtyMismatch" xml:space="preserve">
+    <value>允許序號不匹配</value>
+  </data>
+  <data name="AutoAllocation" xml:space="preserve">
+    <value>自動分配</value>
+  </data>
+  <data name="DaysOnQuarantine" xml:space="preserve">
+    <value>隔離天數</value>
+  </data>
+  <data name="DaysToExpiry" xml:space="preserve">
+    <value>剩餘天數</value>
+  </data>
+  <data name="Earliest" xml:space="preserve">
+    <value>最早</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="ExpiredLotMessage" xml:space="preserve">
+    <value>過期批次分配訊息</value>
+  </data>
+  <data name="ExpiredSerialAllocationMsg" xml:space="preserve">
+    <value>序號分配過期訊息</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>到期日</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>第一的</value>
+  </data>
+  <data name="InvalidMaskFormat" xml:space="preserve">
+    <value>無效遮罩格式</value>
+  </data>
+  <data name="ItemDefaults" xml:space="preserve">
+    <value>項目預設值</value>
+  </data>
+  <data name="Latest" xml:space="preserve">
+    <value>最新的</value>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>批號</value>
+  </data>
+  <data name="LotNumberMask" xml:space="preserve">
+    <value>批號掩碼</value>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>批號掩碼說明</value>
+  </data>
+  <data name="LotReuseMismatchConflict" xml:space="preserve">
+    <value>批次重複使用不匹配衝突</value>
+  </data>
+  <data name="LotSeparators" xml:space="preserve">
+    <value>批次分隔器</value>
+  </data>
+  <data name="MaskStructure" xml:space="preserve">
+    <value>掩膜結構</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>沒有任何</value>
+  </data>
+  <data name="RecordNotFound" xml:space="preserve">
+    <value>尚未為序號定義。</value>
+  </data>
+  <data name="RecordNotFoundLot" xml:space="preserve">
+    <value>很多地塊尚未定義。</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>分離器</value>
+  </data>
+  <data name="SeparatorsUsedInLotMask" xml:space="preserve">
+    <value>批次掩膜結構中使用的分離器</value>
+  </data>
+  <data name="SeparatorsUsedInSerialMask" xml:space="preserve">
+    <value>串行掩模結構中使用的分隔符</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="SerialNumberMask" xml:space="preserve">
+    <value>序號掩碼</value>
+  </data>
+  <data name="SerialNumberMaskDescription" xml:space="preserve">
+    <value>序號遮罩說明</value>
+  </data>
+  <data name="SerialReuseMismatchConflict" xml:space="preserve">
+    <value>序列重用不符衝突</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>排序方式</value>
+  </data>
+  <data name="SortByChangeWarning" xml:space="preserve">
+    <value>警告。一旦串列遮罩結構分隔符被設定為“未使用”，就無法再次重設為“使用中”。是否繼續？</value>
+  </data>
+  <data name="SortLotsByChangeWarning" xml:space="preserve">
+    <value>警告。批次遮罩結構分隔符號一旦設定為“未使用”，就無法再次重設為“使用中”。是否繼續？</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>股票日期</value>
+  </data>
+  <data name="TabcaptionSerials" xml:space="preserve">
+    <value>連續劇</value>
+  </data>
+  <data name="UseQtyOrderedOEForLotAllocation" xml:space="preserve">
+    <value>在OE系統中，使用「訂購數量」欄位來分配批號。</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="SortByDropdownChangeLotsWarning" xml:space="preserve">
+    <value>警告。變更此選項可能會導致在交易輸入時重新分配先前已分配的批號。這可能會使交易過帳失敗。您可以先過帳所有已儲存的 I/C 交易並執行日終處理，然後再變更此選項。您要現在繼續變更此選項嗎？</value>
+  </data>
+  <data name="SortByDropdownChangeWarning" xml:space="preserve">
+    <value>警告。變更此選項可能會導致在交易輸入時重新分配先前已分配的序號。這可能會使交易過帳失敗。您可以先過帳所有已儲存的 I/C 交易並執行日終處理，然後再變更此選項。您要現在繼續變更此選項嗎？</value>
+  </data>
 </root>

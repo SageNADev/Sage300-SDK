@@ -2259,6 +2259,14 @@ let receiptGridUtility = {
     }
 };
 
+// Generic section for invoking cleanup functions when the screen unloads
+var unloadUI = {
+    // Common function to perform any screen required cleanup
+    finalize: function () {
+        sg.utls.destroySession();
+    }
+};
+
 /*
  * This code block is executed after the rest of the DOM has finished loading
  */
@@ -2279,11 +2287,8 @@ $(function () {
         }
     });
 
-    /*
-     * Hook into the 'unload' browser event
-     */
-    $(window).on('unload', function () {
-        sg.utls.destroySession();
-    });
+    // Bind event to invoke common callback function when the screen unloads
+    $(window).on('pagehide', unloadUI.finalize);
+
 });
 
