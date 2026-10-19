@@ -29,7 +29,7 @@
     var extension = settings.Extension;
     var repositoryType = settings.RepositoryType;
     var generateDynamicEnablement = view.Options[BusinessView.Constants.GenerateDynamicEnablement];
-    var viewId = view.Properties[BusinessView.Constants.ViewId];
+    var viewId = (repositoryType.Equals(RepositoryType.Report) ? string.Empty : view.Properties[BusinessView.Constants.ViewId]);
     var modelName = view.Properties[BusinessView.Constants.ModelName];
 
     // Specific payroll logic since CP and UP are now dynamically assigned
