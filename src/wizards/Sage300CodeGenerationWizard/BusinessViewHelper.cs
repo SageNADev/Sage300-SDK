@@ -237,7 +237,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var entityName = view.Properties[BusinessView.Constants.EntityName];
             var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
             var pageUrlFile = Path.Combine(pathProj, "pageUrl.txt");
-            var viewId = view.Properties[BusinessView.Constants.ViewId];
+            var viewId = (settings.RepositoryType.Equals(RepositoryType.Report) ? "" : view.Properties[BusinessView.Constants.ViewId]);
 
             // {0} is the session id passed in from Global.asax.cs
             var pageUrl = "OnPremise/{0}/" + moduleId + "/" + (settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ? settings.EntitiesContainerName : entityName);
