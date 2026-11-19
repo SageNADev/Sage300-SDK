@@ -1757,6 +1757,15 @@
                 displayFieldNames: ["LOCATION", "DESC", "INACTIVE"]
             },
 
+            LocationForSplitCombine: {
+                viewID: "IC0372",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["LOCATION", "DESC"],
+                displayFieldNames: ["LOCATION", "DESC", "ACTIVE", "AQTYONHAND", "QTYONORDER",
+                    "QTYSALORDR", "QTYAVAIL"]
+            },
+
             LotSplitCombine: {
                 viewID: "IC0810",
                 viewOrder: 1,

@@ -1,4 +1,6 @@
 /* Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved. */
+// Portions edited by AI:
+//   Removed message overlays before opening subsequent modal workflows.
 
 // @ts-check
 
@@ -2858,6 +2860,8 @@ $.extend(sg.utls, {
 
             if (handler !== undefined && handler !== null) {
                 var closeHandler = function () {
+                    // Remove the message and its high-z-index overlay before a callback opens another modal.
+                    sg.utls.hideMessage();
                     handler();
                     $(document).off("click", ".msgCtrl-close", closeHandler);
                     $(document).off("keyup keydown", errMsgKeyHandler);
