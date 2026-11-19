@@ -1841,7 +1841,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 if (repositoryType.Equals(RepositoryType.Report))
                 {
                     txtViewID.Text = Guid.NewGuid().ToString();
-                    
                     // This is set in the txtViewID_Leave event, but if the user does not leave the control, it will not be set. So set it here as well
                     var node = _clickedEntityTreeNode;
                     var reportView = (BusinessView)node.LastNode.Tag;

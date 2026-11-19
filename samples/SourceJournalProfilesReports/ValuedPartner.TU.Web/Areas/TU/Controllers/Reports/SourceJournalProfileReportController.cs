@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -49,7 +49,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Reports
         /// <param name="container">Unity Container</param>
         public SourceJournalProfileReportController(IUnityContainer container)
             : base(container, context => new SourceJournalProfileReportControllerInternal<T, SourceJournalProfileReportViewModel<T>,
-                ISourceJournalProfileReportService<T>>(context),"TUSourceJournalProfileReport")
+                ISourceJournalProfileReportService<T>>(context),"GLSourceJournalProfileReport")
         {
         }
 

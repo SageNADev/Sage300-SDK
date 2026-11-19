@@ -48,14 +48,11 @@
     <Reference Include="Microsoft.OData.Edm">
       <HintPath>$(SolutionDir)packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Edm.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity">
-      <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    <Reference Include="Unity.Abstractions">
+      <HintPath>$(SolutionDir)packages\Unity.5.11.10\lib\net48\Unity.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration">
-      <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
-      <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    <Reference Include="Unity.Container">
+      <HintPath>$(SolutionDir)packages\Unity.5.11.10\lib\net48\Unity.Container.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Spatial">
       <HintPath>$(SolutionDir)packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\Microsoft.Spatial.dll</HintPath>
@@ -81,7 +78,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http">
-      <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebApi.Core.5.3.0\lib\net45\System.Web.Http.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.OData">

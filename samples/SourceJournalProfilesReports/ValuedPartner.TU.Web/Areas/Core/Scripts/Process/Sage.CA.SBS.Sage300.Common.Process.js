@@ -1,4 +1,6 @@
 ﻿/* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */
+// Portions edited by AI:
+//   Completed workflows now display 100% progress.
 "use strict";
 var progressUI = function () {
     let defaultProgressUrl;
@@ -13,6 +15,11 @@ var progressUI = function () {
         window.ko.mapping.fromJS(jsonResult.ProcessResult, {}, processResult);
         const error = processResult.ProcessStatus() == 3;
         const completed = processResult.ProcessStatus() == 2;
+        let percentageValue = completed ? 100 : 0;
+        if (!completed && processResult.ProgressMeter && processResult.ProgressMeter.Percent) {
+            percentageValue = processResult.ProgressMeter.Percent();
+        }
+        sg.utls.progressBarControl("#progressBarForProcessing", percentageValue);
         if (error || completed) {
             abortPollRequest = true;
             if (showResult || error) {
@@ -47,11 +54,6 @@ var progressUI = function () {
                 currentOnProcessComplete(jsonResult);
             }
         }
-        let percentageValue = 0;
-        if (processResult.ProgressMeter && processResult.ProgressMeter.Percent) {
-            percentageValue = processResult.ProgressMeter.Percent();
-        }
-        sg.utls.progressBarControl("#progressBarForProcessing", percentageValue);
     };
     const resetMeter = function () {
         if (progressUI.progressUIModel && progressUI.progressUIModel.ProcessResult) {
